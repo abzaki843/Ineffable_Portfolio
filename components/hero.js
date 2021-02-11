@@ -5,6 +5,7 @@ import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -49,7 +50,14 @@ return(
         <Typography variant="subtitle1"  gutterBottom color="textSecondary" align="justify">
     We Are a Team of  software developers. Highly Dedicated to develop Products that Matter  
       </Typography>
+      <Button variant="contained" color="primary"  >
+     
+        Explore More
+       
+      </Button>
+    
     </Box>
+    
         </Grid>
        
         <Grid item xs={12} lg={7}>
