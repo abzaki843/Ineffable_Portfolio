@@ -17,11 +17,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 200,
-    width:220,
-
-    justifyContent: 'center',
-     alignContent: 'center',
+    height: 140,
   },
   divider: {
     width: '100%',
@@ -38,6 +34,7 @@ export default function MediaCard() {
   const classes = useStyles();
 
   return (
+    
       
     <div className={classes.root,classes.divider}>
          <Divider />
@@ -48,21 +45,15 @@ export default function MediaCard() {
     
   >
   
-        <Grid item xs={12} lg={12} >
-        <Box m={1} >
-          <Typography variant="h6" gutterBottom color="textPrimary">
+        <Grid item xs={12} lg={12}  >
+        <Box m={1}  display="flex" justifyContent="center" alignItems="center">
+          <Typography variant="h4" gutterBottom color="textPrimary" >
           
       Technologies we use
         </Typography>
         
        
-          <Typography variant="h4" component="h2" gutterBottom color="textSecondary" align="justify">
-      We Are here to give Best Services
-        </Typography>
-          <Typography variant="subtitle1"  gutterBottom color="textSecondary" align="justify">
-      We Are a Team of  software developers. Highly Dedicated to develop Products that Matter  
-        </Typography>
-      
+         
       
       </Box>
       
@@ -74,7 +65,7 @@ export default function MediaCard() {
     direction="row"
   >
    
-     <Grid item xs={6} lg={4}>
+     <Grid item xs={12} >
     <Card className={classes.root} raised="true"   direction="column"
   alignItems="center"
   justify="center" >
@@ -82,8 +73,7 @@ export default function MediaCard() {
         <CardMedia
           className={classes.media}
           image="/Assets/webdevelopment.png"
-          title="Contemplative Reptile"
-         
+         component="img"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

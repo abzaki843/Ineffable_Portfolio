@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
+import { Hidden } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,30 +25,38 @@ export default function Hero(){
  
 return(
 <div className={classes.root}>
+  
 <Grid
   container
   direction="row"
   justify="center"
   alignItems="center"
+  
 >
 
-      <Grid item xs={12} lg={5}>
+      <Grid item  lg={5} >
       <Box m={3} >
-        <Typography variant="h6" component="h2" gutterBottom color="textPrimary" align="justify">
+      
+      
+
+        <Typography variant="h5"  gutterBottom color="textPrimary" align="justify">
+       
         
     Innovative Software Company 
+    </Typography>
     
     <img
               src="/Assets/divider.png" style={{width:"20%",height:"auto",padding:"5px"}}
               />
-   
-      </Typography>
-      
+  
      
+     <Hidden mdDown>
+    
         <Typography variant="h4" component="h2" gutterBottom color="textSecondary" align="justify">
+
     We Are here to give Best Services
       </Typography>
-        <Typography variant="subtitle1"  gutterBottom color="textSecondary" align="justify">
+        <Typography variant="subtitle1"  gutterBottom color="textSecondary" align="justify" >
     We Are a Team of  software developers. Highly Dedicated to develop Products that Matter  
       </Typography>
       <Button variant="contained" color="primary"  >
@@ -55,8 +64,25 @@ return(
         Explore More
        
       </Button>
-    
-    </Box>
+     </Hidden>
+     
+ 
+      <Hidden lgUp  mdDown>
+      <Typography variant="h4" component="h2" gutterBottom color="textSecondary" align="justify">
+
+We Are here to give Best Services
+  </Typography>
+    <Typography variant="subtitle1"  gutterBottom color="textSecondary" align="justify">
+We Are a Team of  software developers. Highly Dedicated to develop Products that Matter  
+  </Typography>
+  <Button variant="contained" color="primary"  >
+ 
+    Explore More
+   
+  </Button>
+  </Hidden>
+  </Box>
+  
     
         </Grid>
        
@@ -66,8 +92,25 @@ return(
               src="/Assets/hero-img.png" style={{width:"100%",height:"auto"}}
               />
         </Grid>
+        <Hidden lgUp>
+        <Typography variant="h5"  gutterBottom color="textSecondary" align="justify">
+
+We Are here to give Best Services
+  </Typography>
+    <Typography variant="subtitle1"  gutter color="textSecondary" align="justify" paragraph>
+We Are a Team of  software developers. Highly Dedicated to develop Products that Matter  
+  </Typography>
+  <Button variant="contained" color="primary"  paragraph>
+ 
+    Explore More
+   
+  </Button>
+ 
+   </Hidden>
         </Grid>
       
+
+        <Divider  />
     </div>
   );
 }
