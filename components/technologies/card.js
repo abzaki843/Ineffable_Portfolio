@@ -11,13 +11,14 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider';
 import { grey } from '@material-ui/core/colors';
+import { Hidden } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 160,
   },
   divider: {
     width: '100%',
@@ -46,12 +47,36 @@ export default function MediaCard() {
   >
   
         <Grid item xs={12} lg={12}  >
-        <Box m={1}  display="flex" justifyContent="center" alignItems="center">
+        <Box m={1}  display="grid" justifyContent="center" alignItems="center">
+          <Hidden lgUp>
           <Typography variant="h4" gutterBottom color="textPrimary" >
           
       Technologies we use
         </Typography>
+          <Typography variant="h5" gutterBottom color="textSecondary" >
+          
+      What we do we do it perfect
+        </Typography>
         
+       </Hidden>
+         
+      
+      </Box>
+      
+          </Grid>
+        <Grid item xs={12} lg={12}  >
+        <Box m={1} >
+          <Hidden mdDown>
+          <Typography variant="h4" gutterBottom color="textPrimary" >
+          
+      Technologies we use
+        </Typography>
+      
+          <Typography variant="h5" gutterBottom color="textSecondary" >
+          
+      What we do we do it perfect
+        </Typography>
+        </Hidden>
        
          
       
@@ -72,14 +97,14 @@ export default function MediaCard() {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="/Assets/webdevelopment.png"
+          image="/Assets/web.png"
          component="img"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h2" direction="row" justify_content="center"   style={{ align: "center" }}>
             Web App Development
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography variant="body2" color="textSecondary"  >
           The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. 
           </Typography>
         </CardContent>

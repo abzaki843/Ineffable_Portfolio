@@ -23,7 +23,14 @@ const theme = createMuiTheme({
       secondary: "#000000",
       third:"#FFFFFF"
     },
-   
+    typography: {
+      "fontFamily": `"Roboto", "Montserrat"`,
+      "fontSize": 14,
+      "fontWeightLight": 300,
+      "fontWeightRegular": 400,
+      "fontWeightMedium": 500,
+     
+     }
   },
 });
 
