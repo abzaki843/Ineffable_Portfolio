@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 const theme = {
     spacing: 2,
   }
-export default function MediaCard() {
+export default function MediaCard({cardInfo}) {
   const classes = useStyles();
 
   return (
@@ -94,6 +94,15 @@ export default function MediaCard() {
     <Card className={classes.root} raised="true"   direction="column"
   alignItems="center"
   justify="center" >
+   
+   {cardInfo.map(card => 
+      <CardMedia
+      className={classes.media}
+      image={card.image}
+      component="img"
+    />
+       )}
+      
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -109,7 +118,7 @@ export default function MediaCard() {
           </Typography>
         </CardContent>
       </CardActionArea>
-      
+  
     </Card>
     </Grid>
    

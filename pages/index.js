@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Hero from '../components/hero'
-import MediaCard from '../components/technologies/card'
+import CardContainer from '../components/technologies/CardContainer'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -38,7 +38,7 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
       <Hero/>
-      <MediaCard/>
+      <CardContainer/>
     </div>
   );
 }
