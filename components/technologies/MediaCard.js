@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles ,useTheme} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -12,118 +12,82 @@ import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider';
 import { grey } from '@material-ui/core/colors';
 import { Hidden } from '@material-ui/core';
-
+import MobileStepper from '@material-ui/core/MobileStepper';
+import Paper from '@material-ui/core/Paper';
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    width:"2000px"
+  },
+  navitems: {
+    overflow:'auto',
+  
   },
   media: {
-    height: 160,
+    height: 'auto',
   },
   divider: {
     width: '100%',
     maxWidth: '100%',
     backgroundColor: grey,
   },
-  
-  
 });
 const theme = {
     spacing: 2,
   }
 export default function MediaCard({cardInfo}) {
   const classes = useStyles();
-
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
   return (
-    
-      
-    <div className={classes.root,classes.divider}>
-         <Divider />
-    <Grid
-    container
-    direction="row"
-  
-    
-  >
-  
-        <Grid item xs={12} lg={12}  >
-        <Box m={1}  display="grid" justifyContent="center" alignItems="center">
-          <Hidden lgUp>
-          <Typography variant="h4" gutterBottom color="textPrimary" >
-          
-      Technologies we use
-        </Typography>
-          <Typography variant="h5" gutterBottom color="textSecondary" >
-          
-      What we do we do it perfect
-        </Typography>
-        
-       </Hidden>
-         
-      
-      </Box>
-      
-          </Grid>
-        <Grid item xs={12} lg={12}  >
-        <Box m={1} >
-          <Hidden mdDown>
-          <Typography variant="h4" gutterBottom color="textPrimary" >
-          
-      Technologies we use
-        </Typography>
-      
-          <Typography variant="h5" gutterBottom color="textSecondary" >
-          
-      What we do we do it perfect
-        </Typography>
-        </Hidden>
-       
-         
-      
-      </Box>
-      
-          </Grid>
-         
-          </Grid>
+    <>
+    <div className={classes.root,classes.divider,classes.navitems}>
           <Grid
     container
     direction="row"
+    alignItems="center"
+    spacing={1}
+    style={{overflow:"auto"}}
   >
-   
-     <Grid item xs={12} >
+       
+    {cardInfo.map(card => 
+     <Grid item xs={12} lg={4} justify="center" direction="column" align="center" >
+      
     <Card className={classes.root} raised="true"   direction="column"
   alignItems="center"
   justify="center" >
-   
-   {cardInfo.map(card => 
+    
       <CardMedia
       className={classes.media}
       image={card.image}
       component="img"
     />
-       )}
-      
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/Assets/web.png"
-         component="img"
-        />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" direction="row" justify_content="center"   style={{ align: "center" }}>
-            Web App Development
+          <Typography gutterBottom variant="h5"  direction="row" justify="center"  align="center" style={{ align: "center" }} color="textSecondary" >
+            {card.title}
           </Typography>
           <Typography variant="body2" color="textSecondary"  >
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. 
+         {card.text}
           </Typography>
         </CardContent>
       </CardActionArea>
-  
+    
     </Card>
+    
     </Grid>
+      )}
    
     </Grid>
-   
     </div>
+    </>
   );
 }
