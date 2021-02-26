@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import { Hidden } from '@material-ui/core';
 import Box from '@material-ui/core/Box'
 import MediaCard from './MediaCard'
+import NavBar from './NavBar';
 const useStyles = makeStyles({
     
     divider: {
@@ -48,6 +49,9 @@ const cardInfo=[
           
       Technologies we use
         </Typography>
+        <img
+              src="/Assets/divider.png" style={{width:"20%",height:"auto",padding:"5px"}}
+              />
           <Typography variant="h5" gutterBottom color="textSecondary" >
           
       What we do we do it perfect
@@ -67,7 +71,9 @@ const cardInfo=[
           
       Technologies we use
         </Typography>
-      
+        <img
+              src="/Assets/divider.png" style={{width:"10%",height:"auto",padding:"10px"}}
+              />
           <Typography variant="h5" gutterBottom color="textSecondary" >
           
       What we do we do it perfect
@@ -80,7 +86,7 @@ const cardInfo=[
       
           </Grid>
           </Grid>
-          <MediaCard cardInfo = {cardInfo}/>
+          <NavBar cardInfo = {cardInfo}/>
 </div>
 );
 }
