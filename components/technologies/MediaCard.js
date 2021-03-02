@@ -22,7 +22,7 @@ import List from '@material-ui/core/List'
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    width: '2000px',
+    display: 'flex',
   },
 
   media: {
@@ -30,13 +30,8 @@ const useStyles = makeStyles({
   },
   divider: {
     width: '100%',
-    maxWidth: '100%',
+
     backgroundColor: grey,
-  },
-  flex: {
-    display: 'flex',
-    flexDirection: 'row',
-    padding: 10,
   },
 })
 const theme = {
@@ -49,39 +44,41 @@ export default function MediaCard ({ cardInfo }) {
   return (
     <>
       <div className={(classes.root, classes.divider)}>
-        <Paper style={{ maxHeight: 200, overflow: 'auto' }}>
-          <List className={classes.flex}>
-            {cardInfo.map(card => (
-              <Card
-                className={classes.root}
-                raised='true'
-                direction='column'
-                alignItems='center'
-                justify='center'
-              >
-                <CardMedia className={classes.media} image={card.image} component='img' />
-                <CardActionArea>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      direction='row'
-                      justify='center'
-                      align='center'
-                      style={{ align: 'center' }}
-                      color='textSecondary'
-                    >
-                      {card.title}
-                    </Typography>
-                    <Typography variant='body2' color='textSecondary'>
-                      {card.text}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            ))}
-          </List>
-        </Paper>
+        <Grid direction='row' justify='center' alignItems='center' display='flex'>
+          {cardInfo.map(card => (
+            <>
+              <Grid item md={4}>
+                <Card
+                  className={classes.root}
+                  raised='true'
+                  direction='column'
+                  alignItems='center'
+                  justify='center'
+                >
+                  <CardMedia className={classes.media} image={card.image} component='img' />
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant='h5'
+                        direction='row'
+                        justify='center'
+                        align='center'
+                        style={{ align: 'center' }}
+                        color='textSecondary'
+                      >
+                        {card.title}
+                      </Typography>
+                      <Typography variant='body2' color='textSecondary'>
+                        {card.text}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            </>
+          ))}
+        </Grid>
       </div>
     </>
   )
