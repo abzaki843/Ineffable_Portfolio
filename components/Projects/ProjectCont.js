@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
 import { Hidden } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
-
-import Projects from './Projects'
+import ProjectsOdd from './ProjectsOdd'
+import ProjectsEven from './ProjectsEven'
 const useStyles = makeStyles({
   divider: {
     width: '100%',
@@ -60,7 +60,23 @@ export default function ProjectContainer () {
           </Box>
         </Grid>
       </Grid>
-      <Projects projectInfo={projectInfo} />
+      {projectInfo.map((project, index) => (
+        <>
+          {index % 2 == 0 ? (
+            <ProjectsEven
+              projectImage={project.image}
+              ProjectTitle={project.title}
+              projectText={project.Text}
+            />
+          ) : (
+            <ProjectsOdd
+              projectImage={project.image}
+              ProjectTitle={project.title}
+              projectText={project.Text}
+            />
+          )}
+        </>
+      ))}
     </div>
   )
 }
