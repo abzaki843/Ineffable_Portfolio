@@ -21,13 +21,13 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  imgContainer: {
+    backgroundImage: `url(${Image})`,
+  },
 }))
 
 const theme = {
   spacing: 2,
-}
-function ListItemLink (props) {
-  return <ListItem button component='a' {...props} />
 }
 
 export default function ProjectsOdd ({ projectImage, projectText, ProjectTitle }) {
@@ -78,7 +78,7 @@ export default function ProjectsOdd ({ projectImage, projectText, ProjectTitle }
             </Button>
           </Grid>
           <Grid item lg={7}>
-            <img src={projectImage} width={'100%'} />
+            <img src={projectImage} style={{ width: '100%' }} />
           </Grid>
         </>
       </Grid>
