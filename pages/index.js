@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Hero from '../components/hero'
 import CardContainer from '../components/technologies/CardContainer'
 import ProjectContainer from '../components/Projects/ProjectCont'
+import AboutCont from '../components/AboutUs/AboutCont'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -41,6 +42,7 @@ export default function ButtonAppBar () {
       <Hero />
       <CardContainer />
       <ProjectContainer />
+      <AboutCont />
     </div>
   )
 }
