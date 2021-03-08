@@ -5,16 +5,18 @@ import { makeStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
 import Box from '@material-ui/core/Box'
 import ProfileCardDemo from './About'
-import Card from './Card'
 
 const useStyles = makeStyles({
   divider: {
     width: '100%',
     maxWidth: '100%',
   },
+  root: {
+    flexGrow: 1,
+  },
 })
 const theme = {
-  spacing: 2,
+  spacing: 8,
 }
 export default function AboutCont () {
   const classes = useStyles()
@@ -54,34 +56,31 @@ export default function AboutCont () {
   return (
     <div>
       <Divider />
-
-      <Grid container spacing={1}>
-        <Grid item xs={12} lg={12}>
-          <Box m={1} display='grid' justifyContent='center' alignItems='center'>
-            <Typography variant='h4' gutterBottom color='textPrimary'>
+      <Box ml={25}>
+        <Grid container spacing={1} justify-content='center'>
+          <Grid item xs={10}>
+            <Typography variant='h4' gutterBottom color='textPrimary' justify-content='center'>
               Our Team
             </Typography>
             <img
               src='/Assets/divider.png'
               style={{ width: '20%', height: 'auto', padding: '5px' }}
             />
-          </Box>
-        </Grid>
-      </Grid>
+          </Grid>
 
-      <Grid container spacing={1}>
-        {AboutInfo.map(about => (
-          <>
-            <Grid item xs={12} lg={4}>
-              <ProfileCardDemo
-                aboutImage={about.image}
-                aboutTitle={about.title}
-                aboutName={about.name}
-              />
-            </Grid>
-          </>
-        ))}
-      </Grid>
+          {AboutInfo.map(about => (
+            <>
+              <Grid item xs={12} lg={4}>
+                <ProfileCardDemo
+                  aboutImage={about.image}
+                  aboutTitle={about.title}
+                  aboutName={about.name}
+                />
+              </Grid>
+            </>
+          ))}
+        </Grid>
+      </Box>
     </div>
   )
 }

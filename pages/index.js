@@ -11,6 +11,7 @@ import Hero from '../components/hero'
 import CardContainer from '../components/technologies/CardContainer'
 import ProjectContainer from '../components/Projects/ProjectCont'
 import AboutCont from '../components/AboutUs/AboutCont'
+import Contact from '../components/contact/contact'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -43,6 +44,7 @@ export default function ButtonAppBar () {
       <CardContainer />
       <ProjectContainer />
       <AboutCont />
+      <Contact />
     </div>
   )
 }

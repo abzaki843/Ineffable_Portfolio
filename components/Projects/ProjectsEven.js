@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const theme = {
-  spacing: 2,
+  spacing: 8,
 }
 function ListItemLink (props) {
   return <ListItem button component='a' {...props} />
@@ -35,53 +35,57 @@ export default function ProjectsEven ({ projectImage, projectText, ProjectTitle 
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
-        <>
-          <Grid item lg={7}>
-            <img src={projectImage} width={'100%'} />
-          </Grid>
-          <Grid item xs={12} lg={5}>
-            <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
-              {ProjectTitle}
-            </Typography>
-            <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
-              {projectText}
-            </Typography>
+      <Box mr={8}>
+        <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
+          <>
+            <Grid item lg={7}>
+              <img src={projectImage} width={'100%'} />
+            </Grid>
+            <Grid item xs={12} lg={5}>
+              <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
+                {ProjectTitle}
+              </Typography>
+              <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
+                {projectText}
+              </Typography>
 
-            <div className={classes.list}>
-              <List component='nav' aria-label='main mailbox folders'>
-                <ListItem button>
-                  <ListItemIcon>
-                    <CheckCircleOutlineRoundedIcon color='primary' />
-                  </ListItemIcon>
-                  <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
-                </ListItem>
-                <ListItem button>
-                  <ListItemIcon>
-                    <CheckCircleOutlineRoundedIcon color='primary' />
-                  </ListItemIcon>
-                  <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
-                </ListItem>
-                <ListItem button>
-                  <ListItemIcon>
-                    <CheckCircleOutlineRoundedIcon color='primary' />
-                  </ListItemIcon>
-                  <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
-                </ListItem>
-                <ListItem button>
-                  <ListItemIcon>
-                    <CheckCircleOutlineRoundedIcon color='primary' />
-                  </ListItemIcon>
-                  <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
-                </ListItem>
-              </List>
-            </div>
-            <Button variant='contained' color='primary'>
-              LEARN MORE
-            </Button>
-          </Grid>
-        </>
-      </Grid>
+              <div className={classes.list}>
+                <List component='nav' aria-label='main mailbox folders'>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <CheckCircleOutlineRoundedIcon color='primary' />
+                    </ListItemIcon>
+                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <CheckCircleOutlineRoundedIcon color='primary' />
+                    </ListItemIcon>
+                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <CheckCircleOutlineRoundedIcon color='primary' />
+                    </ListItemIcon>
+                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <CheckCircleOutlineRoundedIcon color='primary' />
+                    </ListItemIcon>
+                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                  </ListItem>
+                </List>
+              </div>
+              <Box ml={8}>
+                <Button variant='contained' color='primary'>
+                  LEARN MORE
+                </Button>
+              </Box>
+            </Grid>
+          </>
+        </Grid>
+      </Box>
     </div>
   )
 }

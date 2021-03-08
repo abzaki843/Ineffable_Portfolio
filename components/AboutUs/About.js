@@ -87,7 +87,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
     )
   }
   return (
-    <div className={classes.root}>
+    <div>
       <CardRow />
     </div>
   )

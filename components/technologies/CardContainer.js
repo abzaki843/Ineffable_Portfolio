@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 })
 const theme = {
-  spacing: 2,
+  spacing: 8,
 }
 export default function CardContainer () {
   const classes = useStyles()
@@ -59,26 +59,26 @@ export default function CardContainer () {
   return (
     <div>
       <Divider />
-      <Grid container direction='row'>
-        <Grid item xs={12} lg={12}>
-          <Box m={1} display='grid' justifyContent='center' alignItems='center'>
-            <Hidden lgUp>
-              <Typography variant='h4' gutterBottom color='textPrimary'>
-                Technologies we use
-              </Typography>
-              <img
-                src='/Assets/divider.png'
-                style={{ width: '20%', height: 'auto', padding: '5px' }}
-              />
-              <Typography variant='h5' gutterBottom color='textSecondary'>
-                What we do we do it perfect
-              </Typography>
-            </Hidden>
-          </Box>
-        </Grid>
+      <Box ml={8}>
+        <Grid container direction='row'>
+          <Grid item xs={12} lg={12}>
+            <Box m={1} display='grid' justifyContent='center' alignItems='center'>
+              <Hidden lgUp>
+                <Typography variant='h4' gutterBottom color='textPrimary'>
+                  Technologies we use
+                </Typography>
+                <img
+                  src='/Assets/divider.png'
+                  style={{ width: '20%', height: 'auto', padding: '5px' }}
+                />
+                <Typography variant='h5' gutterBottom color='textSecondary'>
+                  What we do we do it perfect
+                </Typography>
+              </Hidden>
+            </Box>
+          </Grid>
 
-        <Grid item xs={12} lg={12}>
-          <Box m={1}>
+          <Grid item xs={12} lg={12}>
             <Hidden mdDown>
               <Typography variant='h4' gutterBottom color='textPrimary'>
                 Technologies we use
@@ -91,9 +91,9 @@ export default function CardContainer () {
                 What we do we do it perfect
               </Typography>
             </Hidden>
-          </Box>
+          </Grid>
         </Grid>
-      </Grid>
+      </Box>
       <MediaCard cardInfo={cardInfo} />
     </div>
   )
