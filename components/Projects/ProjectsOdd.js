@@ -13,6 +13,11 @@ import Divider from '@material-ui/core/Divider'
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 
 const useStyles = makeStyles(theme => ({
+  margin: {
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
   root: {
     flexGrow: 1,
   },
@@ -31,7 +36,7 @@ export default function ProjectsOdd ({ projectImage, projectText, ProjectTitle }
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
+    <div className={(classes.root, classes.margin)}>
       <Box ml={10}>
         <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
           <>

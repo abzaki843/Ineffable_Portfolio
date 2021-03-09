@@ -58,7 +58,7 @@ export default function CardContainer () {
   ]
   return (
     <div>
-      <Divider />
+      <Divider light='true' />
       <Box ml={8}>
         <Grid container direction='row'>
           <Grid item xs={12} lg={12}>

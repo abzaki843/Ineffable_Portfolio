@@ -7,6 +7,7 @@ import { Hidden } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import ProjectsOdd from './ProjectsOdd'
 import ProjectsEven from './ProjectsEven'
+import ProjectsSm from './ProjectsSm'
 const useStyles = makeStyles({
   divider: {
     width: '100%',
@@ -46,10 +47,9 @@ export default function ProjectContainer () {
   ]
   return (
     <div className={classes.divider}>
-      <Divider />
       <Grid container justify='center' alignItems='center'>
         <Grid item direction='column' xs={12} lg={12}>
-          <Box m={1} display='grid' justifyContent='center' alignItems='center'>
+          <Box m={10} display='grid' justifyContent='center' alignItems='center'>
             <Typography variant='h4' gutterBottom color='textPrimary'>
               Our Work
             </Typography>
@@ -75,6 +75,11 @@ export default function ProjectContainer () {
               projectText={project.Text}
             />
           )}
+          <ProjectsSm
+            projectImage={project.image}
+            ProjectTitle={project.title}
+            projectText={project.Text}
+          />
         </>
       ))}
     </div>

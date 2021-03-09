@@ -55,32 +55,28 @@ export default function AboutCont () {
 
   return (
     <div>
-      <Divider />
-      <Box ml={25}>
-        <Grid container spacing={1} justify-content='center'>
-          <Grid item xs={10}>
-            <Typography variant='h4' gutterBottom color='textPrimary' justify-content='center'>
-              Our Team
-            </Typography>
-            <img
-              src='/Assets/divider.png'
-              style={{ width: '20%', height: 'auto', padding: '5px' }}
-            />
-          </Grid>
+      <Divider light='true' />
 
-          {AboutInfo.map(about => (
-            <>
-              <Grid item xs={12} lg={4}>
-                <ProfileCardDemo
-                  aboutImage={about.image}
-                  aboutTitle={about.title}
-                  aboutName={about.name}
-                />
-              </Grid>
-            </>
-          ))}
+      <Grid container spacing={1} justify-content='center' align='center'>
+        <Grid item xs={12}>
+          <Typography variant='h4' gutterBottom color='textPrimary' justify-content='center'>
+            Our Team
+          </Typography>
+          <img src='/Assets/divider.png' style={{ width: '20%', height: 'auto', padding: '5px' }} />
         </Grid>
-      </Box>
+
+        {AboutInfo.map(about => (
+          <>
+            <Grid item xs={12} sm={6} md={4} lg={4}>
+              <ProfileCardDemo
+                aboutImage={about.image}
+                aboutTitle={about.title}
+                aboutName={about.name}
+              />
+            </Grid>
+          </>
+        ))}
+      </Grid>
     </div>
   )
 }

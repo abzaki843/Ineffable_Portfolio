@@ -13,8 +13,8 @@ import Divider from '@material-ui/core/Divider'
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 
 const useStyles = makeStyles(theme => ({
-  margin: {
-    [theme.breakpoints.down('md')]: {
+  hide: {
+    [theme.breakpoints.up('md')]: {
       display: 'none',
     },
   },
@@ -35,21 +35,19 @@ function ListItemLink (props) {
   return <ListItem button component='a' {...props} />
 }
 
-export default function ProjectsEven ({ projectImage, projectText, ProjectTitle }) {
+export default function ProjectsSm ({ projectImage, projectText, ProjectTitle }) {
   const classes = useStyles()
 
   return (
-    <div className={(classes.root, classes.margin)}>
-      <Box mr={8}>
-        <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
-          <>
-            <Grid item lg={7}>
-              <img src={projectImage} width={'100%'} />
-            </Grid>
-            <Grid item xs={12} lg={5}>
+    <div className={(classes.root, classes.hide)}>
+      <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
+        <>
+          <Grid item xs={10} sm={10} lg={5}>
+            <Grid container justify='center'>
               <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                 {ProjectTitle}
               </Typography>
+
               <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
                 {projectText}
               </Typography>
@@ -82,15 +80,17 @@ export default function ProjectsEven ({ projectImage, projectText, ProjectTitle 
                   </ListItem>
                 </List>
               </div>
-              <Box ml={8}>
-                <Button variant='contained' color='primary'>
-                  LEARN MORE
-                </Button>
-              </Box>
+
+              <Button variant='contained' color='primary'>
+                Visit Web
+              </Button>
             </Grid>
-          </>
-        </Grid>
-      </Box>
+          </Grid>
+          <Grid item lg={7}>
+            <img src={projectImage} width={'100%'} />
+          </Grid>
+        </>
+      </Grid>
     </div>
   )
 }
