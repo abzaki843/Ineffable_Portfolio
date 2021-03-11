@@ -46,7 +46,7 @@ export default function ProjectContainer () {
     },
   ]
   return (
-    <div className={classes.divider}>
+    <div className={classes.divider} id='projects'>
       <Grid container justify='center' alignItems='center'>
         <Grid item direction='column' xs={12} lg={12}>
           <Box m={10} display='grid' justifyContent='center' alignItems='center'>

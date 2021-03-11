@@ -21,7 +21,7 @@ export default function Hero () {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id='hero'>
       <Grid container direction='row' justify='center' alignItems='center'>
         <Grid item lg={5}>
           <Box m={3}>

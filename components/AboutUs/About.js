@@ -21,8 +21,8 @@ const useStyles = makeStyles(({ palette, theme }) => ({
     textAlign: 'center',
   },
   avatar: {
-    width: 60,
-    height: 60,
+    width: 130,
+    height: 130,
     margin: 'auto',
   },
   heading: {
@@ -76,12 +76,6 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
             <span className={styles.subheader}>{aboutName}</span>
           </CardContent>
           <Divider light />
-          <Box display={'flex'}>
-            <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-              <p className={styles.statLabel}>Followers</p>
-              <p className={styles.statValue}>6941</p>
-            </Box>
-          </Box>
         </Card>
       </React.Fragment>
     )

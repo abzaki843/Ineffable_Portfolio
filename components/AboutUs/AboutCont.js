@@ -22,61 +22,66 @@ export default function AboutCont () {
   const classes = useStyles()
   const AboutInfo = [
     {
-      image: '/Assets/saad.jpg',
+      image: '/Assets/Ahsan.jfif',
       title: 'CEO',
       name: 'Ahsan Ansari',
     },
     {
-      image: '/Assets/mobileapp.png',
+      image: '/Assets/Ali.jfif',
       title: 'Technical Lead',
       name: 'Ali Ansari',
     },
     {
-      image: '/Assets/pwa.png',
+      image: '/Assets/hamza.jfif',
       title: 'Backend Lead',
       name: 'Hamza Rehman ',
     },
     {
-      image: '/Assets/wordpress.png',
+      image: '/Assets/abkhan.jpeg',
       title: 'Manager',
-      name: 'Abdul ',
+      name: 'Abdul Basit ',
     },
     {
-      image: '/Assets/design.png',
+      image: '/Assets/saada.jpg',
       title: 'Developer',
-      name: 'Ahsan Ansari',
+      name: 'Saad ul Hassan',
     },
     {
-      image: '/Assets/socialmedia.png',
+      image: '/Assets/saad.jfif',
       title: 'QA ENGENIER',
-      name: 'Ahsan Ansari',
+      name: 'Saad Arshad',
     },
   ]
 
   return (
-    <div>
-      <Divider light='true' />
+    <div id='team'>
+      <Box mt={5}>
+        <Divider light='true' />
 
-      <Grid container spacing={1} justify-content='center' align='center'>
-        <Grid item xs={12}>
-          <Typography variant='h4' gutterBottom color='textPrimary' justify-content='center'>
-            Our Team
-          </Typography>
-          <img src='/Assets/divider.png' style={{ width: '20%', height: 'auto', padding: '5px' }} />
+        <Grid container spacing={1} justify-content='center' align='center'>
+          <Grid item xs={12}>
+            <Typography variant='h4' gutterBottom color='textPrimary' justify-content='center'>
+              Our Team
+            </Typography>
+            <img
+              src='/Assets/divider.png'
+              style={{ width: '20%', height: 'auto', padding: '5px' }}
+            />
+          </Grid>
+
+          {AboutInfo.map(about => (
+            <>
+              <Grid item xs={12} sm={6} md={4} lg={4}>
+                <ProfileCardDemo
+                  aboutImage={about.image}
+                  aboutTitle={about.title}
+                  aboutName={about.name}
+                />
+              </Grid>
+            </>
+          ))}
         </Grid>
-
-        {AboutInfo.map(about => (
-          <>
-            <Grid item xs={12} sm={6} md={4} lg={4}>
-              <ProfileCardDemo
-                aboutImage={about.image}
-                aboutTitle={about.title}
-                aboutName={about.name}
-              />
-            </Grid>
-          </>
-        ))}
-      </Grid>
+      </Box>
     </div>
   )
 }

@@ -55,9 +55,21 @@ export default function CardContainer () {
       text:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
+    {
+      image: '/Assets/ecomerce.png',
+      title: 'Ecommerce',
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
+    {
+      image: '/Assets/branding.png',
+      title: 'Branding',
+      text:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    },
   ]
   return (
-    <div>
+    <div id='tech'>
       <Divider light='true' />
       <Box ml={8}>
         <Grid container direction='row'>

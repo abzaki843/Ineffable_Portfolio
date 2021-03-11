@@ -8,9 +8,7 @@ import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-
 import Container from '@material-ui/core/Container'
-
 import InputAdornment from '@material-ui/core/InputAdornment'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import EmailIcon from '@material-ui/icons/Email'
@@ -40,16 +38,16 @@ export default function Contact () {
   const classes = useStyles()
 
   return (
-    <div className={classes.root}>
-      <Divider />
-      <Box mt={10}>
+    <Box mt={10} id='contact'>
+      <div className={classes.root}>
+        <Divider light='true' />
+
         <Grid container direction='row' justify='center' alignItems='center'>
-          <div className={classes.hide}>
-            <Grid item container xs={12} lg={6}>
-              <img src='/Assets/contact-img.png' style={{ width: '100%', height: 'auto' }} />
-            </Grid>
-          </div>
-          <Grid item xs={8} md={6} lg={6}>
+          <Grid item lg={5} xl={5} className={classes.hide}>
+            <img src='/Assets/contact-img.png' />
+          </Grid>
+
+          <Grid item xs={12} lg={7} xl={7}>
             <Container component='main' maxWidth='xs'>
               <CssBaseline />
               <div className={classes.paper}>
@@ -129,7 +127,7 @@ export default function Contact () {
             </Container>
           </Grid>
         </Grid>
-      </Box>
-    </div>
+      </div>
+    </Box>
   )
 }

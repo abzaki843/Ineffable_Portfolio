@@ -23,10 +23,10 @@ const useStyles = makeStyles(theme => ({
       marginLeft: 60,
     },
     [theme.breakpoints.only('lg')]: {
-      marginLeft: 60,
+      marginLeft: 0,
     },
     [theme.breakpoints.only('xl')]: {
-      marginLeft: 170,
+      marginLeft: 80,
     },
     [theme.breakpoints.only('md')]: {
       marginLeft: 10,
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
   },
   card: {
-    maxwidth: 350,
+    maxWidth: 350,
   },
 
   media: {
@@ -49,14 +49,13 @@ const useStyles = makeStyles(theme => ({
 
 export default function MediaCard ({ cardInfo }) {
   const classes = useStyles()
-  const matches = useMediaQuery('(min-width:600px)')
 
   return (
     <>
       <div className={classes.margin}>
         <Grid container spacing={2}>
           {cardInfo.map(card => (
-            <Grid item xs={12} sm={6} md={4} lg={4}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <Card className={classes.card} raised='true'>
                 <CardMedia className={classes.media} image={card.image} component='img' />
                 <CardActionArea>
