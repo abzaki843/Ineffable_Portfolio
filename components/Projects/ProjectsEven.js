@@ -35,7 +35,15 @@ function ListItemLink (props) {
   return <ListItem button component='a' {...props} />
 }
 
-export default function ProjectsEven ({ projectImage, projectText, ProjectTitle }) {
+export default function ProjectsEven ({
+  projectImage,
+  projectText,
+  ProjectTitle,
+  projectFeature1,
+  projectFeature2,
+  projectFeature3,
+  projectFeature4,
+}) {
   const classes = useStyles()
 
   return (
@@ -60,25 +68,25 @@ export default function ProjectsEven ({ projectImage, projectText, ProjectTitle 
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature1} />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature2} />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature3} />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature4} />
                   </ListItem>
                 </List>
               </div>

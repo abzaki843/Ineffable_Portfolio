@@ -14,7 +14,7 @@ import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutline
 
 const useStyles = makeStyles(theme => ({
   hide: {
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('lg')]: {
       display: 'none',
     },
   },
@@ -35,7 +35,15 @@ function ListItemLink (props) {
   return <ListItem button component='a' {...props} />
 }
 
-export default function ProjectsSm ({ projectImage, projectText, ProjectTitle }) {
+export default function ProjectsSm ({
+  projectImage,
+  projectText,
+  ProjectTitle,
+  projectFeature1,
+  projectFeature2,
+  projectFeature3,
+  projectFeature4,
+}) {
   const classes = useStyles()
 
   return (
@@ -58,35 +66,36 @@ export default function ProjectsSm ({ projectImage, projectText, ProjectTitle })
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature1} />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature2} />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature3} />
                   </ListItem>
                   <ListItem button>
                     <ListItemIcon>
                       <CheckCircleOutlineRoundedIcon color='primary' />
                     </ListItemIcon>
-                    <ListItemText secondary='Lorem Ipsum is simply dummy text of the printing and typesetting industry' />
+                    <ListItemText secondary={projectFeature4} />
                   </ListItem>
+                  <Box ml={15}>
+                    <Button variant='contained' color='primary' justify='center'>
+                      Visit Web
+                    </Button>
+                  </Box>
                 </List>
               </div>
-
-              <Button variant='contained' color='primary'>
-                Visit Web
-              </Button>
             </Grid>
           </Grid>
-          <Grid item lg={7}>
+          <Grid item xs={10} lg={6}>
             <img src={projectImage} width={'100%'} />
           </Grid>
         </>

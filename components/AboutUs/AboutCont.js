@@ -32,15 +32,16 @@ export default function AboutCont () {
       name: 'Ali Ansari',
     },
     {
-      image: '/Assets/hamza.jfif',
-      title: 'Backend Lead',
-      name: 'Hamza Rehman ',
-    },
-    {
       image: '/Assets/abkhan.jpeg',
       title: 'Manager',
       name: 'Abdul Basit ',
     },
+    {
+      image: '/Assets/hamza.jfif',
+      title: 'Backend Lead',
+      name: 'Hamza Rehman ',
+    },
+
     {
       image: '/Assets/saada.jpg',
       title: 'Developer',
@@ -51,6 +52,16 @@ export default function AboutCont () {
       title: 'QA ENGENIER',
       name: 'Saad Arshad',
     },
+    {
+      image: '/Assets/awais.jpg',
+      title: 'Designer',
+      name: 'Awais Shah',
+    },
+    {
+      image: '/Assets/saad.jfif',
+      title: 'Designer',
+      name: 'Tooba Agha',
+    },
   ]
 
   return (
@@ -60,18 +71,18 @@ export default function AboutCont () {
 
         <Grid container spacing={1} justify-content='center' align='center'>
           <Grid item xs={12}>
-            <Typography variant='h4' gutterBottom color='textPrimary' justify-content='center'>
+            <Typography variant='h3' gutterBottom color='textPrimary' justify-content='center'>
               Our Team
             </Typography>
             <img
               src='/Assets/divider.png'
-              style={{ width: '20%', height: 'auto', padding: '5px' }}
+              style={{ width: '13%', height: 'auto', padding: '5px' }}
             />
           </Grid>
 
           {AboutInfo.map(about => (
             <>
-              <Grid item xs={12} sm={6} md={4} lg={4}>
+              <Grid item xs={12} sm={6} md={3} lg={3}>
                 <ProfileCardDemo
                   aboutImage={about.image}
                   aboutTitle={about.title}

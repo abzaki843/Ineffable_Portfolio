@@ -25,9 +25,16 @@ export default function Hero () {
       <Grid container direction='row' justify='center' alignItems='center'>
         <Grid item lg={5}>
           <Box m={3}>
-            <Typography variant='h5' gutterBottom color='textPrimary' align='justify'>
-              Innovative Software Company
-            </Typography>
+            <Hidden smDown>
+              <Typography variant='h3' gutterBottom color='textPrimary' align='justify'>
+                Innovative Software Company
+              </Typography>
+            </Hidden>
+            <Hidden smUp>
+              <Typography variant='h4' gutterBottom color='textPrimary'>
+                Innovative Software Company
+              </Typography>
+            </Hidden>
 
             <img
               src='/Assets/divider.png'
@@ -36,7 +43,7 @@ export default function Hero () {
 
             <Hidden mdDown>
               <Typography
-                variant='h4'
+                variant='h5'
                 component='h2'
                 gutterBottom
                 color='textSecondary'
