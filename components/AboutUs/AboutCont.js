@@ -31,17 +31,17 @@ export default function AboutCont () {
       title: 'Technical Lead',
       name: 'Ali Ansari',
     },
-    {
-      image: '/Assets/abkhan.jpeg',
-      title: 'Manager',
-      name: 'Abdul Basit ',
-    },
+
     {
       image: '/Assets/hamza.jfif',
       title: 'Backend Lead',
       name: 'Hamza Rehman ',
     },
-
+    {
+      image: '/Assets/abk.jfif',
+      title: 'Manager',
+      name: 'Abdul Basit ',
+    },
     {
       image: '/Assets/saada.jpg',
       title: 'Developer',
@@ -58,7 +58,7 @@ export default function AboutCont () {
       name: 'Awais Shah',
     },
     {
-      image: '/Assets/saad.jfif',
+      image: '/Assets/tooba.jpg',
       title: 'Designer',
       name: 'Tooba Agha',
     },

@@ -129,12 +129,26 @@ export default function ButtonAppBar (props) {
             </Hidden>
           </IconButton>
           <Box display='flex' flexGrow={1}>
-            <img
-              src='./Assets/logo.png'
-              alt='Kitty Katty!'
-              style={{ maxWidth: 200, marginRight: '10px', flex: 1 }}
-            />
+            <Hidden mdDown>
+              <img
+                src='./Assets/logo.png'
+                alt='Kitty Katty!'
+                style={{ maxWidth: 200, marginRight: '10px', flex: 1 }}
+              />
+            </Hidden>
+            <Hidden lgUp>
+              <Box display='grid' justifyContent='center'>
+                <img
+                  src='./Assets/logo.png'
+                  alt='Kitty Katty!'
+                  style={{
+                    maxWidth: 200,
+                  }}
+                />
+              </Box>
+            </Hidden>
           </Box>
+
           <Hidden mdDown>
             <nav>
               <ul>

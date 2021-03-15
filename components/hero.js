@@ -9,6 +9,9 @@ import Button from '@material-ui/core/Button'
 import { Hidden } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
+  bg: {
+    backgroundColor: '#F5F5F5',
+  },
   root: {
     flexGrow: 1,
   },
@@ -21,25 +24,31 @@ export default function Hero () {
   const classes = useStyles()
 
   return (
-    <div className={classes.root} id='hero'>
+    <div className={(classes.root, classes.bg)} id='hero'>
       <Grid container direction='row' justify='center' alignItems='center'>
         <Grid item lg={5}>
           <Box m={3}>
-            <Hidden smDown>
-              <Typography variant='h3' gutterBottom color='textPrimary' align='justify'>
+            <Hidden mdDown>
+              <Typography variant='h3' gutterBottom color='textPrimary'>
                 Innovative Software Company
               </Typography>
+              <img
+                src='/Assets/divider.png'
+                style={{ width: '80%', height: '12px', padding: '5px' }}
+              />
             </Hidden>
-            <Hidden smUp>
-              <Typography variant='h4' gutterBottom color='textPrimary'>
-                Innovative Software Company
-              </Typography>
-            </Hidden>
+            <Hidden lgUp>
+              <Box align='center'>
+                <Typography variant='h4' gutterBottom color='textPrimary'>
+                  Innovative Software Company
+                </Typography>
 
-            <img
-              src='/Assets/divider.png'
-              style={{ width: '20%', height: 'auto', padding: '5px' }}
-            />
+                <img
+                  src='/Assets/divider.png'
+                  style={{ width: '20%', height: 'auto', padding: '5px' }}
+                />
+              </Box>
+            </Hidden>
 
             <Hidden mdDown>
               <Typography

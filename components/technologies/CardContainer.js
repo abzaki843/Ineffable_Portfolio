@@ -47,25 +47,25 @@ export default function CardContainer () {
       image: '/Assets/design.png',
       title: 'Designing',
       text:
-        'We provide our customers with Beautiful, Responsive, Mobile Friendly, and Professional UI Designs using Adobe Suite. ',
+        'Beautiful, Responsive, Mobile Friendly, and Professional UI Designs are developed as well as UX Design for better Digital Experiences',
     },
     {
       image: '/Assets/socialmedia.png',
       title: 'Social Media Marketing',
       text:
-        'We provide Brand Promotion Services using Social Media Marketing for Brand Awareness on Social Media Platforms Facebook, Instagram, Twitter, & LinkedIn.',
+        'We provide Brand Promotion Services using Social Media Marketing for Brand Awareness on Social Media Platforms ',
     },
     {
       image: '/Assets/ecomerce.png',
       title: 'Ecommerce',
       text:
-        'We provide our customers with E Commerce solutions that are Beautiful, Responsive, and Mobile Friendly so that they may digitally transform their businesses .',
+        'E Commerce Solutions are designed so that digital transformation of the business is done using Next JS and WordPress. .',
     },
     {
       image: '/Assets/branding.png',
       title: 'Branding',
       text:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        'Modern, Unique, and Professionally made Custom Logo Designs and Concepts are made so that your business stands ',
     },
   ]
   return (
@@ -77,14 +77,15 @@ export default function CardContainer () {
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
               <Hidden lgUp>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
-                  <Typography variant='h3' gutterBottom color='textPrimary'>
+                  <Typography variant='h4' gutterBottom color='textPrimary'>
                     Technologies
                   </Typography>
+
+                  <img
+                    src='/Assets/divider.png'
+                    style={{ width: '90%', height: 'auto', padding: '5px' }}
+                  />
                 </Box>
-                <img
-                  src='/Assets/divider.png'
-                  style={{ width: '70%', height: 'auto', padding: '5px' }}
-                />
                 <Typography variant='h5' gutterBottom color='textSecondary'>
                   What we do we do it perfect
                 </Typography>
@@ -95,7 +96,7 @@ export default function CardContainer () {
           <Grid item xs={12} lg={12}>
             <Hidden mdDown>
               <Typography variant='h3' gutterBottom color='textPrimary'>
-                Technologies we use
+                Technologies & Services
               </Typography>
 
               <img

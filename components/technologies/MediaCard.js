@@ -17,7 +17,7 @@ const theme = {
 const useStyles = makeStyles(theme => ({
   margin: {
     [theme.breakpoints.only('xs')]: {
-      marginLeft: 35,
+      margin: 30,
     },
     [theme.breakpoints.only('sm')]: {
       marginLeft: 60,
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
       marginLeft: 80,
     },
     [theme.breakpoints.only('md')]: {
-      marginLeft: 10,
+      marginLeft: 120,
     },
   },
   root: {
@@ -55,7 +55,7 @@ export default function MediaCard ({ cardInfo }) {
       <div className={classes.margin}>
         <Grid container spacing={2}>
           {cardInfo.map(card => (
-            <Grid item xs={10} sm={6} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={6} lg={3}>
               <Card className={classes.card} raised='true'>
                 <CardMedia className={classes.media} image={card.image} component='img' />
                 <CardActionArea>
