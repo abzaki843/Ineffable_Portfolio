@@ -133,19 +133,18 @@ export default function ButtonAppBar (props) {
               <img
                 src='./Assets/logo.png'
                 alt='Kitty Katty!'
-                style={{ maxWidth: 200, marginRight: '10px', flex: 1 }}
+                style={{ maxWidth: 250, marginRight: '10px', flex: 1 }}
               />
             </Hidden>
             <Hidden lgUp>
-              <Box display='grid' justifyContent='center'>
-                <img
-                  src='./Assets/logo.png'
-                  alt='Kitty Katty!'
-                  style={{
-                    maxWidth: 200,
-                  }}
-                />
-              </Box>
+              <img
+                src='./Assets/logo.png'
+                alt='Kitty Katty!'
+                style={{
+                  maxWidth: 200,
+                  margin: 'auto',
+                }}
+              />
             </Hidden>
           </Box>
 

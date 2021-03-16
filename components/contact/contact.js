@@ -56,9 +56,11 @@ export default function Contact () {
               <CssBaseline />
               <div className={classes.paper}>
                 <Hidden mdDown>
-                  <Typography component='h1' variant='h3' color='textSecondary'>
-                    Get In Touch
-                  </Typography>
+                  <Box mt={5}>
+                    <Typography component='h1' variant='h3' color='textSecondary'>
+                      Get In Touch
+                    </Typography>
+                  </Box>
                 </Hidden>
                 <Hidden lgUp>
                   <Box align='center'>
@@ -125,7 +127,7 @@ export default function Contact () {
                       ),
                     }}
                   />
-                  <Box align='center'>
+                  <Box align='center' mb={2}>
                     <Button
                       type='submit'
                       variant='contained'

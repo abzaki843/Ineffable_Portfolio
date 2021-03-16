@@ -50,7 +50,7 @@ export default function ProjectsSm ({
     <div className={(classes.root, classes.hide)}>
       <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
         <>
-          <Grid item xs={10} sm={10} lg={5}>
+          <Grid item xs={12} sm={10} lg={5}>
             <Grid container justify='center'>
               <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                 {ProjectTitle}
@@ -95,7 +95,7 @@ export default function ProjectsSm ({
               </div>
             </Grid>
           </Grid>
-          <Grid item xs={10} lg={6}>
+          <Grid item xs={12} lg={6}>
             <img src={projectImage} width={'100%'} />
           </Grid>
         </>

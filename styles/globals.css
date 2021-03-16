@@ -25,3 +25,9 @@ body {
   max-width: 100% !important;
   overflow-x: hidden !important;
 }
+.appBar {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+}

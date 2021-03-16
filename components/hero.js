@@ -64,9 +64,11 @@ export default function Hero () {
                 We Are a Team of software developers. Highly Dedicated to develop Products that
                 Matter
               </Typography>
-              <Button variant='contained' color='primary'>
+              {/*   <Button variant='contained' color='primary'>
                 Explore More
               </Button>
+         
+              */}
             </Hidden>
 
             <Hidden lgUp mdDown>

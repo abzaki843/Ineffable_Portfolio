@@ -72,39 +72,47 @@ export default function CardContainer () {
     <div id='tech'>
       <Divider light='true' />
       <Box ml={2}>
-        <Grid container direction='row'>
-          <Grid item xs={12} lg={12}>
+        <Grid container direction='row' justify='center'>
+          <Grid item xs={12} lg={6}>
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
-              <Hidden lgUp>
+              <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
-                  <Typography variant='h4' gutterBottom color='textPrimary'>
-                    Technologies
+                  <Typography variant='h3' gutterBottom color='textPrimary'>
+                    Technologies & Services
                   </Typography>
 
                   <img
                     src='/Assets/divider.png'
-                    style={{ width: '90%', height: 'auto', padding: '5px' }}
+                    style={{ width: '100%', height: '12px', padding: '5px' }}
                   />
                 </Box>
                 <Typography variant='h5' gutterBottom color='textSecondary'>
-                  What we do we do it perfect
+                  We believe in delivering premier services with cutting edge & forefront technology
                 </Typography>
               </Hidden>
             </Box>
           </Grid>
 
           <Grid item xs={12} lg={12}>
-            <Hidden mdDown>
-              <Typography variant='h3' gutterBottom color='textPrimary'>
-                Technologies & Services
-              </Typography>
-
+            <Box mt={7}>
+              <Hidden mdDown lgUp>
+                <Typography variant='h3' gutterBottom color='textPrimary'>
+                  Technologies & Services
+                </Typography>
+              </Hidden>
+              <Hidden lgUp>
+                <Typography variant='h3' gutterBottom color='textPrimary'>
+                  Services & Technologies
+                </Typography>
+              </Hidden>
+            </Box>
+            <Hidden mdDown lgUp>
               <img
                 src='/Assets/divider.png'
                 style={{ width: '15%', height: 'auto', padding: '10px' }}
               />
               <Typography variant='h5' gutterBottom color='textSecondary'>
-                What we do we do it perfect
+                We believe in delivering premier services with cutting edge & forefront technology
               </Typography>
             </Hidden>
           </Grid>

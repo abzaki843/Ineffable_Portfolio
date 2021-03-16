@@ -71,12 +71,14 @@ export default function AboutCont () {
 
         <Grid container spacing={1} justify-content='center' align='center'>
           <Grid item xs={12}>
-            <Typography variant='h3' gutterBottom color='textPrimary' justify-content='center'>
-              Our Team
-            </Typography>
+            <Box mt={6}>
+              <Typography variant='h3' gutterBottom color='textPrimary' justify-content='center'>
+                Our Team
+              </Typography>
+            </Box>
             <img
               src='/Assets/divider.png'
-              style={{ width: '13%', height: 'auto', padding: '5px' }}
+              style={{ width: '13%', height: '12px', padding: '5px' }}
             />
           </Grid>
 

@@ -16,21 +16,11 @@ const theme = {
 }
 const useStyles = makeStyles(theme => ({
   margin: {
-    [theme.breakpoints.only('xs')]: {
-      margin: 30,
-    },
-    [theme.breakpoints.only('sm')]: {
-      marginLeft: 60,
-    },
-    [theme.breakpoints.only('lg')]: {
-      marginLeft: 0,
-    },
-    [theme.breakpoints.only('xl')]: {
-      marginLeft: 80,
-    },
-    [theme.breakpoints.only('md')]: {
-      marginLeft: 120,
-    },
+    [theme.breakpoints.only('xs')]: {},
+    [theme.breakpoints.only('sm')]: {},
+    [theme.breakpoints.only('lg')]: {},
+    [theme.breakpoints.only('xl')]: {},
+    [theme.breakpoints.only('md')]: {},
   },
   root: {
     flexGrow: 1,
@@ -53,33 +43,35 @@ export default function MediaCard ({ cardInfo }) {
   return (
     <>
       <div className={classes.margin}>
-        <Grid container spacing={2}>
-          {cardInfo.map(card => (
-            <Grid item xs={12} sm={6} md={6} lg={3}>
-              <Card className={classes.card} raised='true'>
-                <CardMedia className={classes.media} image={card.image} component='img' />
-                <CardActionArea>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      direction='row'
-                      justify='center'
-                      align='center'
-                      style={{ align: 'center' }}
-                      color='textSecondary'
-                    >
-                      {card.title}
-                    </Typography>
-                    <Typography variant='body2' color='textSecondary'>
-                      {card.text}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        <Box mt={5}>
+          <Grid container spacing={2}>
+            {cardInfo.map(card => (
+              <Grid item xs={12} sm={6} md={6} lg={3}>
+                <Card className={classes.card} raised='true' style={{ margin: 'auto' }}>
+                  <CardMedia className={classes.media} image={card.image} component='img' />
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant='h5'
+                        direction='row'
+                        justify='center'
+                        align='center'
+                        style={{ align: 'center' }}
+                        color='textSecondary'
+                      >
+                        {card.title}
+                      </Typography>
+                      <Typography variant='body2' color='textSecondary'>
+                        {card.text}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </div>
     </>
   )

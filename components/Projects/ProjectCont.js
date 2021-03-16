@@ -80,11 +80,11 @@ export default function ProjectContainer () {
     <div className={classes.divider} id='projects'>
       <Grid container justify='center' alignItems='center'>
         <Grid item direction='column' xs={12} lg={12}>
-          <Box m={3} display='grid' justifyContent='center' alignItems='center'>
+          <Box mt={10} display='grid' justifyContent='center' alignItems='center'>
             <Typography variant='h3' gutterBottom color='textPrimary'>
               Our Work
             </Typography>
-            <img src='/Assets/divider.png' style={{ width: '85%', height: 'auto' }} />
+            <img src='/Assets/divider.png' style={{ width: '100%', height: '2px' }} />
           </Box>
         </Grid>
       </Grid>
