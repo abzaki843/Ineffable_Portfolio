@@ -8,7 +8,9 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import Divider from '@material-ui/core/Divider'
+import 'fontsource-roboto'
+
+import 'fontsource-roboto'
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 
@@ -50,9 +52,15 @@ export default function ProjectsSm ({
     <div className={(classes.root, classes.hide)}>
       <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
         <>
-          <Grid item xs={10} sm={10} lg={5}>
+          <Grid item xs={11} sm={10} lg={5}>
             <Grid container justify='center'>
-              <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
+              <Typography
+                variant='h4'
+                gutterBottom
+                color='textPrimary'
+                align='justify'
+                style={{ marginTop: '30px' }}
+              >
                 {ProjectTitle}
               </Typography>
 
@@ -86,7 +94,7 @@ export default function ProjectsSm ({
                     </ListItemIcon>
                     <ListItemText secondary={projectFeature4} />
                   </ListItem>
-                  <Box ml={15}>
+                  <Box ml={12}>
                     <Button variant='contained' color='primary' justify='center'>
                       Visit Web
                     </Button>
@@ -95,7 +103,7 @@ export default function ProjectsSm ({
               </div>
             </Grid>
           </Grid>
-          <Grid item xs={10} lg={6}>
+          <Grid item xs={12} lg={6}>
             <img src={projectImage} width={'100%'} />
           </Grid>
         </>

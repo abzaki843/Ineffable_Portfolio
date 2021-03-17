@@ -9,8 +9,11 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
+import Paper from '@material-ui/core/Paper'
+import Image from 'next/image'
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
+import { grey } from '@material-ui/core/colors'
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -26,6 +29,9 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
+  bg: {
+    backgroundColor: '#F5F5F5',
+  },
 }))
 
 const theme = {
@@ -37,6 +43,7 @@ function ListItemLink (props) {
 
 export default function ProjectsEven ({
   projectImage,
+
   projectText,
   ProjectTitle,
   projectFeature1,
@@ -51,10 +58,11 @@ export default function ProjectsEven ({
       <Box mr={8}>
         <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
           <>
-            <Grid item lg={7}>
-              <img src={projectImage} width={'100%'} />
+            <Grid item lg={6}>
+              <img src={projectImage} style={{ width: '100%' }} />
             </Grid>
-            <Grid item xs={12} lg={5}>
+
+            <Grid item xs={12} lg={6} style={{ marginTop: '90px' }}>
               <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                 {ProjectTitle}
               </Typography>

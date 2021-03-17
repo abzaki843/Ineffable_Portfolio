@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider'
 import { Hidden } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MediaCard from './MediaCard'
+import 'fontsource-roboto'
 
 const useStyles = makeStyles({
   divider: {
@@ -47,63 +48,75 @@ export default function CardContainer () {
       image: '/Assets/design.png',
       title: 'Designing',
       text:
-        'We provide our customers with Beautiful, Responsive, Mobile Friendly, and Professional UI Designs using Adobe Suite. ',
+        'Beautiful, Responsive, Mobile Friendly, and Professional UI Designs are developed as well as UX Design for better Digital Experiences',
     },
     {
       image: '/Assets/socialmedia.png',
       title: 'Social Media Marketing',
       text:
-        'We provide Brand Promotion Services using Social Media Marketing for Brand Awareness on Social Media Platforms Facebook, Instagram, Twitter, & LinkedIn.',
+        'We provide Brand Promotion Services using Social Media Marketing for Brand Awareness on Social Media Platforms ',
     },
     {
       image: '/Assets/ecomerce.png',
       title: 'Ecommerce',
       text:
-        'We provide our customers with E Commerce solutions that are Beautiful, Responsive, and Mobile Friendly so that they may digitally transform their businesses .',
+        'E Commerce Solutions are designed so that digital transformation of the business is done using Next JS and WordPress. .',
     },
     {
       image: '/Assets/branding.png',
       title: 'Branding',
       text:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+        'Modern, Unique, and Professionally made Custom Logo Designs and Concepts are made so that your business stands ',
     },
   ]
   return (
     <div id='tech'>
-      <Divider light='true' />
       <Box ml={2}>
-        <Grid container direction='row'>
-          <Grid item xs={12} lg={12}>
+        <Grid container direction='row' justify='center'>
+          <Grid item xs={12} lg={10}>
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
-              <Hidden lgUp>
+              <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
                   <Typography variant='h3' gutterBottom color='textPrimary'>
-                    Technologies
+                    Technologies & Services
                   </Typography>
+
+                  <img
+                    src='/Assets/divider.png'
+                    style={{ width: '100%', height: '12px', padding: '5px' }}
+                  />
                 </Box>
-                <img
-                  src='/Assets/divider.png'
-                  style={{ width: '70%', height: 'auto', padding: '5px' }}
-                />
                 <Typography variant='h5' gutterBottom color='textSecondary'>
-                  What we do we do it perfect
+                  We believe in delivering premier services with cutting edge and forefront
+                  technology
                 </Typography>
               </Hidden>
             </Box>
           </Grid>
 
           <Grid item xs={12} lg={12}>
-            <Hidden mdDown>
-              <Typography variant='h3' gutterBottom color='textPrimary'>
-                Technologies we use
-              </Typography>
-
+            <Box mt={5} display='grid' justifyItems='center'>
+              <Hidden lgUp>
+                <Typography variant='h4' gutterBottom color='textPrimary'>
+                  Services & Technologies
+                </Typography>
+                <img
+                  src='/Assets/divider.png'
+                  style={{ width: '50%', height: '12px', padding: '5px' }}
+                />
+                <Typography variant='body1' gutterBottom color='textSecondary'>
+                  We believe in delivering premier services with cutting edge and forefront
+                  technology
+                </Typography>
+              </Hidden>
+            </Box>
+            <Hidden mdDown lgUp>
               <img
                 src='/Assets/divider.png'
                 style={{ width: '15%', height: 'auto', padding: '10px' }}
               />
-              <Typography variant='h5' gutterBottom color='textSecondary'>
-                What we do we do it perfect
+              <Typography variant='h6' gutterBottom color='textSecondary'>
+                We believe in delivering premier services with cutting edge and forefront technology
               </Typography>
             </Hidden>
           </Grid>

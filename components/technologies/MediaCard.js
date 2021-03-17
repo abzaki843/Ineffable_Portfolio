@@ -1,4 +1,5 @@
 import React from 'react'
+import 'fontsource-roboto'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
@@ -16,21 +17,11 @@ const theme = {
 }
 const useStyles = makeStyles(theme => ({
   margin: {
-    [theme.breakpoints.only('xs')]: {
-      marginLeft: 35,
-    },
-    [theme.breakpoints.only('sm')]: {
-      marginLeft: 60,
-    },
-    [theme.breakpoints.only('lg')]: {
-      marginLeft: 0,
-    },
-    [theme.breakpoints.only('xl')]: {
-      marginLeft: 80,
-    },
-    [theme.breakpoints.only('md')]: {
-      marginLeft: 10,
-    },
+    [theme.breakpoints.only('xs')]: {},
+    [theme.breakpoints.only('sm')]: {},
+    [theme.breakpoints.only('lg')]: {},
+    [theme.breakpoints.only('xl')]: {},
+    [theme.breakpoints.only('md')]: {},
   },
   root: {
     flexGrow: 1,
@@ -53,33 +44,35 @@ export default function MediaCard ({ cardInfo }) {
   return (
     <>
       <div className={classes.margin}>
-        <Grid container spacing={2}>
-          {cardInfo.map(card => (
-            <Grid item xs={10} sm={6} md={4} lg={3}>
-              <Card className={classes.card} raised='true'>
-                <CardMedia className={classes.media} image={card.image} component='img' />
-                <CardActionArea>
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      direction='row'
-                      justify='center'
-                      align='center'
-                      style={{ align: 'center' }}
-                      color='textSecondary'
-                    >
-                      {card.title}
-                    </Typography>
-                    <Typography variant='body2' color='textSecondary'>
-                      {card.text}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+        <Box mt={1}>
+          <Grid container spacing={2}>
+            {cardInfo.map(card => (
+              <Grid item xs={12} sm={6} md={6} lg={3} style={{ padding: '20px' }}>
+                <Card className={classes.card} raised='true' style={{ margin: 'auto' }}>
+                  <CardMedia className={classes.media} image={card.image} component='img' />
+                  <CardActionArea>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant='h5'
+                        direction='row'
+                        justify='center'
+                        align='center'
+                        style={{ align: 'center' }}
+                        color='textSecondary'
+                      >
+                        {card.title}
+                      </Typography>
+                      <Typography variant='body2' color='textSecondary'>
+                        {card.text}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
       </div>
     </>
   )

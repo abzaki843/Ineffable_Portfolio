@@ -34,6 +34,7 @@ const theme = {
 
 export default function ProjectsOdd ({
   projectImage,
+  projectImage1,
   projectText,
   ProjectTitle,
   projectFeature1,
@@ -46,9 +47,9 @@ export default function ProjectsOdd ({
   return (
     <div className={(classes.root, classes.margin)}>
       <Box ml={10}>
-        <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
+        <Grid container spacing={1} direction='row' justify='center' alignItems='flex-start'>
           <>
-            <Grid item xs={12} lg={5}>
+            <Grid item xs={12} lg={6} style={{ marginTop: '180px' }}>
               <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                 {ProjectTitle}
               </Typography>
@@ -90,7 +91,7 @@ export default function ProjectsOdd ({
                 </Button>
               </Box>
             </Grid>
-            <Grid item lg={7}>
+            <Grid item lg={6}>
               <img src={projectImage} style={{ width: '100%' }} />
             </Grid>
           </>

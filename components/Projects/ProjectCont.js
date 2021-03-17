@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import ProjectsOdd from './ProjectsOdd'
 import ProjectsEven from './ProjectsEven'
 import ProjectsSm from './ProjectsSm'
+import 'fontsource-roboto'
 const useStyles = makeStyles({
   divider: {
     width: '100%',
@@ -22,6 +23,7 @@ export default function ProjectContainer () {
   const projectInfo = [
     {
       image: '/Assets/vango.png',
+      image1: '/Assets/van.png',
       title: 'VAN GO',
       Text:
         'A Web Application which is highly responsive and fast while being installation free for those in need of moving their precious goods securely and safely with help available at every stage via the Web Application. Some main features are:',
@@ -35,6 +37,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/jamcommerce.png',
+      image1: '/Assets/jamm.png',
       title: 'Jam Commerce',
       Text:
         'An E-Commerce Platform which is free of any 3rd Party Cart System and can be changed according to need with ease. There are many reasons to use JAM Commerce some of them are given below:',
@@ -48,37 +51,41 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/covid19.png',
+      image1: '/Assets/covid.png',
       title: 'COVID 19',
       Text:
         'A website developed to educate people about Covid 19 and keeps update about Covid19 live counts locally and Globally .Key features of website are as follows:game nai  ',
-      feature1: '  Global COVID-19 Count',
-      feature2: ' COVID-19 Symptoms',
-      feature3: 'Precautionary Measures',
-      feature4: 'Country Wise Cases Search',
+      feature1:
+        ' Complete details about COVID-19 that include General Information, Wrong Myths, Precautionary Measures, and Symptoms',
+      feature2:
+        'Global COVID-19 Count which is up to date and is refreshed every day to keep data up to date.',
+      feature3:
+        '  COVID-19 cases for a specific country using the Country Wise Cases Search and see all relevant information all at once.',
+      feature4:
+        'developed using PWA intended to work on any platform that uses a standards-compliant browser, including both desktop and mobile devices ',
     },
     {
       image: '/Assets/toursdenorth.png',
+      image1: '/Assets/tours.png',
       title: 'TOURS De North',
       Text:
         'A Website for all people who want to visit Northern Areas of Pakistan. It provides many packages of ranging differences and provides all information needed for the trip. The Main features are:',
-      feature1: '  Previous Tour Highlights',
-      feature2: ' Multiple Packages to choose from',
-      feature3: 'Detailed Stay and Activities Daily Brief  ',
-      feature4: ' North American exclusive Booking Line',
+      feature1:
+        '  Detailed info about different tourist attraction site in Northeren Areas of Pakistan ',
+      feature2: 'Details about pervious tours clicks and activities',
+      feature3: ' It provides detailed information about different packages offered  ',
+      feature4: '  It  Provides facility for online booking according to package one wills',
     },
   ]
   return (
     <div className={classes.divider} id='projects'>
       <Grid container justify='center' alignItems='center'>
-        <Grid item direction='column' xs={12} lg={12}>
-          <Box m={3} display='grid' justifyContent='center' alignItems='center'>
+        <Grid item direction='column' xs={12} lg={12} justifyItems='grid'>
+          <Box mt={10} display='grid' justifyItems='center'>
             <Typography variant='h3' gutterBottom color='textPrimary'>
               Our Work
             </Typography>
-            <img
-              src='/Assets/divider.png'
-              style={{ width: '20%', height: 'auto', padding: '5px' }}
-            />
+            <img src='/Assets/divider.png' style={{ width: '25%', height: '2px' }} />
           </Box>
         </Grid>
       </Grid>
@@ -93,10 +100,12 @@ export default function ProjectContainer () {
               projectFeature2={project.feature2}
               projectFeature3={project.feature3}
               projectFeature4={project.feature4}
+              projectImage1={project.image1}
             />
           ) : (
             <ProjectsOdd
               projectImage={project.image}
+              projectImage1={project.image1}
               ProjectTitle={project.title}
               projectText={project.Text}
               projectFeature1={project.feature1}
@@ -106,7 +115,7 @@ export default function ProjectContainer () {
             />
           )}
           <ProjectsSm
-            projectImage={project.image}
+            projectImage={project.image1}
             ProjectTitle={project.title}
             projectText={project.Text}
             projectFeature1={project.feature1}

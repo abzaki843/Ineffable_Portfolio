@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import 'fontsource-roboto'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import Divider from '@material-ui/core/Divider'
+
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
@@ -13,6 +13,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import EmailIcon from '@material-ui/icons/Email'
 import MessageIcon from '@material-ui/icons/Message'
+import { Hidden } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,6 +30,9 @@ const useStyles = makeStyles(theme => ({
   input: {
     height: 150,
   },
+  bg: {
+    backgroundColor: '#F5F5F5',
+  },
 }))
 const theme = {
   spacing: 2,
@@ -39,9 +43,7 @@ export default function Contact () {
 
   return (
     <Box mt={10} id='contact'>
-      <div className={classes.root}>
-        <Divider light='true' />
-
+      <div className={(classes.root, classes.bg)}>
         <Grid container direction='row' justify='center' alignItems='center'>
           <Grid item lg={5} xl={5} className={classes.hide}>
             <img src='/Assets/contact-img.png' />
@@ -51,11 +53,29 @@ export default function Contact () {
             <Container component='main' maxWidth='xs'>
               <CssBaseline />
               <div className={classes.paper}>
-                <Typography component='h1' variant='h3' color='textSecondary'>
-                  Get In Touch
-                </Typography>
-
-                <Typography variant='body2' color='textSecondary'>
+                <Hidden mdDown>
+                  <Box mt={5}>
+                    <Typography component='h1' variant='h3' color='textPrimary'>
+                      Get In Touch
+                    </Typography>
+                    <img
+                      src='/Assets/divider.png'
+                      style={{ width: '50%', height: 'auto', padding: '10px' }}
+                    />
+                  </Box>
+                </Hidden>
+                <Hidden lgUp>
+                  <Box align='center'>
+                    <Typography component='h1' variant='h3' color='textPrimary'>
+                      Get In Touch
+                    </Typography>
+                    <img
+                      src='/Assets/divider.png'
+                      style={{ width: '50%', height: 'auto', padding: '10px' }}
+                    />
+                  </Box>
+                </Hidden>
+                <Typography variant='body1' color='textSecondary'>
                   Lets Start Something New ! Just ask and get Answers
                 </Typography>
                 <form className={classes.form} noValidate>
@@ -113,15 +133,16 @@ export default function Contact () {
                       ),
                     }}
                   />
-
-                  <Button
-                    type='submit'
-                    variant='contained'
-                    color='primary'
-                    className={classes.submit}
-                  >
-                    Send
-                  </Button>
+                  <Box align='center' mb={2}>
+                    <Button
+                      type='submit'
+                      variant='contained'
+                      color='primary'
+                      className={classes.submit}
+                    >
+                      Send
+                    </Button>
+                  </Box>
                 </form>
               </div>
             </Container>
