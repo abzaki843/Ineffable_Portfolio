@@ -2,7 +2,7 @@ import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import Divider from '@material-ui/core/Divider'
+import 'fontsource-roboto'
 import Box from '@material-ui/core/Box'
 import ProfileCardDemo from './About'
 
@@ -58,17 +58,15 @@ export default function AboutCont () {
       name: 'Awais Shah',
     },
     {
-      image: '/Assets/tooba.jpg',
-      title: 'Designer',
-      name: 'Tooba Agha',
+      image: '/Assets/aliasad.jpg',
+      title: 'Develoer',
+      name: 'Ali Asad',
     },
   ]
 
   return (
     <div id='team'>
       <Box mt={5}>
-        <Divider light='true' />
-
         <Grid container spacing={1} justify-content='center' align='center'>
           <Grid item xs={12}>
             <Box mt={6}>
@@ -80,6 +78,9 @@ export default function AboutCont () {
               src='/Assets/divider.png'
               style={{ width: '13%', height: '12px', padding: '5px' }}
             />
+            <Typography variant='body1' gutterBottom color='textSecondary' justify-content='center'>
+              "Achievements of an organization are result of combined efforts of every individual"
+            </Typography>
           </Grid>
 
           {AboutInfo.map(about => (

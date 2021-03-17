@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import ProjectsOdd from './ProjectsOdd'
 import ProjectsEven from './ProjectsEven'
 import ProjectsSm from './ProjectsSm'
+import 'fontsource-roboto'
 const useStyles = makeStyles({
   divider: {
     width: '100%',
@@ -22,7 +23,7 @@ export default function ProjectContainer () {
   const projectInfo = [
     {
       image: '/Assets/vango.png',
-      image1: '/Assets/triangle1.png',
+      image1: '/Assets/van.png',
       title: 'VAN GO',
       Text:
         'A Web Application which is highly responsive and fast while being installation free for those in need of moving their precious goods securely and safely with help available at every stage via the Web Application. Some main features are:',
@@ -36,7 +37,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/jamcommerce.png',
-      image1: '/Assets/triangle2.png',
+      image1: '/Assets/jamm.png',
       title: 'Jam Commerce',
       Text:
         'An E-Commerce Platform which is free of any 3rd Party Cart System and can be changed according to need with ease. There are many reasons to use JAM Commerce some of them are given below:',
@@ -50,7 +51,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/covid19.png',
-      image1: '/Assets/triangle1.png',
+      image1: '/Assets/covid.png',
       title: 'COVID 19',
       Text:
         'A website developed to educate people about Covid 19 and keeps update about Covid19 live counts locally and Globally .Key features of website are as follows:game nai  ',
@@ -65,7 +66,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/toursdenorth.png',
-      image1: '/Assets/triangle2.png',
+      image1: '/Assets/tours.png',
       title: 'TOURS De North',
       Text:
         'A Website for all people who want to visit Northern Areas of Pakistan. It provides many packages of ranging differences and provides all information needed for the trip. The Main features are:',
@@ -79,12 +80,12 @@ export default function ProjectContainer () {
   return (
     <div className={classes.divider} id='projects'>
       <Grid container justify='center' alignItems='center'>
-        <Grid item direction='column' xs={12} lg={12}>
-          <Box mt={10} display='grid' justifyContent='center' alignItems='center'>
+        <Grid item direction='column' xs={12} lg={12} justifyItems='grid'>
+          <Box mt={10} display='grid' justifyItems='center'>
             <Typography variant='h3' gutterBottom color='textPrimary'>
               Our Work
             </Typography>
-            <img src='/Assets/divider.png' style={{ width: '100%', height: '2px' }} />
+            <img src='/Assets/divider.png' style={{ width: '25%', height: '2px' }} />
           </Box>
         </Grid>
       </Grid>
@@ -114,7 +115,7 @@ export default function ProjectContainer () {
             />
           )}
           <ProjectsSm
-            projectImage={project.image}
+            projectImage={project.image1}
             ProjectTitle={project.title}
             projectText={project.Text}
             projectFeature1={project.feature1}

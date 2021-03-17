@@ -23,6 +23,7 @@ import Link from 'next/link'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import List from '@material-ui/core/List'
+import Footer from '../components/footer'
 
 const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
@@ -224,41 +225,35 @@ export default function ButtonAppBar (props) {
 
           <List>
             <ul>
-              <li>
-                <Link href='#hero'>
-                  <Typography variant='button' display='block' gutterBottom>
-                    Home
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href='#tech'>
-                  <Typography variant='button' display='block' gutterBottom>
-                    Technologies
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href='#projects'>
-                  <Typography variant='button' display='block' gutterBottom>
-                    Our Work
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href='#team'>
-                  <Typography variant='button' display='block' gutterBottom>
-                    Team
-                  </Typography>
-                </Link>
-              </li>
-              <li>
-                <Link href='#contact'>
-                  <Typography variant='button' display='block' gutterBottom>
-                    Contact
-                  </Typography>
-                </Link>
-              </li>
+              <Link href='#hero'>
+                <Typography variant='button' display='block' gutterBottom>
+                  Home
+                </Typography>
+              </Link>
+
+              <Link href='#tech'>
+                <Typography variant='button' display='block' gutterBottom>
+                  Technologies
+                </Typography>
+              </Link>
+
+              <Link href='#projects'>
+                <Typography variant='button' display='block' gutterBottom>
+                  Our Work
+                </Typography>
+              </Link>
+
+              <Link href='#team'>
+                <Typography variant='button' display='block' gutterBottom>
+                  Team
+                </Typography>
+              </Link>
+
+              <Link href='#contact'>
+                <Typography variant='button' display='block' gutterBottom>
+                  Contact
+                </Typography>
+              </Link>
             </ul>
           </List>
         </Drawer>
@@ -273,6 +268,7 @@ export default function ButtonAppBar (props) {
       <ProjectContainer />
       <AboutCont />
       <Contact />
+      <Footer />
     </div>
   )
 }

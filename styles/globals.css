@@ -31,3 +31,6 @@ body {
   height: 40px;
   margin: auto;
 }
+.bg {
+  background-color: '#F5F5F5';
+}

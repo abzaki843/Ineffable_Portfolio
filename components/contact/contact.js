@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import 'fontsource-roboto'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-import Divider from '@material-ui/core/Divider'
+
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
@@ -44,8 +44,6 @@ export default function Contact () {
   return (
     <Box mt={10} id='contact'>
       <div className={(classes.root, classes.bg)}>
-        <Divider light='true' />
-
         <Grid container direction='row' justify='center' alignItems='center'>
           <Grid item lg={5} xl={5} className={classes.hide}>
             <img src='/Assets/contact-img.png' />
@@ -57,19 +55,27 @@ export default function Contact () {
               <div className={classes.paper}>
                 <Hidden mdDown>
                   <Box mt={5}>
-                    <Typography component='h1' variant='h3' color='textSecondary'>
+                    <Typography component='h1' variant='h3' color='textPrimary'>
                       Get In Touch
                     </Typography>
+                    <img
+                      src='/Assets/divider.png'
+                      style={{ width: '50%', height: 'auto', padding: '10px' }}
+                    />
                   </Box>
                 </Hidden>
                 <Hidden lgUp>
                   <Box align='center'>
-                    <Typography component='h1' variant='h3' color='textSecondary'>
+                    <Typography component='h1' variant='h3' color='textPrimary'>
                       Get In Touch
                     </Typography>
+                    <img
+                      src='/Assets/divider.png'
+                      style={{ width: '50%', height: 'auto', padding: '10px' }}
+                    />
                   </Box>
                 </Hidden>
-                <Typography variant='h6' color='textSecondary'>
+                <Typography variant='body1' color='textSecondary'>
                   Lets Start Something New ! Just ask and get Answers
                 </Typography>
                 <form className={classes.form} noValidate>

@@ -1,4 +1,5 @@
 import React from 'react'
+import 'fontsource-roboto'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
@@ -43,10 +44,10 @@ export default function MediaCard ({ cardInfo }) {
   return (
     <>
       <div className={classes.margin}>
-        <Box mt={5}>
+        <Box mt={1}>
           <Grid container spacing={2}>
             {cardInfo.map(card => (
-              <Grid item xs={12} sm={6} md={6} lg={3}>
+              <Grid item xs={12} sm={6} md={6} lg={3} style={{ padding: '20px' }}>
                 <Card className={classes.card} raised='true' style={{ margin: 'auto' }}>
                   <CardMedia className={classes.media} image={card.image} component='img' />
                   <CardActionArea>

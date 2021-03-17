@@ -9,9 +9,6 @@ import Button from '@material-ui/core/Button'
 import { Hidden } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
-  bg: {
-    backgroundColor: '#F5F5F5',
-  },
   root: {
     flexGrow: 1,
   },
@@ -58,10 +55,10 @@ export default function Hero () {
                 color='textSecondary'
                 align='justify'
               >
-                We Are here to give Best Services
+                Inventing better Future
               </Typography>
-              <Typography variant='subtitle1' gutterBottom color='textSecondary' align='justify'>
-                We Are a Team of software developers. Highly Dedicated to develop Products that
+              <Typography variant='body1' gutterBottom color='textSecondary' align='justify'>
+                We Are a Team of software developers, Highly Dedicated to develop Products that
                 Matter
               </Typography>
               {/*   <Button variant='contained' color='primary'>

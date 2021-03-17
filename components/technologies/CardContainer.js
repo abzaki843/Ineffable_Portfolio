@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider'
 import { Hidden } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MediaCard from './MediaCard'
+import 'fontsource-roboto'
 
 const useStyles = makeStyles({
   divider: {
@@ -70,10 +71,9 @@ export default function CardContainer () {
   ]
   return (
     <div id='tech'>
-      <Divider light='true' />
       <Box ml={2}>
         <Grid container direction='row' justify='center'>
-          <Grid item xs={12} lg={6}>
+          <Grid item xs={12} lg={10}>
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
               <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
@@ -87,22 +87,26 @@ export default function CardContainer () {
                   />
                 </Box>
                 <Typography variant='h5' gutterBottom color='textSecondary'>
-                  We believe in delivering premier services with cutting edge & forefront technology
+                  We believe in delivering premier services with cutting edge and forefront
+                  technology
                 </Typography>
               </Hidden>
             </Box>
           </Grid>
 
           <Grid item xs={12} lg={12}>
-            <Box mt={7}>
-              <Hidden mdDown lgUp>
-                <Typography variant='h3' gutterBottom color='textPrimary'>
-                  Technologies & Services
-                </Typography>
-              </Hidden>
+            <Box mt={5} display='grid' justifyItems='center'>
               <Hidden lgUp>
-                <Typography variant='h3' gutterBottom color='textPrimary'>
+                <Typography variant='h4' gutterBottom color='textPrimary'>
                   Services & Technologies
+                </Typography>
+                <img
+                  src='/Assets/divider.png'
+                  style={{ width: '50%', height: '12px', padding: '5px' }}
+                />
+                <Typography variant='body1' gutterBottom color='textSecondary'>
+                  We believe in delivering premier services with cutting edge and forefront
+                  technology
                 </Typography>
               </Hidden>
             </Box>
@@ -111,8 +115,8 @@ export default function CardContainer () {
                 src='/Assets/divider.png'
                 style={{ width: '15%', height: 'auto', padding: '10px' }}
               />
-              <Typography variant='h5' gutterBottom color='textSecondary'>
-                We believe in delivering premier services with cutting edge & forefront technology
+              <Typography variant='h6' gutterBottom color='textSecondary'>
+                We believe in delivering premier services with cutting edge and forefront technology
               </Typography>
             </Hidden>
           </Grid>
