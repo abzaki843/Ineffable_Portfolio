@@ -55,7 +55,7 @@ export default function AboutCont () {
       title: 'Developer',
       name: 'Saad ul Hassan',
       linked: 'https://www.linkedin.com/in/saad-ul-hassan-72a7b1190/',
-      facebook: '',
+      facebook: 'https://www.facebook.com/profile.php?id=100014828587193',
     },
     {
       image: '/Assets/saad.jfif',
