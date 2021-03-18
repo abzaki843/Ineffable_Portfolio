@@ -36,7 +36,7 @@ export default function CardContainer () {
       image: '/Assets/pwa.png',
       title: 'PWA',
       text:
-        'We help you by designing Progressive Web Apps (PWA) that facilitate profitable communication pathways for brands and their consumers with their smart and connecting features using standards and Technologies. ',
+        '  Progressive Web Apps (PWA) web applications  are regular web pages or websites, but can appear to the user like traditional applications or native mobile applications  ',
     },
     {
       image: '/Assets/wordpress.png',

@@ -25,42 +25,58 @@ export default function AboutCont () {
       image: '/Assets/Ahsan.jfif',
       title: 'CEO',
       name: 'Ahsan Ansari',
+      linked: 'https://www.linkedin.com/in/ahsan-ansari-865466143/',
+      facebook: 'https://www.facebook.com/ahsan.ansari.33',
     },
     {
       image: '/Assets/Ali.jfif',
       title: 'Technical Lead',
       name: 'Ali Ansari',
+      linked: 'https://www.linkedin.com/in/ali-ansari-116b47a2/',
+      facebook: 'https://www.facebook.com/aliwajdan.ansari',
     },
 
     {
       image: '/Assets/hamza.jfif',
       title: 'Backend Lead',
       name: 'Hamza Rehman ',
+      linked: 'https://www.linkedin.com/in/hamza-rahman-01750787/',
+      facebook: 'https://www.facebook.com/heman7',
     },
     {
       image: '/Assets/abk.jfif',
       title: 'Manager',
       name: 'Abdul Basit ',
+      linked: 'https://www.linkedin.com/in/abdul-basit-khan-70a893186/',
+      facebook: 'https://www.facebook.com/abdul.basit.9212',
     },
     {
       image: '/Assets/saada.jpg',
       title: 'Developer',
       name: 'Saad ul Hassan',
+      linked: 'https://www.linkedin.com/in/saad-ul-hassan-72a7b1190/',
+      facebook: '',
     },
     {
       image: '/Assets/saad.jfif',
       title: 'QA ENGENIER',
       name: 'Saad Arshad',
+      linked: 'https://www.linkedin.com/in/saadarshadmehmood/',
+      facebook: 'https://www.facebook.com/saadarshadmehmood',
     },
     {
       image: '/Assets/awais.jpg',
       title: 'Designer',
       name: 'Awais Shah',
+      linked: 'https://www.linkedin.com/in/imawais/',
+      facebook: 'https://www.facebook.com/Awais7o7',
     },
     {
       image: '/Assets/aliasad.jpg',
       title: 'Develoer',
       name: 'Ali Asad',
+      linked: '',
+      facebook: '',
     },
   ]
 
@@ -90,6 +106,8 @@ export default function AboutCont () {
                   aboutImage={about.image}
                   aboutTitle={about.title}
                   aboutName={about.name}
+                  linked={about.linked}
+                  facebook={about.facebook}
                 />
               </Grid>
             </>

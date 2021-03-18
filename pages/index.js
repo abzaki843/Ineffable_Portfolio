@@ -24,6 +24,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import List from '@material-ui/core/List'
 import Footer from '../components/footer'
+import useScrollTrigger from '@material-ui/core/useScrollTrigger'
+import Slide from '@material-ui/core/Slide'
+import PropTypes from 'prop-types'
 
 const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
@@ -93,7 +96,19 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0,
   },
 }))
+function HideOnScroll (props) {
+  const { children, window } = props
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined })
 
+  return (
+    <Slide appear={false} direction='down' in={!trigger}>
+      {children}
+    </Slide>
+  )
+}
 export default function ButtonAppBar (props) {
   const classes = useStyles()
   const theme = useTheme()
@@ -110,102 +125,108 @@ export default function ButtonAppBar (props) {
   return (
     <div className={classes.roots}>
       <CssBaseline />
-      <AppBar
-        position='fixed'
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar justifyContent='flex-end'>
-          <IconButton
-            edge='start'
-            color='inherit'
-            aria-label='menu'
-            onClick={handleDrawerOpen}
-            edge='start'
-            className={clsx(classes.menuButton, open && classes.hide)}
-          >
-            <Hidden lgUp>
-              <MenuIcon />
-            </Hidden>
-          </IconButton>
-          <Box display='flex' flexGrow={1}>
-            <Hidden mdDown>
-              <img
-                src='./Assets/logo.png'
-                alt='Kitty Katty!'
-                style={{ maxWidth: 250, marginRight: '10px', flex: 1 }}
-              />
-            </Hidden>
-            <Hidden lgUp>
-              <img
-                src='./Assets/logo.png'
-                alt='Kitty Katty!'
-                style={{
-                  maxWidth: 200,
-                  margin: 'auto',
-                }}
-              />
-            </Hidden>
-          </Box>
-
-          <Hidden mdDown>
-            <nav>
-              <ul>
+      <HideOnScroll {...props}>
+        <AppBar
+          position='fixed'
+          className={clsx(classes.appBar, {
+            [classes.appBarShift]: open,
+          })}
+        >
+          <Toolbar justifyContent='flex-end'>
+            <IconButton
+              edge='start'
+              color='inherit'
+              aria-label='menu'
+              onClick={handleDrawerOpen}
+              edge='start'
+              className={clsx(classes.menuButton, open && classes.hide)}
+            >
+              <Hidden lgUp>
+                <MenuIcon />
+              </Hidden>
+            </IconButton>
+            <Box display='flex' flexGrow={1}>
+              <Hidden mdDown>
                 <Link href='#hero'>
-                  <Button variant='contained' size='small' color='primary' disableElevation>
-                    Home
-                  </Button>
+                  <img
+                    src='./Assets/logo.png'
+                    alt='Kitty Katty!'
+                    style={{ maxWidth: 250, marginRight: '10px', flex: 1 }}
+                  />
                 </Link>
-                <Link href='#tech'>
-                  <Button
-                    variant='contained'
-                    size='small'
-                    color='primary'
-                    href='#contained-buttons'
-                    disableElevation
-                  >
-                    Technologies
-                  </Button>
+              </Hidden>
+              <Hidden lgUp>
+                <Link href='#hero'>
+                  <img
+                    src='./Assets/logo.png'
+                    alt='Kitty Katty!'
+                    style={{
+                      maxWidth: 200,
+                      margin: 'auto',
+                    }}
+                  />
                 </Link>
-                <Link href='#projects'>
-                  <Button
-                    variant='contained'
-                    size='small'
-                    color='primary'
-                    href='#contained-buttons '
-                    disableElevation
-                  >
-                    Our Work
-                  </Button>
-                </Link>
-                <Link href='#team'>
-                  <Button
-                    variant='contained'
-                    size='small'
-                    color='primary'
-                    href='#contained-buttons'
-                    disableElevation
-                  >
-                    Team
-                  </Button>
-                </Link>
-                <Link href='#contact'>
-                  <Button
-                    variant='contained'
-                    size='small'
-                    color='primary'
-                    href='#contained-buttons'
-                    disableElevation
-                  >
-                    Contact
-                  </Button>
-                </Link>
-              </ul>
-            </nav>
-          </Hidden>
-        </Toolbar>
-      </AppBar>
+              </Hidden>
+            </Box>
+
+            <Hidden mdDown>
+              <nav>
+                <ul>
+                  <Link href='#hero'>
+                    <Button variant='contained' size='small' color='primary' disableElevation>
+                      Home
+                    </Button>
+                  </Link>
+                  <Link href='#tech'>
+                    <Button
+                      variant='contained'
+                      size='small'
+                      color='primary'
+                      href='#contained-buttons'
+                      disableElevation
+                    >
+                      Technologies
+                    </Button>
+                  </Link>
+                  <Link href='#projects'>
+                    <Button
+                      variant='contained'
+                      size='small'
+                      color='primary'
+                      href='#contained-buttons '
+                      disableElevation
+                    >
+                      Our Work
+                    </Button>
+                  </Link>
+                  <Link href='#team'>
+                    <Button
+                      variant='contained'
+                      size='small'
+                      color='primary'
+                      href='#contained-buttons'
+                      disableElevation
+                    >
+                      Team
+                    </Button>
+                  </Link>
+                  <Link href='#contact'>
+                    <Button
+                      variant='contained'
+                      size='small'
+                      color='primary'
+                      href='#contained-buttons'
+                      disableElevation
+                    >
+                      Contact
+                    </Button>
+                  </Link>
+                </ul>
+              </nav>
+            </Hidden>
+          </Toolbar>
+        </AppBar>
+      </HideOnScroll>
       <Hidden lgUp>
         <Drawer
           className={classes.drawer}
