@@ -34,7 +34,7 @@ export default function Footer () {
                   </Link>
                 </Hidden>
               </Grid>
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={6} lg={3}>
                 <ul>
                   <ol>
                     <Link href='#hero'>Home</Link>
@@ -54,7 +54,7 @@ export default function Footer () {
                 </ul>
               </Grid>
 
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={6} lg={3}>
                 <ul>
                   <ol>
                     <Link href='https://www.facebook.com/ineffabledevs'>
@@ -68,27 +68,28 @@ export default function Footer () {
                   </ol>
                   <ol>
                     <MailIcon style={{ color: '#3e65cf' }} />
-                    <Typography variant='body1'>info@ineffabledevs.com</Typography>
                   </ol>
+                  <Typography variant='OVERLINE TEXT'>info@ineffabledevs.com</Typography>
                 </ul>
               </Grid>
-              <Grid item xs={12} lg={3}>
+              <Grid item xs={6} lg={3}>
                 <ul>
                   <ol>
-                    <LocationOnIcon style={{ color: '#960A0A' }} />
-                    <Typography variant='body1'>Cubator 1ne Comsats Islamabad</Typography>
+                    <LocationOnIcon style={{ color: '#67C974' }} />
                   </ol>
-
+                  <Typography variant='subtitle'> Comsats, Islamabad</Typography>
                   <ol>
-                    <CallIcon style={{ color: '#960A0A' }} />
-                    <Typography variant='body1'>03365551788</Typography>
+                    <CallIcon style={{ color: '#67C974' }} />
                   </ol>
+                  <Typography variant='subtitle'>03365551788</Typography>
                 </ul>
               </Grid>
-              <Grid item xs={12} lg={5}>
-                <Typography variant='body1'>
-                  Copyright © 2021 INEFFABLE DEVS. All rights reserved
-                </Typography>
+              <Grid container direction='row' justify='center' alignItems='center'>
+                <Grid item xs={12} lg={5}>
+                  <Typography variant='caption text'>
+                    Copyright © 2021 INEFFABLE DEVS. All rights reserved
+                  </Typography>
+                </Grid>
               </Grid>
             </Grid>
           </Toolbar>
