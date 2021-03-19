@@ -41,6 +41,7 @@ export default function ProjectsOdd ({
   projectFeature2,
   projectFeature3,
   projectFeature4,
+  projectRef,
 }) {
   const classes = useStyles()
 
@@ -86,7 +87,8 @@ export default function ProjectsOdd ({
                 </List>
               </div>
               <Box ml={8}>
-                <Button variant='contained' color='primary'>
+                *{' '}
+                <Button variant='contained' color='primary' href={projectRef}>
                   LEARN MORE
                 </Button>
               </Box>

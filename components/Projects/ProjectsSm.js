@@ -45,6 +45,7 @@ export default function ProjectsSm ({
   projectFeature2,
   projectFeature3,
   projectFeature4,
+  projectRef,
 }) {
   const classes = useStyles()
 
@@ -95,7 +96,7 @@ export default function ProjectsSm ({
                     <ListItemText secondary={projectFeature4} />
                   </ListItem>
                   <Box ml={12}>
-                    <Button variant='contained' color='primary' justify='center'>
+                    <Button variant='contained' color='primary' justify='center' href={projectRef}>
                       Visit Web
                     </Button>
                   </Box>

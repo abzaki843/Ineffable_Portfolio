@@ -34,6 +34,7 @@ export default function ProjectContainer () {
         ' Driver can Accept Order according to the Area Zip Code he has set and keep updating the Order till it has been completed.',
       feature4:
         ' Driver will do Document Verification so that he can gain the chance of using Van Go Driver App to make earning',
+      href: '',
     },
     {
       image: '/Assets/jamcommerce.png',
@@ -48,6 +49,7 @@ export default function ProjectContainer () {
         'It has  sections and information blocks  display content and images on your store strategically so visitors can quickly find the information they need.',
       feature4:
         ' No need to use any 3rd Party Pre-made Cart technology we use snip cart as a backend for cart operation handling. ',
+      href: '',
     },
     {
       image: '/Assets/covid19.png',
@@ -63,6 +65,7 @@ export default function ProjectContainer () {
         '  COVID-19 cases for a specific country using the Country Wise Cases Search and see all relevant information all at once.',
       feature4:
         'developed using PWA intended to work on any platform that uses a standards-compliant browser, including both desktop and mobile devices ',
+      href: 'https://ineffabledevs.com/covid%2019',
     },
     {
       image: '/Assets/toursdenorth.png',
@@ -75,6 +78,7 @@ export default function ProjectContainer () {
       feature2: 'Details about pervious tours clicks and activities',
       feature3: ' It provides detailed information about different packages offered  ',
       feature4: '  It  Provides facility for online booking according to package one wills',
+      href: 'https://toursdenorth.com/',
     },
   ]
   return (
@@ -101,6 +105,7 @@ export default function ProjectContainer () {
               projectFeature3={project.feature3}
               projectFeature4={project.feature4}
               projectImage1={project.image1}
+              projectRef={project.href}
             />
           ) : (
             <ProjectsOdd
@@ -112,6 +117,7 @@ export default function ProjectContainer () {
               projectFeature2={project.feature2}
               projectFeature3={project.feature3}
               projectFeature4={project.feature4}
+              projectRef={project.href}
             />
           )}
           <ProjectsSm
@@ -122,6 +128,7 @@ export default function ProjectContainer () {
             projectFeature2={project.feature2}
             projectFeature3={project.feature3}
             projectFeature4={project.feature4}
+            projectRef={project.href}
           />
         </>
       ))}
