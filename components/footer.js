@@ -13,6 +13,7 @@ import CallIcon from '@material-ui/icons/Call'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import { Hidden } from '@material-ui/core'
 import InstagramIcon from '@material-ui/icons/Instagram';
+import ListItem from '@material-ui/core/ListItem';
 
 import Container from '@material-ui/core/Container'
 
@@ -106,7 +107,7 @@ export default function Footer () {
         <Container>
         <Hidden mdUp>
           <Toolbar>
-            <Grid container>
+            <Grid container  direction='row' justify='center' flexWrap= 'wrap' >
             <Grid  container item xs={10} >
                 <Hidden>
                   <Link href='#hero'>
@@ -116,48 +117,50 @@ export default function Footer () {
               
                 
               </Grid>
-             
-              <Grid container item xs={12} md={3} lg={3}>
-                <ul>
-                <ol>
-                    <MailIcon style={{ color: '#0072B1' }} />
-                 
-                  </ol>
-                  <Typography variant='subtitle' paragraph="true">info@ineffabledevs.com</Typography>
-                  <ol>
-                    <LocationOnIcon style={{ color: '#0072B1' }} />
-                
-                  
-                  </ol>
-                  <Typography variant='subtitle'paragraph="true"> Comsats, Islamabad</Typography>
-                  <ol>
-                    <CallIcon style={{ color: '#0072B1' }} />
-                  
-                  </ol>
-                  <Typography variant='subtitle' paragraph="true">00923365551788</Typography>
-                </ul>
-              </Grid>
-           
-            
-         <Grid container item xs={10} md={3} lg={3}>
+              <Grid container item xs={10} md={3} lg={3}>
                 <ul>
                   <ol>
+                  <ListItem>
                     <Link href='https://www.facebook.com/ineffabledevs'>
                       <FacebookIcon style={{ color: '#4267B2' }}  />
                     </Link>
-                 
+                  
+                   
                     <Link href='https://www.linkedin.com/company/ineffable-devs'>
                       <LinkedInIcon style={{ color: '#0072B1' }} />
                     </Link>
                  
-                  
+                
                     <Link href='https://www.linkedin.com/company/ineffable-devs'>
                       <InstagramIcon style={{ color: '#0072B1' }} />
                     </Link>
+                    </ListItem>
                   </ol>
               
                 </ul>
               </Grid>
+              <Grid container item xs={10} md={3} lg={3}>
+                <ul>
+                <ListItem>
+                    <MailIcon style={{ color: '#0072B1' }} />
+                    <Typography variant='subtitle' >info@ineffabledevs.com</Typography>
+                </ListItem>
+                
+                <ListItem>
+                    <LocationOnIcon style={{ color: '#0072B1' }} />
+                    <Typography variant='subtitle'> Comsats, Islamabad</Typography>
+                    </ListItem>
+                
+                    <ListItem>
+                    <CallIcon style={{ color: '#0072B1' }} />
+                    <Typography variant='subtitle' >00923365551788</Typography>
+                    </ListItem>
+                
+                </ul>
+              </Grid>
+           
+            
+     
           
           
               <Grid container direction='row' justify='center' alignItems='center'>
