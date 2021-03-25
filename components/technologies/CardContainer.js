@@ -48,7 +48,7 @@ export default function CardContainer () {
       image: '/Assets/design.png',
       title: 'Designing',
       text:
-        'Beautiful, Responsive, Mobile Friendly, and Professional UI Designs are developed as well as UX Design for better Digital Experiences',
+        ' Mobile Friendly, and Professional UI Designs are developed as well as UX Design for better Digital Experiences',
     },
     {
       image: '/Assets/socialmedia.png',
@@ -57,7 +57,7 @@ export default function CardContainer () {
         'We provide Brand Promotion Services using Social Media Marketing for Brand Awareness on Social Media Platforms ',
     },
     {
-      image: '/Assets/ecomerce.png',
+      image: '/Assets/ecommerce.png',
       title: 'Ecommerce',
       text:
         'E Commerce Solutions are designed so that digital transformation of the business is done using Next JS and WordPress. .',
@@ -73,7 +73,7 @@ export default function CardContainer () {
     <div id='tech'>
       <Box ml={2}>
         <Grid container direction='row' justify='center'>
-          <Grid item xs={12} lg={10}>
+          <Grid item  lg={10}>
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
               <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
@@ -95,30 +95,31 @@ export default function CardContainer () {
           </Grid>
 
           <Grid item xs={12} lg={12}>
-            <Box mt={5} display='grid' justifyItems='center'>
-              <Hidden lgUp>
+            <Box mt={5} display='grid' justifyContent='center' alignItems='center'>
+              <Hidden lgUp >
+              <Box  display='grid' justifyContent='center' alignItems='center'>
+                <Hidden xsDown>
                 <Typography variant='h4' gutterBottom color='textPrimary'>
                   Services & Technologies
                 </Typography>
+                </Hidden>
+                <Hidden smUp>
+                <Typography variant='h4' gutterBottom color='textPrimary'>
+                  Services We Offer
+                </Typography>
+                </Hidden>
                 <img
                   src='/Assets/divider.png'
-                  style={{ width: '50%', height: '12px', padding: '5px' }}
+                  style={{ width: '100%', height: '12px', padding: '5px' }}
                 />
+                </Box>
                 <Typography variant='body1' gutterBottom color='textSecondary'>
                   We believe in delivering premier services with cutting edge and forefront
                   technology
                 </Typography>
               </Hidden>
             </Box>
-            <Hidden mdDown lgUp>
-              <img
-                src='/Assets/divider.png'
-                style={{ width: '15%', height: 'auto', padding: '10px' }}
-              />
-              <Typography variant='h6' gutterBottom color='textSecondary'>
-                We believe in delivering premier services with cutting edge and forefront technology
-              </Typography>
-            </Hidden>
+        
           </Grid>
         </Grid>
       </Box>
