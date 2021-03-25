@@ -31,7 +31,7 @@ export default function Footer () {
                   </Link>
                 </Hidden>
               
-                {/* nothinh gas changes */}
+                
               </Grid>
           
               <Grid container item xs={6} md={3} lg={3}>
@@ -114,7 +114,7 @@ export default function Footer () {
                   </Link>
                 </Hidden>
               
-                // nothing has changes
+                
               </Grid>
              
               <Grid container item xs={12} md={3} lg={3}>
