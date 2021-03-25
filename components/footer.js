@@ -79,18 +79,20 @@ export default function Footer () {
               </Grid>
               <Grid container item xs={6} md={3} lg={3}>
                 <ul>
-                <ol>
+                <ListItem>
                     <MailIcon style={{ color: '#0072B1' }} />
-                  </ol>
-                  <Typography variant='OVERLINE TEXT'>info@ineffabledevs.com</Typography>
-                  <ol>
+                    <Typography variant='OVERLINE TEXT'>info@ineffabledevs.com</Typography>
+                    </ListItem>
+                
+                    <ListItem>
                     <LocationOnIcon style={{ color: '#0072B1' }} />
-                  </ol>
-                  <Typography variant='subtitle'> Comsats, Islamabad</Typography>
-                  <ol>
+                    <Typography variant='subtitle'> Comsats, Islamabad</Typography>
+                    </ListItem>
+               
+                    <ListItem>
                     <CallIcon style={{ color: '#0072B1' }} />
-                  </ol>
                   <Typography variant='subtitle'>00923365551788</Typography>
+                  </ListItem>
                 </ul>
               </Grid>
               <Grid container direction='row' justify='center' alignItems='center'>
