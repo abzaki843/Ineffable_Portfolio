@@ -34,3 +34,6 @@ body {
 .bg {
   background-color: '#F5F5F5';
 }
+.MuiIconButton-edgeStart {
+  margin-left: -29px;
+}

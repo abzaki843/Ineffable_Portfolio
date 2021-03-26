@@ -30,6 +30,12 @@ import PropTypes from 'prop-types'
 
 const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
+  margin: {
+    [theme.breakpoints.down('md')]: {
+      marginLeft: '-10px',
+    },
+  },
+
   root: {
     flexGrow: 1,
     display: 'flex',
@@ -157,15 +163,14 @@ export default function ButtonAppBar (props) {
               </Hidden>
               <Hidden lgUp>
                 <Link href='#hero'>
-                  <Box style={{ margin: 'auto' }}>
-                    <img
-                      src='./Assets/logo.png'
-                      alt='Kitty Katty!'
-                      style={{
-                        maxWidth: 200,
-                      }}
-                    />
-                  </Box>
+                  <img
+                    src='./Assets/logo.png'
+                    alt='Kitty Katty!'
+                    style={{
+                      maxWidth: 200,
+                      margin: 'auto',
+                    }}
+                  />
                 </Link>
               </Hidden>
             </Box>
