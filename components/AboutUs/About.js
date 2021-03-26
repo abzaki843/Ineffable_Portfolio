@@ -86,7 +86,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
               <p className={styles.statLabel}>
                 {' '}
                 <Link href={linked}>
-                  <LinkedInIcon style={{ color: '#0072B1' }} />
+                  <LinkedInIcon style={{ color: '#67c974' }} />
                 </Link>
               </p>
             </Box>
@@ -94,7 +94,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
               <p className={styles.statLabel}>
                 {' '}
                 <Link href={facebook}>
-                  <FacebookIcon style={{ color: '#4267B2' }} />
+                  <FacebookIcon style={{ color: '#67c974' }} />
                 </Link>{' '}
               </p>
             </Box>

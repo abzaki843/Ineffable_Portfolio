@@ -24,7 +24,7 @@ export default function ProjectContainer () {
     {
       image: '/Assets/vango.png',
       image1: '/Assets/van.png',
-      title: 'VAN GO',
+      title: 'Van Go',
       Text:
         'A Web Application which is highly responsive and fast while being installation free for those in need of moving their precious goods securely and safely with help available at every stage via the Web Application. Some main features are:',
       feature1: 'Highly Responsive and Fast Web Application for both User and Driver.',
@@ -54,7 +54,7 @@ export default function ProjectContainer () {
     {
       image: '/Assets/covid19.png',
       image1: '/Assets/covid.png',
-      title: 'COVID 19',
+      title: 'Covid 19',
       Text:
         'A website developed to educate people about Covid 19 and keeps update about Covid19 live counts locally and Globally .Key features of website are as follows:game nai  ',
       feature1:
@@ -70,7 +70,7 @@ export default function ProjectContainer () {
     {
       image: '/Assets/toursdenorth.png',
       image1: '/Assets/tours.png',
-      title: 'TOURS De North',
+      title: 'Tours De North',
       Text:
         'A Website for all people who want to visit Northern Areas of Pakistan. It provides many packages of ranging differences and provides all information needed for the trip. The Main features are:',
       feature1:
@@ -84,7 +84,7 @@ export default function ProjectContainer () {
   return (
     <div className={classes.divider} id='projects'>
       <Grid container justify='center' alignItems='center'>
-        <Grid item direction='column' xs={12} lg={12} justifyItems='grid'>
+        <Grid item direction='column' xs={12} lg={4} justifyItems='grid'>
           <Box mt={10} display='grid' justifyItems='center'>
             <Typography variant='h3' gutterBottom color='textPrimary'>
               Our Work

@@ -45,11 +45,11 @@ export default function Contact () {
     <Box mt={10} id='contact'>
       <div className={(classes.root, classes.bg)}>
         <Grid container direction='row' justify='center' alignItems='center'>
-          <Grid item lg={5} xl={5} className={classes.hide}>
+          <Grid item lg={5} className={classes.hide}>
             <img src='/Assets/contact-img.png' />
           </Grid>
 
-          <Grid item xs={12} lg={7} xl={7}>
+          <Grid item xs={12} lg={7}>
             <Container component='main' maxWidth='xs'>
               <CssBaseline />
               <div className={classes.paper}>
@@ -58,14 +58,12 @@ export default function Contact () {
                     <Typography component='h1' variant='h3' color='textPrimary'>
                       Get In Touch
                     </Typography>
-                    <img
-                      src='/Assets/divider.png'
-                      style={{ width: '50%', height: 'auto', padding: '10px' }}
-                    />
+                    <img src='/Assets/divider.png' style={{ width: '70%', height: '2px' }} />
                   </Box>
                 </Hidden>
                 <Hidden lgUp>
                   <Box align='center'>
+                    <Box mt={2} />
                     <Typography component='h1' variant='h3' color='textPrimary'>
                       Get In Touch
                     </Typography>
@@ -75,6 +73,7 @@ export default function Contact () {
                     />
                   </Box>
                 </Hidden>
+                <Box my={2} />
                 <Typography variant='body1' color='textSecondary'>
                   Lets Start Something New ! Just ask and get Answers
                 </Typography>

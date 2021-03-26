@@ -59,7 +59,7 @@ export default function AboutCont () {
     },
     {
       image: '/Assets/saad.jfif',
-      title: 'QA ENGENIER',
+      title: 'QA Engineer',
       name: 'Saad Arshad',
       linked: 'https://www.linkedin.com/in/saadarshadmehmood/',
       facebook: 'https://www.facebook.com/saadarshadmehmood',
@@ -73,7 +73,7 @@ export default function AboutCont () {
     },
     {
       image: '/Assets/aliasad.jpg',
-      title: 'Develoer',
+      title: 'Developer',
       name: 'Ali Asad',
       linked: '',
       facebook: '',
