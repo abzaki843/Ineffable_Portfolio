@@ -74,7 +74,7 @@ const useStyles = makeStyles(theme => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
-    padding: theme.spacing(0, 1),
+    padding: theme.spacing(0, 0),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
@@ -151,20 +151,21 @@ export default function ButtonAppBar (props) {
                   <img
                     src='./Assets/logo.png'
                     alt='Kitty Katty!'
-                    style={{ maxWidth: 250, marginRight: '10px', flex: 1 }}
+                    style={{ maxWidth: 250, flex: 1 }}
                   />
                 </Link>
               </Hidden>
               <Hidden lgUp>
                 <Link href='#hero'>
-                  <img
-                    src='./Assets/logo.png'
-                    alt='Kitty Katty!'
-                    style={{
-                      maxWidth: 200,
-                      margin: 'auto',
-                    }}
-                  />
+                  <Box style={{ margin: 'auto' }}>
+                    <img
+                      src='./Assets/logo.png'
+                      alt='Kitty Katty!'
+                      style={{
+                        maxWidth: 200,
+                      }}
+                    />
+                  </Box>
                 </Link>
               </Hidden>
             </Box>
