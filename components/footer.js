@@ -94,30 +94,25 @@ export default function Footer () {
                     </ListItem>
                   </ul>
                 </Grid>
-                <Grid container direction='row' justify='center' alignItems='center'>
-                  <Grid item xs={12} lg={5}>
-                    <Typography variant='caption text'>
-                      Copyright © 2021 INEFFABLE DEVS. All rights reserved
-                    </Typography>
-                  </Grid>
-                </Grid>
+              
               </Grid>
             </Toolbar>
           </Container>
         </Hidden>
+     
         <Container>
           <Hidden mdUp>
             <Toolbar>
               <Grid container direction='row' justify='center' flexWrap='wrap'>
                 <Box mt={15} />
-                <Grid container item xs={8} sm={5}>
+                <Grid container item xs={8} sm={10}>
                   <Hidden>
                     <Link href='#hero'>
                       <img src='./Assets/logo.png' style={{ width: '90%', margin: 'auto' }} />
                     </Link>
                   </Hidden>
                 </Grid>
-                <Grid container direction='row' justify='center' item xs={10} sm={2} md={3} lg={3}>
+                <Grid container direction='row' justify='center' item xs={10} sm={3} md={3} lg={3}>
                   <ul>
                     <ListItem>
                       <>
@@ -157,14 +152,14 @@ export default function Footer () {
                     </ListItem>
                   </ul>
                 </Grid>
-
-                <Grid container direction='row' justify='center' alignItems='center'>
-                  <Grid item xs={12} lg={5}>
+                <Grid container direction='column' justify='center' alignItems='center'>
+                  <Grid item xs={12} lg={6} >
                     <Typography variant='caption text'>
                       Copyright © 2021 INEFFABLE DEVS. All rights reserved
                     </Typography>
                   </Grid>
                 </Grid>
+            
               </Grid>
             </Toolbar>
           </Hidden>
