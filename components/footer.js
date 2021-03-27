@@ -110,14 +110,14 @@ export default function Footer () {
             <Toolbar>
               <Grid container direction='row' justify='center' flexWrap='wrap'>
                 <Box mt={15} />
-                <Grid container item xs={8} sm={5}>
+                <Grid container item xs={8} sm={4}>
                   <Hidden>
                     <Link href='#hero'>
                       <img src='./Assets/logo.png' style={{ width: '90%', margin: 'auto' }} />
                     </Link>
                   </Hidden>
                 </Grid>
-                <Grid container direction='row' justify='center' item xs={10} sm={2} md={3} lg={3}>
+                <Grid container direction='row' justify='center' item xs={10} sm={4} md={3} lg={3}>
                   <ul>
                     <ListItem>
                       <>
@@ -136,7 +136,7 @@ export default function Footer () {
                     </ListItem>
                   </ul>
                 </Grid>
-                <Grid container direction='row' justify='center' item xs={10} sm={5} md={3} lg={3}>
+                <Grid container direction='row' justify='center' item xs={10} sm={4} md={3} lg={3}>
                   <ul>
                     <ListItem>
                       <MailIcon style={{ color: '#FFFFFF' }} />
