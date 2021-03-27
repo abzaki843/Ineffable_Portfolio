@@ -65,7 +65,7 @@ export default function ProjectContainer () {
         '  COVID-19 cases for a specific country using the Country Wise Cases Search and see all relevant information all at once.',
       feature4:
         'developed using PWA intended to work on any platform that uses a standards-compliant browser, including both desktop and mobile devices ',
-      href: 'https://ineffabledevs.com/covid%2019',
+      href: 'https://covid19-black.vercel.app/',
     },
     {
       image: '/Assets/toursdenorth.png',
