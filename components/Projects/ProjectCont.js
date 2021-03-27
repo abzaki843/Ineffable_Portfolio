@@ -49,7 +49,7 @@ export default function ProjectContainer () {
         'It has  sections and information blocks  display content and images on your store strategically so visitors can quickly find the information they need.',
       feature4:
         ' No need to use any 3rd Party Pre-made Cart technology we use snip cart as a backend for cart operation handling. ',
-      href: '',
+      href: 'https://jamcommerce-pro.vercel.app/',
     },
     {
       image: '/Assets/covid19.png',
