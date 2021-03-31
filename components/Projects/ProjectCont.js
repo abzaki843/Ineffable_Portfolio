@@ -49,7 +49,7 @@ export default function ProjectContainer () {
         'It has  sections and information blocks  display content and images on your store strategically so visitors can quickly find the information they need.',
       feature4:
         ' No need to use any 3rd Party Pre-made Cart technology we use snip cart as a backend for cart operation handling. ',
-      href: '',
+      href: 'https://jamcommerce-pro.vercel.app/',
     },
     {
       image: '/Assets/covid19.png',
@@ -65,7 +65,7 @@ export default function ProjectContainer () {
         '  COVID-19 cases for a specific country using the Country Wise Cases Search and see all relevant information all at once.',
       feature4:
         'developed using PWA intended to work on any platform that uses a standards-compliant browser, including both desktop and mobile devices ',
-      href: 'https://ineffabledevs.com/covid%2019',
+      href: 'https://covid19-black.vercel.app/',
     },
     {
       image: '/Assets/toursdenorth.png',

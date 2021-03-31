@@ -87,7 +87,7 @@ export default function Contact () {
                     label='Name'
                     name='email'
                     autoComplete='email'
-                    autoFocus
+                 
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position='start'>
@@ -105,7 +105,7 @@ export default function Contact () {
                     label='email'
                     type='password'
                     id='password'
-                    autoComplete='current-password'
+                 
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position='start'>
