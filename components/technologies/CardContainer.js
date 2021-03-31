@@ -36,7 +36,7 @@ export default function CardContainer () {
       image: '/Assets/pwa.png',
       title: 'PWA',
       text:
-        '   We provide services of PWA  that can be installed on your Mobile devices and  thats also works offline  ',
+        '   We provide services of Progressive Web Apps  that can be installed on your Mobile devices and Desktops  ',
     },
     {
       image: '/Assets/wordpress.png',
