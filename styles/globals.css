@@ -37,3 +37,8 @@ body {
 .MuiIconButton-edgeStart {
   margin-left: -29px;
 }
+.MuiCardActionArea {
+  width: 100%;
+  display: block;
+  text-align: center;
+}

@@ -36,6 +36,11 @@ const useStyles = makeStyles(theme => ({
   divider: {
     width: '100%',
   },
+  MuiCardActionArea: {
+    width: '100%',
+    display: 'block',
+    textAlign: 'center',
+  },
 }))
 
 export default function MediaCard ({ cardInfo }) {
@@ -50,7 +55,7 @@ export default function MediaCard ({ cardInfo }) {
               <Grid item xs={12} sm={6} md={6} lg={3} style={{ padding: '20px' }}>
                 <Card className={classes.card} raised='true' style={{ margin: 'auto' }}>
                   <CardMedia className={classes.media} image={card.image} component='img' />
-                  <CardActionArea>
+                  <CardActionArea className={classes.MuiCardActionArea}>
                     <CardContent>
                       <Typography
                         gutterBottom
@@ -63,7 +68,7 @@ export default function MediaCard ({ cardInfo }) {
                       >
                         {card.title}
                       </Typography>
-                      <Typography variant='body2' color='textSecondary'>
+                      <Typography variant='body2' color='textSecondary' display='inline'>
                         {card.text}
                       </Typography>
                     </CardContent>
