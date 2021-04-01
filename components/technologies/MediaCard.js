@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     maxWidth: 350,
+    minHeight: 331,
   },
 
   media: {
@@ -53,7 +54,7 @@ export default function MediaCard ({ cardInfo }) {
           <Grid container spacing={2}>
             {cardInfo.map(card => (
               <Grid item xs={12} sm={6} md={6} lg={3} style={{ padding: '20px' }}>
-                <Card className={classes.card} raised='true' style={{ margin: 'auto' }}>
+                <Card className={classes.card} style={{ margin: 'auto' }}>
                   <CardMedia className={classes.media} image={card.image} component='img' />
                   <CardActionArea className={classes.MuiCardActionArea}>
                     <CardContent>

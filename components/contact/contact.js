@@ -100,10 +100,7 @@ export default function Contact () {
                     margin='normal'
                     required
                     fullWidth
-                    name='password'
                     label='email'
-                    type='password'
-                    id='password'
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position='start'>
@@ -117,10 +114,7 @@ export default function Contact () {
                     margin='normal'
                     required
                     fullWidth
-                    name='password'
                     label='message'
-                    type='password'
-                    id='password'
                     InputProps={{
                       className: classes.input,
                       startAdornment: (
