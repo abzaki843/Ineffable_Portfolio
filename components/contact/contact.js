@@ -45,11 +45,11 @@ export default function Contact () {
     <Box mt={10} id='contact'>
       <div className={(classes.root, classes.bg)}>
         <Grid container direction='row' justify='center' alignItems='center'>
-          <Grid item lg={5} className={classes.hide}>
-            <img src='/Assets/contact-img.png' />
+          <Grid item md={6} lg={7} xl={6} className={classes.hide}>
+            <img src='/Assets/contact-img.png' style={{ width: '100%' }} />
           </Grid>
 
-          <Grid item xs={12} lg={7}>
+          <Grid item xs={12} md={6} lg={5} xl={6}>
             <Container component='main' maxWidth='xs'>
               <CssBaseline />
               <div className={classes.paper}>
@@ -87,7 +87,6 @@ export default function Contact () {
                     label='Name'
                     name='email'
                     autoComplete='email'
-                 
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position='start'>
@@ -105,7 +104,6 @@ export default function Contact () {
                     label='email'
                     type='password'
                     id='password'
-                 
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position='start'>

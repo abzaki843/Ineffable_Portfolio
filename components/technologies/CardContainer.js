@@ -24,48 +24,49 @@ export default function CardContainer () {
       image: '/Assets/web.png',
       title: 'Web Development',
       text:
-        'We provide services for Website development with  technlogog stacks like  React JS, and Next JS   ',
+        ' Services for Website development with  technOLOGY stacks like  React JS, and Next JS   ',
     },
     {
       image: '/Assets/mobileapp.png',
       title: 'Mobile Apps',
       text:
-        'We Provide services for Mobile application development for Android, and IOS using  React Native Platfoam.',
+        ' Services for Mobile application development for Android, and IOS using  React Native Platfoam.',
     },
     {
       image: '/Assets/pwa.png',
       title: 'PWA',
       text:
-        '   We provide services of Progressive Web Apps  that can be installed on your Mobile devices and Desktops  ',
+        '  Services of Progressive Web Apps  that can be installed on your android and ios mobile devices  and computers  ',
     },
     {
       image: '/Assets/wordpress.png',
       title: 'Wordpress',
       text:
-        'We provide services of wordpress Development  to create  ecommerce  and bussiness portfolio websites  ',
+        ' Services of wordpress Development  to create  ecommerce ,blogs  bussiness portfolio & POS websites  ',
     },
     {
       image: '/Assets/design.png',
       title: 'Designing',
       text:
-        ' Mobile Friendly, and Professional UI Designs are developed as well as UX Design for better Digital Experiences',
+        ' Services of UI/UX design to help create user-friendly interfaces that enable users to understand how to use software products ',
     },
     {
       image: '/Assets/socialmedia.png',
       title: 'Social Media Marketing',
-      text: 'We provide services of promoting your bussiness through social media platfoams   ',
+      text:
+        ' Services of  Social media marketing using social media platfoamns to connect with you audience to build you brand & increase sales ',
     },
     {
       image: '/Assets/ecommerce.png',
       title: 'Ecommerce',
       text:
-        'We provide services of Ecommerce to digitally transform your bussiness using modern technology stack platfoams',
+        ' Services of Ecommerce to digitally transform your bussiness into online stores using modern technology  platfoams',
     },
     {
       image: '/Assets/branding.png',
       title: 'Branding',
       text:
-        ' We provide services of branding by helping you with unique brand name, modern logos  and bussiness slogans',
+        ' Services of branding by helping you with unique brand names, modern logos  and innovative bussiness slogans',
     },
   ]
   return (

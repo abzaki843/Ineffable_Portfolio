@@ -26,7 +26,7 @@ export default function ProjectContainer () {
       image1: '/Assets/van.png',
       title: 'Van Go',
       Text:
-        'A Web Application which is highly responsive and fast while being installation free for those in need of moving their precious goods securely and safely with help available at every stage via the Web Application. Some main features are:',
+        'Van go is our startup product  to be launched in UK .Van go will help users move from one place to other or relocating your bussiness or house  by providing transport and Manpower services ',
       feature1: 'Highly Responsive and Fast Web Application for both User and Driver.',
       feature2:
         ' User uses Live Tracking for tracking the Status of the Order along with location information.',
@@ -41,7 +41,7 @@ export default function ProjectContainer () {
       image1: '/Assets/jamm.png',
       title: 'Jam Commerce',
       Text:
-        'An E-Commerce Platform which is free of any 3rd Party Cart System and can be changed according to need with ease. There are many reasons to use JAM Commerce some of them are given below:',
+        'An E-Commerce Platform which is free of any 3rd Party Cart System and can be changed according to need with ease. ',
       feature1:
         'It provides powerful framework so that no high customizability is needed everything is already done for you and only minor additions are needed.',
       feature2: 'It has E-Commerce Store which is blazing fast due to usage of Next JS ',
@@ -56,7 +56,7 @@ export default function ProjectContainer () {
       image1: '/Assets/covid.png',
       title: 'Covid 19',
       Text:
-        'A website developed to educate people about Covid 19 and keeps update about Covid19 live counts locally and Globally .Key features of website are as follows:game nai  ',
+        'A website developed to educate people about Covid 19 and keeps updated about Covid19 live counts locally and Globally . ',
       feature1:
         ' Complete details about COVID-19 that include General Information, Wrong Myths, Precautionary Measures, and Symptoms',
       feature2:
@@ -72,7 +72,7 @@ export default function ProjectContainer () {
       image1: '/Assets/tours.png',
       title: 'Tours De North',
       Text:
-        'A Website for all people who want to visit Northern Areas of Pakistan. It provides many packages of ranging differences and provides all information needed for the trip. The Main features are:',
+        'A Website for all people who want to visit Northern Areas of Pakistan. It provides many packages of ranging differences and provides all information needed for the trip.',
       feature1:
         '  Detailed info about different tourist attraction site in Northeren Areas of Pakistan ',
       feature2: 'Details about pervious tours clicks and activities',
