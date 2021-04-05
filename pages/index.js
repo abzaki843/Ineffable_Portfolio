@@ -27,8 +27,6 @@ import Footer from '../components/footer'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import Slide from '@material-ui/core/Slide'
 import PropTypes from 'prop-types'
-import firebase from './config'
-firebase()
 
 const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
