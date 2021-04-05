@@ -101,7 +101,7 @@ export default function AboutCont () {
 
           {AboutInfo.map(about => (
             <>
-              <Grid item xs={12} sm={6} md={3} lg={3}>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
                 <ProfileCardDemo
                   aboutImage={about.image}
                   aboutTitle={about.title}

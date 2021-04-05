@@ -74,7 +74,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
   function CardRow () {
     return (
       <React.Fragment>
-        <Card className={cx(styles.card, shadowStyles.root)}>
+        <Card className={cx(styles.card)}>
           <CardContent>
             <Avatar className={styles.avatar} src={aboutImage} />
             <h3 className={styles.heading}>{aboutTitle}</h3>
