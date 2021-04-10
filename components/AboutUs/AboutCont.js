@@ -44,7 +44,7 @@ export default function AboutCont () {
       facebook: 'https://www.facebook.com/heman7',
     },
     {
-      image: '/Assets/abk.jfif',
+      image: '/Assets/abk.jpg',
       title: 'Manager',
       name: 'Abdul Basit ',
       linked: 'https://www.linkedin.com/in/abdul-basit-khan-70a893186/',
