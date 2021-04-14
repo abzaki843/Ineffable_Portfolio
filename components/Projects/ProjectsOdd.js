@@ -8,7 +8,8 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import Divider from '@material-ui/core/Divider'
+
+import Slide from '@material-ui/core/Slide'
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 
@@ -51,50 +52,56 @@ export default function ProjectsOdd ({
         <Grid container spacing={1} direction='row' justify='center' alignItems='flex-start'>
           <>
             <Grid item xs={12} lg={6} style={{ marginTop: '180px' }}>
-              <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
-                {ProjectTitle}
-              </Typography>
-              <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
-                {projectText}
-              </Typography>
+              <Slide direction='left' in mountOnEnter unmountOnExit>
+                <div>
+                  <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
+                    {ProjectTitle}
+                  </Typography>
+                  <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
+                    {projectText}
+                  </Typography>
 
-              <div className={classes.list}>
-                <List component='nav' aria-label='main mailbox folders'>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature1} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature2} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature3} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature4} />
-                  </ListItem>
-                </List>
-              </div>
-              <Box ml={8}>
-                *{' '}
-                <Button variant='contained' color='primary' href={projectRef}>
-                  LEARN MORE
-                </Button>
-              </Box>
+                  <div className={classes.list}>
+                    <List component='nav' aria-label='main mailbox folders'>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature1} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature2} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature3} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature4} />
+                      </ListItem>
+                    </List>
+                  </div>
+                  <Box ml={8}>
+                    *{' '}
+                    <Button variant='contained' color='primary' href={projectRef}>
+                      LEARN MORE
+                    </Button>
+                  </Box>
+                </div>
+              </Slide>
             </Grid>
             <Grid item lg={6}>
-              <img src={projectImage} style={{ width: '100%' }} />
+              <Slide direction='right' in mountOnEnter unmountOnExit>
+                <img src={projectImage} style={{ width: '100%' }} />
+              </Slide>
             </Grid>
           </>
         </Grid>

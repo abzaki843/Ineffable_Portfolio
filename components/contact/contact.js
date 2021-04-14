@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import 'fontsource-roboto'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-
+import Slide from '@material-ui/core/Slide'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
@@ -46,95 +46,101 @@ export default function Contact () {
       <div className={(classes.root, classes.bg)}>
         <Grid container direction='row' justify='center' alignItems='center'>
           <Grid item md={6} lg={7} xl={6} className={classes.hide}>
-            <img src='/Assets/contact-img.png' style={{ width: '100%' }} />
+            <Slide direction='right' in mountOnEnter unmountOnExit>
+              <img src='/Assets/contact-img.png' style={{ width: '100%' }} />
+            </Slide>
           </Grid>
 
           <Grid item xs={12} md={6} lg={5} xl={6}>
             <Container component='main' maxWidth='xs'>
               <CssBaseline />
               <div className={classes.paper}>
-                <Hidden mdDown>
-                  <Box mt={5}>
-                    <Typography component='h1' variant='h3' color='textPrimary'>
-                      Get In Touch
+                <Slide direction='left' in mountOnEnter unmountOnExit>
+                  <div>
+                    <Hidden mdDown>
+                      <Box mt={5}>
+                        <Typography component='h1' variant='h3' color='textPrimary'>
+                          Get In Touch
+                        </Typography>
+                        <img src='/Assets/divider.png' style={{ width: '70%', height: '2px' }} />
+                      </Box>
+                    </Hidden>
+                    <Hidden lgUp>
+                      <Box align='center'>
+                        <Box mt={2} />
+                        <Typography component='h1' variant='h3' color='textPrimary'>
+                          Get In Touch
+                        </Typography>
+                        <img
+                          src='/Assets/divider.png'
+                          style={{ width: '50%', height: 'auto', padding: '10px' }}
+                        />
+                      </Box>
+                    </Hidden>
+                    <Box my={2} />
+                    <Typography variant='body1' color='textSecondary'>
+                      Lets Start Something New ! Just ask and get Answers
                     </Typography>
-                    <img src='/Assets/divider.png' style={{ width: '70%', height: '2px' }} />
-                  </Box>
-                </Hidden>
-                <Hidden lgUp>
-                  <Box align='center'>
-                    <Box mt={2} />
-                    <Typography component='h1' variant='h3' color='textPrimary'>
-                      Get In Touch
-                    </Typography>
-                    <img
-                      src='/Assets/divider.png'
-                      style={{ width: '50%', height: 'auto', padding: '10px' }}
-                    />
-                  </Box>
-                </Hidden>
-                <Box my={2} />
-                <Typography variant='body1' color='textSecondary'>
-                  Lets Start Something New ! Just ask and get Answers
-                </Typography>
-                <form className={classes.form} noValidate>
-                  <TextField
-                    variant='outlined'
-                    margin='normal'
-                    required
-                    fullWidth
-                    id='email'
-                    label='Name'
-                    name='email'
-                    autoComplete='email'
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position='start'>
-                          <AccountCircle />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                  <TextField
-                    variant='outlined'
-                    margin='normal'
-                    required
-                    fullWidth
-                    label='email'
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position='start'>
-                          <EmailIcon />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                  <TextField
-                    variant='outlined'
-                    margin='normal'
-                    required
-                    fullWidth
-                    label='message'
-                    InputProps={{
-                      className: classes.input,
-                      startAdornment: (
-                        <InputAdornment position='start'>
-                          <MessageIcon />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                  <Box align='center' mb={2}>
-                    <Button
-                      type='submit'
-                      variant='contained'
-                      color='primary'
-                      className={classes.submit}
-                    >
-                      Send
-                    </Button>
-                  </Box>
-                </form>
+                    <form className={classes.form} noValidate>
+                      <TextField
+                        variant='outlined'
+                        margin='normal'
+                        required
+                        fullWidth
+                        id='email'
+                        label='Name'
+                        name='email'
+                        autoComplete='email'
+                        InputProps={{
+                          startAdornment: (
+                            <InputAdornment position='start'>
+                              <AccountCircle />
+                            </InputAdornment>
+                          ),
+                        }}
+                      />
+                      <TextField
+                        variant='outlined'
+                        margin='normal'
+                        required
+                        fullWidth
+                        label='email'
+                        InputProps={{
+                          startAdornment: (
+                            <InputAdornment position='start'>
+                              <EmailIcon />
+                            </InputAdornment>
+                          ),
+                        }}
+                      />
+                      <TextField
+                        variant='outlined'
+                        margin='normal'
+                        required
+                        fullWidth
+                        label='message'
+                        InputProps={{
+                          className: classes.input,
+                          startAdornment: (
+                            <InputAdornment position='start'>
+                              <MessageIcon />
+                            </InputAdornment>
+                          ),
+                        }}
+                      />
+                      <Box align='center' mb={2}>
+                        <Button
+                          type='submit'
+                          variant='contained'
+                          color='primary'
+                          className={classes.submit}
+                        >
+                          Send
+                        </Button>
+                      </Box>
+                    </form>
+                  </div>
+                </Slide>
               </div>
             </Container>
           </Grid>

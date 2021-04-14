@@ -7,6 +7,7 @@ import { Hidden } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MediaCard from './MediaCard'
 import 'fontsource-roboto'
+import Slide from '@material-ui/core/Slide'
 
 const useStyles = makeStyles({
   divider: {
@@ -77,19 +78,22 @@ export default function CardContainer () {
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
               <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
-                  <Typography variant='h3' gutterBottom color='textPrimary'>
-                    Technologies & Services
-                  </Typography>
-
+                  <Slide direction='right' in mountOnEnter unmountOnExit>
+                    <Typography variant='h3' gutterBottom color='textPrimary'>
+                      Technologies & Services
+                    </Typography>
+                  </Slide>
                   <img
                     src='/Assets/divider.png'
                     style={{ width: '100%', height: '12px', padding: '5px' }}
                   />
                 </Box>
-                <Typography variant='h5' gutterBottom color='textSecondary'>
-                  We believe in delivering premier services with cutting edge and forefront
-                  technology
-                </Typography>
+                <Slide direction='left' in mountOnEnter unmountOnExit>
+                  <Typography variant='h5' gutterBottom color='textSecondary'>
+                    We believe in delivering premier services with cutting edge and forefront
+                    technology
+                  </Typography>
+                </Slide>
               </Hidden>
             </Box>
           </Grid>

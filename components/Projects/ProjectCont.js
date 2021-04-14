@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import ProjectsOdd from './ProjectsOdd'
 import ProjectsEven from './ProjectsEven'
 import ProjectsSm from './ProjectsSm'
+import Slide from '@material-ui/core/Slide'
 import 'fontsource-roboto'
 const useStyles = makeStyles({
   divider: {
@@ -86,9 +87,11 @@ export default function ProjectContainer () {
       <Grid container justify='center' alignItems='center'>
         <Grid item direction='column' xs={12} lg={4} justifyItems='grid'>
           <Box mt={10} display='grid' justifyItems='center'>
-            <Typography variant='h3' gutterBottom color='textPrimary'>
-              Our Work
-            </Typography>
+            <Slide direction='up' in mountOnEnter unmountOnExit>
+              <Typography variant='h3' gutterBottom color='textPrimary'>
+                Our Work
+              </Typography>
+            </Slide>
             <img src='/Assets/divider.png' style={{ width: '25%', height: '2px' }} />
           </Box>
         </Grid>

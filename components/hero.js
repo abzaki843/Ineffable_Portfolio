@@ -7,6 +7,7 @@ import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
 import { Hidden } from '@material-ui/core'
+import Slide from '@material-ui/core/Slide'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,13 +27,17 @@ export default function Hero () {
         <Grid item lg={5}>
           <Box m={3}>
             <Hidden mdDown>
-              <Typography variant='h3' gutterBottom color='textPrimary'>
-                Innovative Software Company
-              </Typography>
-              <img
-                src='/Assets/divider.png'
-                style={{ width: '80%', height: '12px', padding: '5px' }}
-              />
+              <Slide direction='left' in mountOnEnter unmountOnExit>
+                <Typography variant='h3' gutterBottom color='textPrimary'>
+                  Innovative Software Company
+                </Typography>
+              </Slide>
+              <Slide direction='right' in mountOnEnter unmountOnExit>
+                <img
+                  src='/Assets/divider.png'
+                  style={{ width: '80%', height: '12px', padding: '5px' }}
+                />
+              </Slide>
             </Hidden>
             <Hidden lgUp>
               <Box align='center'>
@@ -48,49 +53,36 @@ export default function Hero () {
             </Hidden>
 
             <Hidden mdDown>
-              <Typography
-                variant='h5'
-                component='h2'
-                gutterBottom
-                color='textSecondary'
-                align='justify'
-              >
-                Inventing better Future
-              </Typography>
-              <Typography variant='body1' gutterBottom color='textSecondary' align='justify'>
-                We Are a Team of software developers, Highly Dedicated to develop Products that
-                Matter
-              </Typography>
+              <Slide direction='left' in mountOnEnter unmountOnExit>
+                <Typography
+                  variant='h5'
+                  component='h2'
+                  gutterBottom
+                  color='textSecondary'
+                  align='justify'
+                >
+                  Inventing better Future
+                </Typography>
+              </Slide>
+              <Slide direction='left' in mountOnEnter unmountOnExit>
+                <Typography variant='body1' gutterBottom color='textSecondary' align='justify'>
+                  We Are a Team of software developers, Highly Dedicated to develop Products that
+                  Matter
+                </Typography>
+              </Slide>
               {/*   <Button variant='contained' color='primary'>
                 Explore More
               </Button>
          
               */}
             </Hidden>
-
-            <Hidden lgUp mdDown>
-              <Typography
-                variant='h4'
-                component='h2'
-                gutterBottom
-                color='textSecondary'
-                align='justify'
-              >
-                We Are here to give Best Services
-              </Typography>
-              <Typography variant='subtitle1' gutterBottom color='textSecondary' align='justify'>
-                We Are a Team of software developers. Highly Dedicated to develop Products that
-                Matter
-              </Typography>
-              <Button variant='contained' color='primary'>
-                Explore More
-              </Button>
-            </Hidden>
           </Box>
         </Grid>
 
         <Grid item xs={12} md={10} lg={7}>
-          <img src='/Assets/hero-img.png' style={{ width: '100%', height: 'auto' }} />
+          <Slide direction='right' in mountOnEnter unmountOnExit>
+            <img src='/Assets/hero-img.png' style={{ width: '100%', height: 'auto' }} />
+          </Slide>
         </Grid>
         <Hidden lgUp>
           <Grid item xs={11} md={10}>
