@@ -140,22 +140,21 @@ export default function ButtonAppBar (props) {
         >
           <Toolbar justifyContent='flex-end'>
             <Hidden lgUp>
-            <IconButton
-              edge='start'
-              color='inherit'
-              aria-label='menu'
-              onClick={handleDrawerOpen}
-              edge='start'
-              className={clsx(classes.menuButton, open && classes.hide)}
-              style={{marginRight:"-54px"}}
-            >
-              <Hidden lgUp>
-                <MenuIcon />
-              </Hidden>
-            </IconButton>
+              <IconButton
+                edge='start'
+                color='inherit'
+                aria-label='menu'
+                onClick={handleDrawerOpen}
+                edge='start'
+                className={clsx(classes.menuButton, open && classes.hide)}
+                style={{ marginRight: '-54px' }}
+              >
+                <Hidden lgUp>
+                  <MenuIcon />
+                </Hidden>
+              </IconButton>
             </Hidden>
-            <Box display='flex' flexGrow={1} >
-           
+            <Box display='flex' flexGrow={1}>
               <Hidden mdDown>
                 <Link href='#hero'>
                   <img
@@ -165,9 +164,8 @@ export default function ButtonAppBar (props) {
                   />
                 </Link>
               </Hidden>
-            
-              <Hidden lgUp >
-              
+
+              <Hidden lgUp>
                 <Link href='#hero'>
                   <img
                     src='./Assets/logo.png'
@@ -178,7 +176,6 @@ export default function ButtonAppBar (props) {
                     }}
                   />
                 </Link>
-               
               </Hidden>
             </Box>
 

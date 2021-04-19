@@ -7,6 +7,7 @@ import { Hidden } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MediaCard from './MediaCard'
 import 'fontsource-roboto'
+import Slide from '@material-ui/core/Slide'
 
 const useStyles = makeStyles({
   divider: {
@@ -22,96 +23,99 @@ export default function CardContainer () {
   const cardInfo = [
     {
       image: '/Assets/web.png',
-      title: 'Web App Development',
+      title: 'Web Development',
       text:
-        'We provide services for Website and Web Application Development of all kinds. The technologies that you can chose from are Custom, WordPress, React JS, and Next JS based Websites and Web Applications.  ',
+        ' Services for Website development with  technOLOGY stacks like  React JS, and Next JS   ',
     },
     {
       image: '/Assets/mobileapp.png',
-      title: 'Mobile App Development',
+      title: 'Mobile Apps',
       text:
-        'We create High Performing, Digitally Transformative, Responsive, Mobile Friendly, and Feature-Packed Native Mobile Applications for Android, and IOS using React Native.',
+        ' Services for Mobile application development for Android, and IOS using  React Native Platfoam.',
     },
     {
       image: '/Assets/pwa.png',
       title: 'PWA',
       text:
-        '  Progressive Web Apps (PWA) web applications  are regular web pages or websites, but can appear to the user like traditional applications or native mobile applications  ',
+        '  Services of Progressive Web Apps  that can be installed on your android and ios mobile devices  and computers  ',
     },
     {
       image: '/Assets/wordpress.png',
       title: 'Wordpress',
       text:
-        'We provide WordPress services for Website Development of your choice. The Theme Builder of our choice is DIVI using which we can create a Simple Static Site or a Fully Fledged Blogs site  ',
+        ' Services of wordpress Development  to create  ecommerce ,blogs  bussiness portfolio & POS websites  ',
     },
     {
       image: '/Assets/design.png',
       title: 'Designing',
       text:
-        ' Mobile Friendly, and Professional UI Designs are developed as well as UX Design for better Digital Experiences',
+        ' Services of UI/UX design to help create user-friendly interfaces that enable users to understand how to use software products ',
     },
     {
       image: '/Assets/socialmedia.png',
       title: 'Social Media Marketing',
       text:
-        'We provide Brand Promotion Services using Social Media Marketing for Brand Awareness on Social Media Platforms ',
+        ' Services of  Social media marketing using social media platfoamns to connect with you audience to build you brand & increase sales ',
     },
     {
       image: '/Assets/ecommerce.png',
       title: 'Ecommerce',
       text:
-        'E Commerce Solutions are designed so that digital transformation of the business is done using Next JS and WordPress. .',
+        ' Services of Ecommerce to digitally transform your bussiness into online stores using modern technology  platfoams',
     },
     {
       image: '/Assets/branding.png',
       title: 'Branding',
       text:
-        'Modern, Unique, and Professionally made Custom Logo Designs and Concepts are made so that your business stands ',
+        ' Services of branding by helping you with unique brand names, modern logos  and innovative bussiness slogans',
     },
   ]
   return (
     <div id='tech'>
       <Box ml={2}>
         <Grid container direction='row' justify='center'>
-          <Grid item  lg={10}>
+          <Grid item lg={10}>
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
               <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
-                  <Typography variant='h3' gutterBottom color='textPrimary'>
-                    Technologies & Services
-                  </Typography>
-
+                  <Slide direction='right' in mountOnEnter unmountOnExit>
+                    <Typography variant='h3' gutterBottom color='textPrimary'>
+                      Technologies & Services
+                    </Typography>
+                  </Slide>
                   <img
                     src='/Assets/divider.png'
                     style={{ width: '100%', height: '12px', padding: '5px' }}
                   />
                 </Box>
-                <Typography variant='h5' gutterBottom color='textSecondary'>
-                  We believe in delivering premier services with cutting edge and forefront
-                  technology
-                </Typography>
+                <Slide direction='left' in mountOnEnter unmountOnExit>
+                  <Typography variant='h5' gutterBottom color='textSecondary'>
+                    We believe in delivering premier services with cutting edge and forefront
+                    technology
+                  </Typography>
+                </Slide>
               </Hidden>
             </Box>
           </Grid>
 
           <Grid item xs={12} lg={12}>
             <Box mt={5} display='grid' justifyContent='center' alignItems='center'>
-              <Hidden lgUp >
-              <Box  display='grid' justifyContent='center' alignItems='center'>
-                <Hidden xsDown>
-                <Typography variant='h4' gutterBottom color='textPrimary'>
-                  Services & Technologies
-                </Typography>
-                </Hidden>
-                <Hidden smUp>
-                <Typography variant='h4' gutterBottom color='textPrimary'>
-                  Services We Offer
-                </Typography>
-                </Hidden>
-                <img
-                  src='/Assets/divider.png'
-                  style={{ width: '100%', height: '12px', padding: '5px' }}
-                />
+              <Hidden lgUp>
+                <Box display='grid' justifyContent='center' alignItems='center'>
+                  <Hidden xsDown>
+                    <Typography variant='h4' gutterBottom color='textPrimary'>
+                      Services & Technologies
+                    </Typography>
+                  </Hidden>
+                  <Hidden smUp>
+                    <Typography variant='h4' gutterBottom color='textPrimary'>
+                      Services We Offer
+                    </Typography>
+                  </Hidden>
+                  <img
+                    src='/Assets/divider.png'
+                    style={{ width: '100%', height: '12px', padding: '5px' }}
+                  />
                 </Box>
                 <Typography variant='body1' gutterBottom color='textSecondary'>
                   We believe in delivering premier services with cutting edge and forefront
@@ -119,7 +123,6 @@ export default function CardContainer () {
                 </Typography>
               </Hidden>
             </Box>
-        
           </Grid>
         </Grid>
       </Box>

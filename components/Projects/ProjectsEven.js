@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import Paper from '@material-ui/core/Paper'
 import Image from 'next/image'
+import Slide from '@material-ui/core/Slide'
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 import { grey } from '@material-ui/core/colors'
@@ -58,54 +59,58 @@ export default function ProjectsEven ({
     <div className={(classes.root, classes.margin)}>
       <Box mr={8}>
         <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
-          <>
-            <Grid item lg={6}>
+          <Grid item lg={6}>
+            <Slide direction='right' in mountOnEnter unmountOnExit>
               <img src={projectImage} style={{ width: '100%' }} />
-            </Grid>
+            </Slide>
+          </Grid>
 
-            <Grid item xs={12} lg={6} style={{ marginTop: '90px' }}>
-              <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
-                {ProjectTitle}
-              </Typography>
-              <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
-                {projectText}
-              </Typography>
+          <Grid item xs={12} lg={6} style={{ marginTop: '90px' }}>
+            <Slide direction='left' in mountOnEnter unmountOnExit>
+              <div>
+                <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
+                  {ProjectTitle}
+                </Typography>
+                <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
+                  {projectText}
+                </Typography>
 
-              <div className={classes.list}>
-                <List component='nav' aria-label='main mailbox folders'>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature1} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature2} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature3} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature4} />
-                  </ListItem>
-                </List>
+                <div className={classes.list}>
+                  <List component='nav' aria-label='main mailbox folders'>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <CheckCircleOutlineRoundedIcon color='primary' />
+                      </ListItemIcon>
+                      <ListItemText secondary={projectFeature1} />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <CheckCircleOutlineRoundedIcon color='primary' />
+                      </ListItemIcon>
+                      <ListItemText secondary={projectFeature2} />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <CheckCircleOutlineRoundedIcon color='primary' />
+                      </ListItemIcon>
+                      <ListItemText secondary={projectFeature3} />
+                    </ListItem>
+                    <ListItem button>
+                      <ListItemIcon>
+                        <CheckCircleOutlineRoundedIcon color='primary' />
+                      </ListItemIcon>
+                      <ListItemText secondary={projectFeature4} />
+                    </ListItem>
+                  </List>
+                </div>
+                <Box ml={8}>
+                  <Button variant='contained' color='primary' href={projectRef}>
+                    LEARN MORE
+                  </Button>
+                </Box>
               </div>
-              <Box ml={8}>
-                <Button variant='contained' color='primary' href={projectRef}>
-                  LEARN MORE
-                </Button>
-              </Box>
-            </Grid>
-          </>
+            </Slide>
+          </Grid>
         </Grid>
       </Box>
     </div>

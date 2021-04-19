@@ -12,6 +12,10 @@ import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Switch from '@material-ui/core/Switch'
+import Paper from '@material-ui/core/Paper'
+import Zoom from '@material-ui/core/Zoom'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 const theme = {
   spacing: 8,
 }
@@ -28,6 +32,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     maxWidth: 350,
+    minHeight: 331,
   },
 
   media: {
@@ -36,10 +41,19 @@ const useStyles = makeStyles(theme => ({
   divider: {
     width: '100%',
   },
+  MuiCardActionArea: {
+    width: '100%',
+    display: 'block',
+    textAlign: 'center',
+  },
 }))
 
 export default function MediaCard ({ cardInfo }) {
   const classes = useStyles()
+
+  const handleChange = () => {
+    setChecked(prev => !prev)
+  }
 
   return (
     <>
@@ -48,27 +62,29 @@ export default function MediaCard ({ cardInfo }) {
           <Grid container spacing={2}>
             {cardInfo.map(card => (
               <Grid item xs={12} sm={6} md={6} lg={3} style={{ padding: '20px' }}>
-                <Card className={classes.card} raised='true' style={{ margin: 'auto' }}>
-                  <CardMedia className={classes.media} image={card.image} component='img' />
-                  <CardActionArea>
-                    <CardContent>
-                      <Typography
-                        gutterBottom
-                        variant='h5'
-                        direction='row'
-                        justify='center'
-                        align='center'
-                        style={{ align: 'center' }}
-                        color='textSecondary'
-                      >
-                        {card.title}
-                      </Typography>
-                      <Typography variant='body2' color='textSecondary'>
-                        {card.text}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
+                <Zoom in>
+                  <Card className={classes.card} style={{ margin: 'auto' }}>
+                    <CardMedia className={classes.media} image={card.image} component='img' />
+                    <CardActionArea className={classes.MuiCardActionArea}>
+                      <CardContent>
+                        <Typography
+                          gutterBottom
+                          variant='h5'
+                          direction='row'
+                          justify='center'
+                          align='center'
+                          style={{ align: 'center' }}
+                          color='textSecondary'
+                        >
+                          {card.title}
+                        </Typography>
+                        <Typography variant='body2' color='textSecondary' display='inline'>
+                          {card.text}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </Zoom>
               </Grid>
             ))}
           </Grid>

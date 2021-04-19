@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import Link from 'next/link'
+import Collapse from '@material-ui/core/Collapse'
 
 const useStyles = makeStyles(({ palette, theme }) => ({
   root: {
@@ -74,32 +75,34 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
   function CardRow () {
     return (
       <React.Fragment>
-        <Card className={cx(styles.card, shadowStyles.root)}>
-          <CardContent>
-            <Avatar className={styles.avatar} src={aboutImage} />
-            <h3 className={styles.heading}>{aboutTitle}</h3>
-            <span className={styles.subheader}>{aboutName}</span>
-          </CardContent>
-          <Divider light />
-          <Box display={'flex'}>
-            <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-              <p className={styles.statLabel}>
-                {' '}
-                <Link href={linked}>
-                  <LinkedInIcon style={{ color: '#67c974' }} />
-                </Link>
-              </p>
+        <Collapse in>
+          <Card className={cx(styles.card)}>
+            <CardContent>
+              <Avatar className={styles.avatar} src={aboutImage} />
+              <h3 className={styles.heading}>{aboutTitle}</h3>
+              <span className={styles.subheader}>{aboutName}</span>
+            </CardContent>
+            <Divider light />
+            <Box display={'flex'}>
+              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+                <p className={styles.statLabel}>
+                  {' '}
+                  <Link href={linked}>
+                    <LinkedInIcon style={{ color: '#67c974' }} />
+                  </Link>
+                </p>
+              </Box>
+              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+                <p className={styles.statLabel}>
+                  {' '}
+                  <Link href={facebook}>
+                    <FacebookIcon style={{ color: '#67c974' }} />
+                  </Link>{' '}
+                </p>
+              </Box>
             </Box>
-            <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-              <p className={styles.statLabel}>
-                {' '}
-                <Link href={facebook}>
-                  <FacebookIcon style={{ color: '#67c974' }} />
-                </Link>{' '}
-              </p>
-            </Box>
-          </Box>
-        </Card>
+          </Card>
+        </Collapse>
       </React.Fragment>
     )
   }
