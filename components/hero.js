@@ -7,8 +7,8 @@ import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
 import { Hidden } from '@material-ui/core'
-import Slide from '@material-ui/core/Slide'
 
+import {motion} from 'framer-motion'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -22,22 +22,32 @@ export default function Hero () {
   const classes = useStyles()
 
   return (
-    <div className={(classes.root, classes.bg)} id='hero'>
+    <div className={(classes.root, classes.bg)} id='hero' >
       <Grid container direction='row' justify='center' alignItems='center'>
+
         <Grid item lg={5}>
+        <motion.div
+  initial={{x:'-100vw'}}
+  animate={{x:0}}
+  transition={{delay:0.5,duration:0.5}}
+ >
           <Box m={3}>
             <Hidden mdDown>
-              <Slide direction='left' in mountOnEnter unmountOnExit>
+           
                 <Typography variant='h3' gutterBottom color='textPrimary'>
                   Innovative Software Company
                 </Typography>
-              </Slide>
-              <Slide direction='right' in mountOnEnter unmountOnExit>
-                <img
+           
+            
+                <motion.img
                   src='/Assets/divider.png'
                   style={{ width: '80%', height: '12px', padding: '5px' }}
+                  initial={{x:'-100vw'}}
+animate={{x:0}}
+transition={{delay:1,duration:1}}
+
                 />
-              </Slide>
+          
             </Hidden>
             <Hidden lgUp>
               <Box align='center'>
@@ -45,15 +55,19 @@ export default function Hero () {
                   Innovative Software Company
                 </Typography>
 
-                <img
+                <motion.img
                   src='/Assets/divider.png'
-                  style={{ width: '20%', height: 'auto', padding: '5px' }}
+                  style={{ width: '40%', height: 'auto', padding: '5px' }}
+                  initial={{x:'-100vw'}}
+animate={{x:0}}
+transition={{delay:1,duration:1}}
+
                 />
               </Box>
             </Hidden>
 
             <Hidden mdDown>
-              <Slide direction='left' in mountOnEnter unmountOnExit>
+           
                 <Typography
                   variant='h5'
                   component='h2'
@@ -63,13 +77,13 @@ export default function Hero () {
                 >
                   Inventing better Future
                 </Typography>
-              </Slide>
-              <Slide direction='left' in mountOnEnter unmountOnExit>
+          
+           
                 <Typography variant='body1' gutterBottom color='textSecondary' align='justify'>
                   We Are a Team of software developers, Highly Dedicated to develop Products that
                   Matter
                 </Typography>
-              </Slide>
+         
               {/*   <Button variant='contained' color='primary'>
                 Explore More
               </Button>
@@ -77,12 +91,18 @@ export default function Hero () {
               */}
             </Hidden>
           </Box>
+          </motion.div>
         </Grid>
+      
 
         <Grid item xs={12} md={10} lg={7}>
-          <Slide direction='right' in mountOnEnter unmountOnExit>
+        <motion.div
+
+initial={{x:'100vw'}}
+  animate={{x:0}}
+  transition={{delay:0.5,duration:0.5}}>
             <img src='/Assets/hero-img.png' style={{ width: '100%', height: 'auto' }} />
-          </Slide>
+    </motion.div>
         </Grid>
         <Hidden lgUp>
           <Grid item xs={11} md={10}>

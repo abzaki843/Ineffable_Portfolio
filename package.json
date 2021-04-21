@@ -13,8 +13,8 @@
     "@material-ui/icons": "^4.11.2",
     "@mui-treasury/styles": "^1.13.1",
     "axios": "^0.21.1",
-    "firebase": "^8.3.2",
     "fontsource-roboto": "^4.0.0",
+    "framer-motion": "^4.1.5",
     "material-ui-image": "^3.3.1",
     "material-ui-textfield-icon": "^0.2.8",
     "next": "^10.1.2",
@@ -22,5 +22,4 @@
     "react-dom": "17.0.1",
     "react-router-dom": "^5.2.0"
   }
-  
 }

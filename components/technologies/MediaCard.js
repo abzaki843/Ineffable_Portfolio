@@ -10,12 +10,7 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
-import Divider from '@material-ui/core/Divider'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
-import Switch from '@material-ui/core/Switch'
-import Paper from '@material-ui/core/Paper'
-import Zoom from '@material-ui/core/Zoom'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
+import {motion} from 'framer-motion'
 const theme = {
   spacing: 8,
 }
@@ -48,7 +43,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function MediaCard ({ cardInfo }) {
+export default function MediaCard ({ cardInfo },props) {
   const classes = useStyles()
 
   const handleChange = () => {
@@ -57,12 +52,12 @@ export default function MediaCard ({ cardInfo }) {
 
   return (
     <>
-      <div className={classes.margin}>
+      <div className={classes.margin}{...props}>
         <Box mt={1}>
           <Grid container spacing={2}>
             {cardInfo.map(card => (
               <Grid item xs={12} sm={6} md={6} lg={3} style={{ padding: '20px' }}>
-                <Zoom in>
+               <motion.div  whileHover={{scale:1.1,originX:0}}>
                   <Card className={classes.card} style={{ margin: 'auto' }}>
                     <CardMedia className={classes.media} image={card.image} component='img' />
                     <CardActionArea className={classes.MuiCardActionArea}>
@@ -84,7 +79,7 @@ export default function MediaCard ({ cardInfo }) {
                       </CardContent>
                     </CardActionArea>
                   </Card>
-                </Zoom>
+                  </motion.div>
               </Grid>
             ))}
           </Grid>

@@ -12,7 +12,8 @@ import Grid from '@material-ui/core/Grid'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import Link from 'next/link'
-import Collapse from '@material-ui/core/Collapse'
+import {motion} from 'framer-motion'
+
 
 const useStyles = makeStyles(({ palette, theme }) => ({
   root: {
@@ -75,7 +76,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
   function CardRow () {
     return (
       <React.Fragment>
-        <Collapse in>
+        <motion.div  whileHover={{scale:1.1,originX:0}}>
           <Card className={cx(styles.card)}>
             <CardContent>
               <Avatar className={styles.avatar} src={aboutImage} />
@@ -102,7 +103,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
               </Box>
             </Box>
           </Card>
-        </Collapse>
+          </motion.div>
       </React.Fragment>
     )
   }

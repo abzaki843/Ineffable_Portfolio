@@ -8,13 +8,10 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import Divider from '@material-ui/core/Divider'
-import Paper from '@material-ui/core/Paper'
-import Image from 'next/image'
-import Slide from '@material-ui/core/Slide'
+import {motion} from 'framer-motion'
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
-import { grey } from '@material-ui/core/colors'
+
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -60,13 +57,19 @@ export default function ProjectsEven ({
       <Box mr={8}>
         <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
           <Grid item lg={6}>
-            <Slide direction='right' in mountOnEnter unmountOnExit>
+          <motion.div
+initial={{x:'-100vw'}}
+  animate={{x:0}}
+  transition={{delay:5,duration:1}}>
               <img src={projectImage} style={{ width: '100%' }} />
-            </Slide>
+            </motion.div>
           </Grid>
 
           <Grid item xs={12} lg={6} style={{ marginTop: '90px' }}>
-            <Slide direction='left' in mountOnEnter unmountOnExit>
+          <motion.div
+initial={{x:'100vw'}}
+  animate={{x:0}}
+  transition={{delay:5,duration:1}}>
               <div>
                 <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                   {ProjectTitle}
@@ -76,6 +79,7 @@ export default function ProjectsEven ({
                 </Typography>
 
                 <div className={classes.list}>
+                  <motion.div  whileHover={{scale:1.1,originX:0,color:"green"}}>
                   <List component='nav' aria-label='main mailbox folders'>
                     <ListItem button>
                       <ListItemIcon>
@@ -102,14 +106,17 @@ export default function ProjectsEven ({
                       <ListItemText secondary={projectFeature4} />
                     </ListItem>
                   </List>
+                  </motion.div>
                 </div>
                 <Box ml={8}>
-                  <Button variant='contained' color='primary' href={projectRef}>
-                    LEARN MORE
-                  </Button>
+                <motion.div  whileHover={{scale:1.1,originX:0}}>
+                    <Button variant='contained' color='primary' href={projectRef}>
+                      LEARN MORE
+                    </Button>
+                    </motion.div>
                 </Box>
               </div>
-            </Slide>
+          </motion.div>
           </Grid>
         </Grid>
       </Box>

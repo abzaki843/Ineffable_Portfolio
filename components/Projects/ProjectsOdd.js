@@ -8,8 +8,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-
-import Slide from '@material-ui/core/Slide'
+import {motion} from 'framer-motion'
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 
@@ -52,7 +51,10 @@ export default function ProjectsOdd ({
         <Grid container spacing={1} direction='row' justify='center' alignItems='flex-start'>
           <>
             <Grid item xs={12} lg={6} style={{ marginTop: '180px' }}>
-              <Slide direction='left' in mountOnEnter unmountOnExit>
+            <motion.div
+initial={{x:'-100vw'}}
+  animate={{x:0}}
+  transition={{delay:5,duration:1}}>
                 <div>
                   <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                     {ProjectTitle}
@@ -62,6 +64,7 @@ export default function ProjectsOdd ({
                   </Typography>
 
                   <div className={classes.list}>
+                  <motion.div  whileHover={{scale:1.1,originX:0,color:"green"}}>
                     <List component='nav' aria-label='main mailbox folders'>
                       <ListItem button>
                         <ListItemIcon>
@@ -88,20 +91,25 @@ export default function ProjectsOdd ({
                         <ListItemText secondary={projectFeature4} />
                       </ListItem>
                     </List>
+                    </motion.div>
                   </div>
                   <Box ml={8}>
-                    *{' '}
+                  <motion.div  whileHover={{scale:1.1,originX:0}}>
                     <Button variant='contained' color='primary' href={projectRef}>
                       LEARN MORE
                     </Button>
+                    </motion.div>
                   </Box>
                 </div>
-              </Slide>
+          </motion.div>
             </Grid>
             <Grid item lg={6}>
-              <Slide direction='right' in mountOnEnter unmountOnExit>
+            <motion.div
+initial={{x:'100vw'}}
+  animate={{x:0}}
+  transition={{delay:5,duration:1}}>
                 <img src={projectImage} style={{ width: '100%' }} />
-              </Slide>
+                </motion.div>
             </Grid>
           </>
         </Grid>

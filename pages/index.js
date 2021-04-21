@@ -26,7 +26,7 @@ import List from '@material-ui/core/List'
 import Footer from '../components/footer'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import Slide from '@material-ui/core/Slide'
-import PropTypes from 'prop-types'
+import {motion } from 'framer-motion'
 
 const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
@@ -129,14 +129,21 @@ export default function ButtonAppBar (props) {
   }
 
   return (
-    <div className={classes.roots}>
+    <div className={classes.roots}
+  >
       <CssBaseline />
       <HideOnScroll {...props}>
+        <motion.div 
+        initial={{y:-250}}
+        animate={{y:0}}
+        transition={{delay:0.5,type:'spring',stiffness:250}}>
         <AppBar
           position='fixed'
           className={clsx(classes.appBar, {
             [classes.appBarShift]: open,
           })}
+          initial={{y:-250}}
+          animate={{y:0}}
         >
           <Toolbar justifyContent='flex-end'>
             <Hidden lgUp>
@@ -236,6 +243,7 @@ export default function ButtonAppBar (props) {
             </Hidden>
           </Toolbar>
         </AppBar>
+        </motion.div>
       </HideOnScroll>
       <Hidden lgUp>
         <Drawer

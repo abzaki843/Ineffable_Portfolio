@@ -8,6 +8,7 @@ import Box from '@material-ui/core/Box'
 import MediaCard from './MediaCard'
 import 'fontsource-roboto'
 import Slide from '@material-ui/core/Slide'
+import {motion } from  'framer-motion'
 
 const useStyles = makeStyles({
   divider: {
@@ -78,22 +79,37 @@ export default function CardContainer () {
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
               <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
-                  <Slide direction='right' in mountOnEnter unmountOnExit>
+                <motion.div 
+                    initial={{x:'100vw'}}
+                    animate={{x:0}}
+                    transition={{delay:0.5}}>
                     <Typography variant='h3' gutterBottom color='textPrimary'>
                       Technologies & Services
                     </Typography>
-                  </Slide>
+            </motion.div>
+            <motion.div
+
+initial={{x:'-100vw'}}
+  animate={{x:0}}
+  transition={{delay:1,duration:1}}>
                   <img
                     src='/Assets/divider.png'
                     style={{ width: '100%', height: '12px', padding: '5px' }}
+                    nitial={{x:'-100vw'}}
+                    animate={{x:0}}
+                    transition={{delay:2}}
                   />
+                  </motion.div>
                 </Box>
-                <Slide direction='left' in mountOnEnter unmountOnExit>
+                <motion.div 
+                    initial={{x:'-100vw'}}
+                    animate={{x:0}}
+                    transition={{delay:0.5}}>
                   <Typography variant='h5' gutterBottom color='textSecondary'>
                     We believe in delivering premier services with cutting edge and forefront
                     technology
                   </Typography>
-                </Slide>
+             </motion.div>
               </Hidden>
             </Box>
           </Grid>
@@ -102,16 +118,12 @@ export default function CardContainer () {
             <Box mt={5} display='grid' justifyContent='center' alignItems='center'>
               <Hidden lgUp>
                 <Box display='grid' justifyContent='center' alignItems='center'>
-                  <Hidden xsDown>
-                    <Typography variant='h4' gutterBottom color='textPrimary'>
-                      Services & Technologies
-                    </Typography>
-                  </Hidden>
-                  <Hidden smUp>
+                
+              
                     <Typography variant='h4' gutterBottom color='textPrimary'>
                       Services We Offer
                     </Typography>
-                  </Hidden>
+                
                   <img
                     src='/Assets/divider.png'
                     style={{ width: '100%', height: '12px', padding: '5px' }}
@@ -121,7 +133,9 @@ export default function CardContainer () {
                   We believe in delivering premier services with cutting edge and forefront
                   technology
                 </Typography>
+            
               </Hidden>
+            
             </Box>
           </Grid>
         </Grid>

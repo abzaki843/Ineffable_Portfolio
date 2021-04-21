@@ -14,6 +14,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 import EmailIcon from '@material-ui/icons/Email'
 import MessageIcon from '@material-ui/icons/Message'
 import { Hidden } from '@material-ui/core'
+import {motion} from 'framer-motion'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -46,16 +47,22 @@ export default function Contact () {
       <div className={(classes.root, classes.bg)}>
         <Grid container direction='row' justify='center' alignItems='center'>
           <Grid item md={6} lg={7} xl={6} className={classes.hide}>
-            <Slide direction='right' in mountOnEnter unmountOnExit>
+          <motion.div
+initial={{x:'-100vw'}}
+  animate={{x:0}}
+  transition={{delay:5,duration:1}}>
               <img src='/Assets/contact-img.png' style={{ width: '100%' }} />
-            </Slide>
+          </motion.div>
           </Grid>
 
           <Grid item xs={12} md={6} lg={5} xl={6}>
             <Container component='main' maxWidth='xs'>
               <CssBaseline />
               <div className={classes.paper}>
-                <Slide direction='left' in mountOnEnter unmountOnExit>
+              <motion.div
+initial={{x:'100vw'}}
+  animate={{x:0}}
+  transition={{delay:5,duration:1}}>
                   <div>
                     <Hidden mdDown>
                       <Box mt={5}>
@@ -140,7 +147,7 @@ export default function Contact () {
                       </Box>
                     </form>
                   </div>
-                </Slide>
+             </motion.div>
               </div>
             </Container>
           </Grid>
