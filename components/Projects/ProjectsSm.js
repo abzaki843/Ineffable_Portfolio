@@ -9,11 +9,25 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import 'fontsource-roboto'
-
+import { motion } from 'framer-motion'
 import 'fontsource-roboto'
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
-
+const buttonVariants = {
+  // visible: {
+  //   x: [0, -20, 20, -20, 20, 0],
+  //   transition: { delay: 2 }
+  // },
+  hover: {
+    scale: [1, 1.1, 1, 1.1, 1, 1.1],
+    textShadow: '0px 0px 8px rgb(255,255,255)',
+    boxShadow: '0px 0px 8px rgb(255,255,255)',
+    transition: {
+      duration: 0.3,
+      yoyo: 5,
+    },
+  },
+}
 const useStyles = makeStyles(theme => ({
   hide: {
     [theme.breakpoints.up('lg')]: {
@@ -96,9 +110,11 @@ export default function ProjectsSm ({
                     <ListItemText secondary={projectFeature4} />
                   </ListItem>
                   <Box ml={15}>
-                    <Button variant='contained' color='primary' justify='center' href={projectRef}>
-                      Visit Web
-                    </Button>
+                    <motion.div variants={buttonVariants} whileHover='hover'>
+                      <Button variant='contained' color='primary' href={projectRef}>
+                        LEARN MORE
+                      </Button>
+                    </motion.div>
                   </Box>
                 </List>
               </div>
