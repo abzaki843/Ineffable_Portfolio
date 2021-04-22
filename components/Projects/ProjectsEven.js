@@ -52,7 +52,6 @@ const buttonVariants = {
     boxShadow: '0px 0px 8px rgb(255,255,255)',
     transition: {
       duration: 0.3,
-      yoyo: 5,
     },
   },
 }
@@ -146,7 +145,7 @@ export default function ProjectsEven ({
                   </motion.div>
                 </div>
                 <Box ml={8}>
-                  <motion.div variants={buttonVariants} whileHover='hover'>
+                  <motion.div variants={buttonVariants} whileHover={{ scale: 1.1, originX: 0 }}>
                     <Button variant='contained' color='primary' href={projectRef}>
                       LEARN MORE
                     </Button>

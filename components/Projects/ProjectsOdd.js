@@ -52,7 +52,6 @@ const buttonVariants = {
     boxShadow: '0px 0px 8px rgb(255,255,255)',
     transition: {
       duration: 0.3,
-      yoyo: 5,
     },
   },
 }
@@ -145,10 +144,8 @@ export default function ProjectsOdd ({
               </motion.div>
             </Grid>
             <Grid item lg={6}>
-              <motion.div variants={buttonVariants} whileHover='hover'>
-                <Button variant='contained' color='primary' href={projectRef}>
-                  LEARN MORE
-                </Button>
+              <motion.div variants={containerVariants} initial='hidden' animate='visible'>
+                <img src={projectImage} style={{ width: '100%' }} />
               </motion.div>
             </Grid>
           </>
