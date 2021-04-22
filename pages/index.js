@@ -26,8 +26,22 @@ import List from '@material-ui/core/List'
 import Footer from '../components/footer'
 import useScrollTrigger from '@material-ui/core/useScrollTrigger'
 import Slide from '@material-ui/core/Slide'
-import {motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
+const pathVariants = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 2,
+      ease: 'easeInOut',
+    },
+  },
+}
 const drawerWidth = 240
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -129,120 +143,123 @@ export default function ButtonAppBar (props) {
   }
 
   return (
-    <div className={classes.roots}
-  >
+    <div className={classes.roots}>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <motion.div 
-        initial={{y:-250}}
-        animate={{y:0}}
-        transition={{delay:0.5,type:'spring',stiffness:250}}>
-        <AppBar
-          position='fixed'
-          className={clsx(classes.appBar, {
-            [classes.appBarShift]: open,
-          })}
-          initial={{y:-250}}
-          animate={{y:0}}
+        <motion.div
+          initial={{ y: -250 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 0.5, type: 'spring', stiffness: 250 }}
         >
-          <Toolbar justifyContent='flex-end'>
-            <Hidden lgUp>
-              <IconButton
-                edge='start'
-                color='inherit'
-                aria-label='menu'
-                onClick={handleDrawerOpen}
-                edge='start'
-                className={clsx(classes.menuButton, open && classes.hide)}
-                style={{ marginRight: '-54px' }}
-              >
-                <Hidden lgUp>
-                  <MenuIcon />
-                </Hidden>
-              </IconButton>
-            </Hidden>
-            <Box display='flex' flexGrow={1}>
-              <Hidden mdDown>
-                <Link href='#hero'>
-                  <img
-                    src='./Assets/logo.png'
-                    alt='Kitty Katty!'
-                    style={{ maxWidth: 250, flex: 1 }}
-                  />
-                </Link>
-              </Hidden>
-
+          <AppBar
+            position='fixed'
+            className={clsx(classes.appBar, {
+              [classes.appBarShift]: open,
+            })}
+            initial={{ y: -250 }}
+            animate={{ y: 0 }}
+          >
+            <Toolbar justifyContent='flex-end'>
               <Hidden lgUp>
-                <Link href='#hero'>
-                  <img
-                    src='./Assets/logo.png'
-                    alt='Kitty Katty!'
-                    style={{
-                      maxWidth: 200,
-                      margin: 'auto',
-                    }}
-                  />
-                </Link>
+                <IconButton
+                  edge='start'
+                  color='inherit'
+                  aria-label='menu'
+                  onClick={handleDrawerOpen}
+                  edge='start'
+                  className={clsx(classes.menuButton, open && classes.hide)}
+                  style={{ marginRight: '-54px' }}
+                >
+                  <Hidden lgUp>
+                    <MenuIcon />
+                  </Hidden>
+                </IconButton>
               </Hidden>
-            </Box>
-
-            <Hidden mdDown>
-              <nav>
-                <ul>
+              <Box display='flex' flexGrow={1}>
+                <Hidden mdDown>
                   <Link href='#hero'>
-                    <Button variant='contained' size='small' color='primary' disableElevation>
-                      Home
-                    </Button>
+                    <motion.img
+                      src='./Assets/logo.png'
+                      alt='Kitty Katty!'
+                      style={{ maxWidth: 250, flex: 1 }}
+                      variants={pathVariants}
+                      initial='hidden'
+                      animate='visible'
+                    />
                   </Link>
-                  <Link href='#tech'>
-                    <Button
-                      variant='contained'
-                      size='small'
-                      color='primary'
-                      href='#contained-buttons'
-                      disableElevation
-                    >
-                      Technologies
-                    </Button>
+                </Hidden>
+
+                <Hidden lgUp>
+                  <Link href='#hero'>
+                    <img
+                      src='./Assets/logo.png'
+                      alt='Kitty Katty!'
+                      style={{
+                        maxWidth: 200,
+                        margin: 'auto',
+                      }}
+                    />
                   </Link>
-                  <Link href='#projects'>
-                    <Button
-                      variant='contained'
-                      size='small'
-                      color='primary'
-                      href='#contained-buttons '
-                      disableElevation
-                    >
-                      Our Work
-                    </Button>
-                  </Link>
-                  <Link href='#team'>
-                    <Button
-                      variant='contained'
-                      size='small'
-                      color='primary'
-                      href='#contained-buttons'
-                      disableElevation
-                    >
-                      Team
-                    </Button>
-                  </Link>
-                  <Link href='#contact'>
-                    <Button
-                      variant='contained'
-                      size='small'
-                      color='primary'
-                      href='#contained-buttons'
-                      disableElevation
-                    >
-                      Contact
-                    </Button>
-                  </Link>
-                </ul>
-              </nav>
-            </Hidden>
-          </Toolbar>
-        </AppBar>
+                </Hidden>
+              </Box>
+
+              <Hidden mdDown>
+                <nav>
+                  <ul>
+                    <Link href='#hero'>
+                      <Button variant='contained' size='small' color='primary' disableElevation>
+                        Home
+                      </Button>
+                    </Link>
+                    <Link href='#tech'>
+                      <Button
+                        variant='contained'
+                        size='small'
+                        color='primary'
+                        href='#contained-buttons'
+                        disableElevation
+                      >
+                        Technologies
+                      </Button>
+                    </Link>
+                    <Link href='#projects'>
+                      <Button
+                        variant='contained'
+                        size='small'
+                        color='primary'
+                        href='#contained-buttons '
+                        disableElevation
+                      >
+                        Our Work
+                      </Button>
+                    </Link>
+                    <Link href='#team'>
+                      <Button
+                        variant='contained'
+                        size='small'
+                        color='primary'
+                        href='#contained-buttons'
+                        disableElevation
+                      >
+                        Team
+                      </Button>
+                    </Link>
+                    <Link href='#contact'>
+                      <Button
+                        variant='contained'
+                        size='small'
+                        color='primary'
+                        href='#contained-buttons'
+                        disableElevation
+                      >
+                        Contact
+                      </Button>
+                    </Link>
+                  </ul>
+                </nav>
+              </Hidden>
+            </Toolbar>
+          </AppBar>
         </motion.div>
       </HideOnScroll>
       <Hidden lgUp>
