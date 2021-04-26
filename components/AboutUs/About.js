@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import cx from 'clsx'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
@@ -11,9 +11,24 @@ import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBor
 import Grid from '@material-ui/core/Grid'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import Link from 'next/link'
-import {motion} from 'framer-motion'
-
+import Link from 'next/Link'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '-100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      mass: 0.4,
+      damping: 8,
+    },
+  },
+}
 
 const useStyles = makeStyles(({ palette, theme }) => ({
   root: {
@@ -66,6 +81,16 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
   facebook,
 }) {
   const styles = useStyles()
+  const animation = useAnimation()
+  const [ref, inView, entry] = useInView({ threshold: 0.1 })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible')
+    } else {
+      animation.start('hidden')
+    }
+  }, [animation, inView])
   const shadowStyles = useFadedShadowStyles()
   const borderedGridStyles = useGutterBorderedGridStyles({
     borderColor: 'rgba(0, 0, 0, 0.08)',
@@ -75,36 +100,42 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
 
   function CardRow () {
     return (
-      <React.Fragment>
-        <motion.div  whileHover={{scale:1.1,originX:0}}>
-          <Card className={cx(styles.card)}>
-            <CardContent>
-              <Avatar className={styles.avatar} src={aboutImage} />
-              <h3 className={styles.heading}>{aboutTitle}</h3>
-              <span className={styles.subheader}>{aboutName}</span>
-            </CardContent>
-            <Divider light />
-            <Box display={'flex'}>
-              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-                <p className={styles.statLabel}>
-                  {' '}
-                  <Link href={linked}>
-                    <LinkedInIcon style={{ color: '#67c974' }} />
-                  </Link>
-                </p>
+      <motion.div ref={ref} initial='hidden' animate={animation}>
+        <React.Fragment>
+          <motion.div
+            variants={containerVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <Card className={cx(styles.card)}>
+              <CardContent>
+                <Avatar className={styles.avatar} src={aboutImage} />
+                <h3 className={styles.heading}>{aboutTitle}</h3>
+                <span className={styles.subheader}>{aboutName}</span>
+              </CardContent>
+              <Divider light />
+              <Box display={'flex'}>
+                <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+                  <p className={styles.statLabel}>
+                    {' '}
+                    <Link href={linked}>
+                      <LinkedInIcon style={{ color: '#67c974' }} />
+                    </Link>
+                  </p>
+                </Box>
+                <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+                  <p className={styles.statLabel}>
+                    {' '}
+                    <Link href={facebook}>
+                      <FacebookIcon style={{ color: '#67c974' }} />
+                    </Link>{' '}
+                  </p>
+                </Box>
               </Box>
-              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-                <p className={styles.statLabel}>
-                  {' '}
-                  <Link href={facebook}>
-                    <FacebookIcon style={{ color: '#67c974' }} />
-                  </Link>{' '}
-                </p>
-              </Box>
-            </Box>
-          </Card>
+            </Card>
           </motion.div>
-      </React.Fragment>
+        </React.Fragment>
+      </motion.div>
     )
   }
   return (

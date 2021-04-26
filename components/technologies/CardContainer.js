@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -7,8 +7,8 @@ import { Hidden } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
 import MediaCard from './MediaCard'
 import 'fontsource-roboto'
-import Slide from '@material-ui/core/Slide'
-import {motion } from  'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const useStyles = makeStyles({
   divider: {
@@ -21,6 +21,17 @@ const theme = {
 }
 export default function CardContainer () {
   const classes = useStyles()
+  const animation = useAnimation()
+  const [ref, inView, entry] = useInView({ threshold: 0.1 })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible')
+    } else {
+      animation.start('hidden')
+    }
+  }, [animation, inView])
+
   const cardInfo = [
     {
       image: '/Assets/web.png',
@@ -79,37 +90,39 @@ export default function CardContainer () {
             <Box m={1} display='grid' justifyContent='center' alignItems='center'>
               <Hidden mdDown>
                 <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
-                <motion.div 
-                    initial={{x:'100vw'}}
-                    animate={{x:0}}
-                    transition={{delay:0.5}}>
+                  <motion.div
+                    initial={{ x: '100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
                     <Typography variant='h3' gutterBottom color='textPrimary'>
                       Technologies & Services
                     </Typography>
-            </motion.div>
-            <motion.div
-
-initial={{x:'-100vw'}}
-  animate={{x:0}}
-  transition={{delay:1,duration:1}}>
-                  <img
-                    src='/Assets/divider.png'
-                    style={{ width: '100%', height: '12px', padding: '5px' }}
-                    nitial={{x:'-100vw'}}
-                    animate={{x:0}}
-                    transition={{delay:2}}
-                  />
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: '-100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 1, duration: 1 }}
+                  >
+                    <img
+                      src='/Assets/divider.png'
+                      style={{ width: '100%', height: '12px', padding: '5px' }}
+                      nitial={{ x: '-100vw' }}
+                      animate={{ x: 0 }}
+                      transition={{ delay: 2 }}
+                    />
                   </motion.div>
                 </Box>
-                <motion.div 
-                    initial={{x:'-100vw'}}
-                    animate={{x:0}}
-                    transition={{delay:0.5}}>
+                <motion.div
+                  initial={{ x: '-100vw' }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
                   <Typography variant='h5' gutterBottom color='textSecondary'>
                     We believe in delivering premier services with cutting edge and forefront
                     technology
                   </Typography>
-             </motion.div>
+                </motion.div>
               </Hidden>
             </Box>
           </Grid>
@@ -118,12 +131,10 @@ initial={{x:'-100vw'}}
             <Box mt={5} display='grid' justifyContent='center' alignItems='center'>
               <Hidden lgUp>
                 <Box display='grid' justifyContent='center' alignItems='center'>
-                
-              
-                    <Typography variant='h4' gutterBottom color='textPrimary'>
-                      Services We Offer
-                    </Typography>
-                
+                  <Typography variant='h4' gutterBottom color='textPrimary'>
+                    Services We Offer
+                  </Typography>
+
                   <img
                     src='/Assets/divider.png'
                     style={{ width: '100%', height: '12px', padding: '5px' }}
@@ -133,9 +144,7 @@ initial={{x:'-100vw'}}
                   We believe in delivering premier services with cutting edge and forefront
                   technology
                 </Typography>
-            
               </Hidden>
-            
             </Box>
           </Grid>
         </Grid>

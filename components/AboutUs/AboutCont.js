@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import 'fontsource-roboto'
 import Box from '@material-ui/core/Box'
 import ProfileCardDemo from './About'
-
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 const useStyles = makeStyles({
   divider: {
     width: '100%',
@@ -20,6 +21,17 @@ const theme = {
 }
 export default function AboutCont () {
   const classes = useStyles()
+  const animation = useAnimation()
+  const [ref, inView, entry] = useInView({ threshold: 0.1 })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible')
+    } else {
+      animation.start('hidden')
+    }
+  }, [animation, inView])
+
   const AboutInfo = [
     {
       image: '/Assets/Ahsan.jfif',
@@ -81,39 +93,63 @@ export default function AboutCont () {
   ]
 
   return (
-    <div id='team'>
-      <Box mt={5}>
-        <Grid container spacing={1} justify-content='center' align='center'>
-          <Grid item xs={12}>
-            <Box mt={6}>
-              <Typography variant='h3' gutterBottom color='textPrimary' justify-content='center'>
-                Our Team
-              </Typography>
-            </Box>
-            <img
-              src='/Assets/divider.png'
-              style={{ width: '13%', height: '12px', padding: '5px' }}
-            />
-            <Typography variant='body1' gutterBottom color='textSecondary' justify-content='center'>
-              "Achievements of an organization are result of combined efforts of every individual"
-            </Typography>
-          </Grid>
-
-          {AboutInfo.map(about => (
-            <>
-              <Grid item xs={6} sm={6} md={3} lg={3}>
-                <ProfileCardDemo
-                  aboutImage={about.image}
-                  aboutTitle={about.title}
-                  aboutName={about.name}
-                  linked={about.linked}
-                  facebook={about.facebook}
+    <motion.div ref={ref} initial='hidden' animate={animation}>
+      <div id='team'>
+        <Box mt={5}>
+          <Grid container spacing={1} justify-content='center' align='center'>
+            <Grid item xs={12}>
+              <Box mt={6}>
+                <motion.div
+                  initial={{ x: '100vw' }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                >
+                  <Typography
+                    variant='h3'
+                    gutterBottom
+                    color='textPrimary'
+                    justify-content='center'
+                  >
+                    Our Team
+                  </Typography>
+                </motion.div>
+              </Box>
+              <motion.div
+                initial={{ x: '-100vw' }}
+                animate={{ x: 0 }}
+                transition={{ delay: 1, duration: 1 }}
+              >
+                <img
+                  src='/Assets/divider.png'
+                  style={{ width: '13%', height: '12px', padding: '5px' }}
                 />
-              </Grid>
-            </>
-          ))}
-        </Grid>
-      </Box>
-    </div>
+              </motion.div>
+              <Typography
+                variant='body1'
+                gutterBottom
+                color='textSecondary'
+                justify-content='center'
+              >
+                "Achievements of an organization are result of combined efforts of every individual"
+              </Typography>
+            </Grid>
+
+            {AboutInfo.map(about => (
+              <>
+                <Grid item xs={6} sm={6} md={3} lg={3}>
+                  <ProfileCardDemo
+                    aboutImage={about.image}
+                    aboutTitle={about.title}
+                    aboutName={about.name}
+                    linked={about.linked}
+                    facebook={about.facebook}
+                  />
+                </Grid>
+              </>
+            ))}
+          </Grid>
+        </Box>
+      </div>
+    </motion.div>
   )
 }

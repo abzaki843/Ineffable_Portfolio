@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -8,7 +8,9 @@ import Box from '@material-ui/core/Box'
 import ProjectsOdd from './ProjectsOdd'
 import ProjectsEven from './ProjectsEven'
 import ProjectsSm from './ProjectsSm'
-import {motion} from 'framer-motion'
+
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import 'fontsource-roboto'
 const useStyles = makeStyles({
   divider: {
@@ -21,6 +23,17 @@ const theme = {
 }
 export default function ProjectContainer () {
   const classes = useStyles()
+  const animation = useAnimation()
+  const [ref, inView, entry] = useInView({ threshold: 0.1 })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible')
+    } else {
+      animation.start('hidden')
+    }
+  }, [animation, inView])
+
   const projectInfo = [
     {
       image: '/Assets/vango.png',
@@ -83,68 +96,70 @@ export default function ProjectContainer () {
     },
   ]
   return (
-    <div className={classes.divider} id='projects'>
-      <Grid container justify='center' alignItems='center'>
-        <Grid item direction='column' xs={12} lg={4} justifyItems='grid'>
-          <Box mt={10} display='grid' justifyItems='center'>
-          <motion.div
-
-initial={{x:'100vw'}}
-  animate={{x:0}}
-  transition={{delay:0.5,duration:0.5}}>
-              <Typography variant='h3' gutterBottom color='textPrimary'>
-                Our Work
-              </Typography>
-           </motion.div>
-           <motion.div
-
-initial={{x:'-100vw'}}
-  animate={{x:0}}
-  transition={{delay:1,duration:1}}>
-            <img src='/Assets/divider.png' style={{ width: '100%', height: '2px' }} />
-            </motion.div>
-          </Box>
+    <motion.div ref={ref} initial='hidden' animate={animation}>
+      <div className={classes.divider} id='projects'>
+        <Grid container justify='center' alignItems='center'>
+          <Grid item direction='column' xs={12} lg={4} justifyItems='grid'>
+            <Box mt={10} display='grid' justifyItems='center'>
+              <motion.div
+                initial={{ x: '100vw' }}
+                animate={{ x: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              >
+                <Typography variant='h3' gutterBottom color='textPrimary'>
+                  Our Work
+                </Typography>
+              </motion.div>
+              <motion.div
+                initial={{ x: '-100vw' }}
+                animate={{ x: 0 }}
+                transition={{ delay: 1, duration: 1 }}
+              >
+                <img src='/Assets/divider.png' style={{ width: '100%', height: '2px' }} />
+              </motion.div>
+            </Box>
+          </Grid>
         </Grid>
-      </Grid>
-      {projectInfo.map((project, index) => (
-        <>
-          {index % 2 == 0 ? (
-            <ProjectsEven
-              projectImage={project.image}
+        {projectInfo.map((project, index) => (
+          <>
+            {index % 2 == 0 ? (
+              <ProjectsEven
+                projectImage={project.image}
+                ProjectTitle={project.title}
+                projectText={project.Text}
+                projectFeature1={project.feature1}
+                projectFeature2={project.feature2}
+                projectFeature3={project.feature3}
+                projectFeature4={project.feature4}
+                projectImage1={project.image1}
+                projectRef={project.href}
+              />
+            ) : (
+              <ProjectsOdd
+                projectImage={project.image}
+                projectImage1={project.image1}
+                ProjectTitle={project.title}
+                projectText={project.Text}
+                projectFeature1={project.feature1}
+                projectFeature2={project.feature2}
+                projectFeature3={project.feature3}
+                projectFeature4={project.feature4}
+                projectRef={project.href}
+              />
+            )}
+            <ProjectsSm
+              projectImage={project.image1}
               ProjectTitle={project.title}
               projectText={project.Text}
               projectFeature1={project.feature1}
               projectFeature2={project.feature2}
               projectFeature3={project.feature3}
               projectFeature4={project.feature4}
-              projectImage1={project.image1}
               projectRef={project.href}
             />
-          ) : (
-            <ProjectsOdd
-              projectImage={project.image}
-              projectImage1={project.image1}
-              ProjectTitle={project.title}
-              projectText={project.Text}
-              projectFeature1={project.feature1}
-              projectFeature2={project.feature2}
-              projectFeature3={project.feature3}
-              projectFeature4={project.feature4}
-              projectRef={project.href}
-            />
-          )}
-          <ProjectsSm
-            projectImage={project.image1}
-            ProjectTitle={project.title}
-            projectText={project.Text}
-            projectFeature1={project.feature1}
-            projectFeature2={project.feature2}
-            projectFeature3={project.feature3}
-            projectFeature4={project.feature4}
-            projectRef={project.href}
-          />
-        </>
-      ))}
-    </div>
+          </>
+        ))}
+      </div>
+    </motion.div>
   )
 }

@@ -149,7 +149,7 @@ export default function ButtonAppBar (props) {
         <motion.div
           initial={{ y: -250 }}
           animate={{ y: 0 }}
-          transition={{ delay: 0.5, type: 'spring', stiffness: 250 }}
+          transition={{ delay: 0.5, type: 'spring' }}
         >
           <AppBar
             position='fixed'
@@ -185,6 +185,8 @@ export default function ButtonAppBar (props) {
                       variants={pathVariants}
                       initial='hidden'
                       animate='visible'
+                      drag
+                      dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
                     />
                   </Link>
                 </Hidden>

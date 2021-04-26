@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -9,10 +9,25 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import 'fontsource-roboto'
-
-import 'fontsource-roboto'
-
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: '-100vw',
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 120,
+      mass: 0.4,
+      damping: 10,
+    },
+  },
+}
 
 const useStyles = makeStyles(theme => ({
   hide: {
@@ -48,68 +63,86 @@ export default function ProjectsSm ({
   projectRef,
 }) {
   const classes = useStyles()
+  const animation = useAnimation()
+  const [ref, inView, entry] = useInView({ threshold: 0.1 })
+
+  useEffect(() => {
+    if (inView) {
+      animation.start('visible')
+    } else {
+      animation.start('hidden')
+    }
+  }, [animation, inView])
 
   return (
-    <div className={(classes.root, classes.hide)}>
-      <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
-        <>
-          <Grid item xs={11} sm={10} lg={5}>
-            <Grid container justify='center'>
-              <Typography
-                variant='h4'
-                gutterBottom
-                color='textPrimary'
-                align='justify'
-                style={{ marginTop: '30px' }}
-              >
-                {ProjectTitle}
-              </Typography>
+    <motion.div ref={ref} initial='hidden' animate={animation}>
+      <div className={(classes.root, classes.hide)}>
+        <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
+          <>
+            <motion.div variants={containerVariants}>
+              <Grid item xs={11} sm={10} lg={5}>
+                <Grid container justify='center'>
+                  <Typography
+                    variant='h4'
+                    gutterBottom
+                    color='textPrimary'
+                    align='justify'
+                    style={{ marginTop: '30px' }}
+                  >
+                    {ProjectTitle}
+                  </Typography>
 
-              <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
-                {projectText}
-              </Typography>
+                  <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
+                    {projectText}
+                  </Typography>
 
-              <div className={classes.list}>
-          
-                <List component='nav' aria-label='main mailbox folders'>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature1} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature2} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature3} />
-                  </ListItem>
-                  <ListItem button>
-                    <ListItemIcon>
-                      <CheckCircleOutlineRoundedIcon color='primary' />
-                    </ListItemIcon>
-                    <ListItemText secondary={projectFeature4} />
-                  </ListItem>
-                  <Box ml={15}>
-                    <Button variant='contained' color='primary' justify='center' href={projectRef}>
-                      Visit Web
-                    </Button>
-                  </Box>
-                </List>
-              </div>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <img src={projectImage} width={'100%'} />
-          </Grid>
-        </>
-      </Grid>
-    </div>
+                  <div className={classes.list}>
+                    <List component='nav' aria-label='main mailbox folders'>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature1} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature2} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature3} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='primary' />
+                        </ListItemIcon>
+                        <ListItemText secondary={projectFeature4} />
+                      </ListItem>
+                      <Box ml={15}>
+                        <Button
+                          variant='contained'
+                          color='primary'
+                          justify='center'
+                          href={projectRef}
+                        >
+                          Visit Web
+                        </Button>
+                      </Box>
+                    </List>
+                  </div>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <img src={projectImage} width={'100%'} />
+              </Grid>
+            </motion.div>
+          </>
+        </Grid>
+      </div>
+    </motion.div>
   )
 }
