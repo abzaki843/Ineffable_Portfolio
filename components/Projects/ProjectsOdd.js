@@ -1,4 +1,4 @@
-import React from 'react'
+import React   , { useEffect } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -8,7 +8,8 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer';
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 const containerVariants = {
@@ -26,8 +27,8 @@ const containerVariants = {
       type: 'spring',
       mass: 0.4,
       damping: 8,
-      staggerChildren: 0.4,
-      when: 'beforeChildren',
+    
+     
     },
   },
 }
@@ -39,6 +40,14 @@ const childVariants = {
   },
   visible: {
     opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      mass: 0.4,
+      damping: 8,
+     
+     
+    },
   },
 }
 const buttonVariants = {
@@ -77,7 +86,7 @@ const theme = {
 
 export default function ProjectsOdd ({
   projectImage,
-  projectImage1,
+ 
   projectText,
   ProjectTitle,
   projectFeature1,
@@ -87,14 +96,24 @@ export default function ProjectsOdd ({
   projectRef,
 }) {
   const classes = useStyles()
-
+  const animation = useAnimation();    
+  const [ref, inView, entry] = useInView({ threshold: 0.1 });
+  
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    } else {
+      animation.start("hidden");
+    }
+  }, [animation, inView]);
   return (
+    <motion.div  ref={ref}  initial='hidden' animate={animation}>
     <div className={(classes.root, classes.margin)}>
       <Box ml={10}>
         <Grid container spacing={1} direction='row' justify='center' alignItems='flex-start'>
           <>
             <Grid item xs={12} lg={6} style={{ marginTop: '180px' }}>
-              <motion.div variants={containerVariants} initial='hidden' animate='visible'>
+            <motion.div ref={ref} variants={containerVariants} initial='hidden' animate='visible'>
                 <div>
                   <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                     {ProjectTitle}
@@ -144,7 +163,7 @@ export default function ProjectsOdd ({
               </motion.div>
             </Grid>
             <Grid item lg={6}>
-              <motion.div variants={containerVariants} initial='hidden' animate='visible'>
+            <motion.div   variants={childVariants}>
                 <img src={projectImage} style={{ width: '100%' }} />
               </motion.div>
             </Grid>
@@ -152,5 +171,6 @@ export default function ProjectsOdd ({
         </Grid>
       </Box>
     </div>
+    </motion.div>
   )
 }

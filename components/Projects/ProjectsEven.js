@@ -1,4 +1,4 @@
-import React from 'react'
+import React  , { useEffect }  from 'react'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
@@ -8,16 +8,34 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer';
 
 import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded'
 const containerVariants = {
   hidden: {
     opacity: 0,
     x: '-100vw',
+  
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
     transition: {
-      staggerChildren: 0.5,
+      type: 'spring',
+      mass: 0.4,
+      damping: 8,
+    
+     
     },
+  },
+}
+
+const childVariants = {
+  hidden: {
+    opacity: 0,
+    x: '100vw',
+    
   },
   visible: {
     opacity: 1,
@@ -27,18 +45,8 @@ const containerVariants = {
       mass: 0.4,
       damping: 8,
       staggerChildren: 0.4,
-      when: 'beforeChildren',
+     
     },
-  },
-}
-
-const childVariants = {
-  hidden: {
-    opacity: 0,
-    x: '100vw',
-  },
-  visible: {
-    opacity: 1,
   },
 }
 const buttonVariants = {
@@ -77,11 +85,10 @@ const useStyles = makeStyles(theme => ({
 const theme = {
   spacing: 8,
 }
-function ListItemLink (props) {
-  return <ListItem button component='a' {...props} />
-}
 
-export default function ProjectsEven ({
+
+
+export default function ProjectsEven ({children,
   projectImage,
 
   projectText,
@@ -93,19 +100,32 @@ export default function ProjectsEven ({
   projectRef,
 }) {
   const classes = useStyles()
-
+  const animation = useAnimation();    
+  const [ref, inView, entry] = useInView({ threshold: 0.1 });
+  
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    } else {
+      animation.start("hidden");
+    }
+  }, [animation, inView]);
+  
   return (
+    <motion.div  ref={ref}  initial='hidden' animate={animation}>
     <div className={(classes.root, classes.margin)}>
       <Box mr={8}>
         <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
           <Grid item lg={6}>
-            <motion.div variants={containerVariants} initial='hidden' animate='visible'>
+          <motion.div      variants={containerVariants
+          } initial='hidden'animate='visible'>
               <img src={projectImage} style={{ width: '100%' }} />
             </motion.div>
           </Grid>
 
           <Grid item xs={12} lg={6} style={{ marginTop: '90px' }}>
-            <motion.div variants={childVariants}>
+            <motion.div   variants={childVariants}>
+          
               <div>
                 <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                   {ProjectTitle}
@@ -115,7 +135,7 @@ export default function ProjectsEven ({
                 </Typography>
 
                 <div className={classes.list}>
-                  <motion.div whileHover={{ scale: 1.1, originX: 0, color: 'green' }}>
+                  <motion.div whileHover={{ scale: 1.1, originX: 0, color: 'green' }} >
                     <List component='nav' aria-label='main mailbox folders'>
                       <ListItem button>
                         <ListItemIcon>
@@ -145,7 +165,7 @@ export default function ProjectsEven ({
                   </motion.div>
                 </div>
                 <Box ml={8}>
-                  <motion.div variants={buttonVariants} whileHover={{ scale: 1.1, originX: 0 }}>
+                  <motion.div variants={buttonVariants} whileHover={{ scale: 1.1, originX: 0 }}  ref={ref} style={{ opacity: inView ? 1 : 0 }}>
                     <Button variant='contained' color='primary' href={projectRef}>
                       LEARN MORE
                     </Button>
@@ -157,5 +177,6 @@ export default function ProjectsEven ({
         </Grid>
       </Box>
     </div>
+    </motion.div>
   )
 }
