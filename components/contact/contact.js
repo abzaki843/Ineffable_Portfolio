@@ -129,7 +129,7 @@ export default function Contact () {
                           <motion.div
                             initial={{ x: '100vw' }}
                             animate={{ x: 0 }}
-                            transition={{ delay: 0.5 }}
+                            transition={{ delay: 1 }}
                           >
                             <Typography component='h1' variant='h3' color='textPrimary'>
                               Get In Touch
@@ -138,7 +138,7 @@ export default function Contact () {
                           <motion.div
                             initial={{ x: '-100vw' }}
                             animate={{ x: 0 }}
-                            transition={{ delay: 1, duration: 1 }}
+                            transition={{ delay: 1, duration: 2 }}
                           >
                             <img
                               src='/Assets/divider.png'

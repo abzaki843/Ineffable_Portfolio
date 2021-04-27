@@ -153,7 +153,7 @@ export default function CardContainer () {
                     </motion.div>
                   </Box>
                   <motion.div
-                    initial={{ x: '-100vw' }}
+                    initial={{ x: '100vw' }}
                     animate={{ x: 0 }}
                     transition={{ delay: 1, duration: 2 }}
                   >

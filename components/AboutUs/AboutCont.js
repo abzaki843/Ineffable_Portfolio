@@ -102,7 +102,7 @@ export default function AboutCont () {
                 <motion.div
                   initial={{ x: '100vw' }}
                   animate={{ x: 0 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
+                  transition={{ delay: 1, duration: 1 }}
                 >
                   <Typography
                     variant='h3'
@@ -117,21 +117,27 @@ export default function AboutCont () {
               <motion.div
                 initial={{ x: '-100vw' }}
                 animate={{ x: 0 }}
-                transition={{ delay: 1, duration: 1.5 }}
+                transition={{ delay: 1, duration: 2 }}
               >
                 <img
                   src='/Assets/divider.png'
                   style={{ width: '13%', height: '12px', padding: '5px' }}
                 />
               </motion.div>
-              <Typography
-                variant='body1'
-                gutterBottom
-                color='textSecondary'
-                justify-content='center'
+              <motion.div
+                initial={{ x: '100vw' }}
+                animate={{ x: 0 }}
+                transition={{ delay: 1, duration: 2 }}
               >
-                "Achievements of an organization are result of combined efforts of every individual"
-              </Typography>
+                <Typography
+                  variant='body1'
+                  gutterBottom
+                  color='textSecondary'
+                  justify-content='center'
+                >
+                  Achievements of an organization are result of combined efforts of every individual
+                </Typography>
+              </motion.div>
             </Grid>
 
             {AboutInfo.map(about => (
