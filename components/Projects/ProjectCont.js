@@ -94,6 +94,18 @@ export default function ProjectContainer () {
       feature4: '  It  Provides facility for online booking according to package one wills',
       href: 'https://toursdenorth.com/',
     },
+    {
+      image: '/Assets/skin.png',
+      image1: '/Assets/skinstore.png',
+      title: 'Steamskinstore',
+      Text:
+        'A Website for all Lovers of Custom Skins for Steam Games. You can get all Skins at Good Price and with Many Payment Methods.',
+      feature1: '  Payment via EasyPaisa and Bank Transfer for Pakistani Customer ',
+      feature2: 'A Single Sale Point for all Type and Categories of Custom Game Skins',
+      feature3: ' Fast and Responsive Site made using Next JS ',
+      feature4: ' Use of Latest JAM Commerce Technology and 3rd Party Cart free.',
+      href: 'https://steamskinstore.com/',
+    },
   ]
   return (
     <motion.div ref={ref} initial='hidden' animate={animation}>
