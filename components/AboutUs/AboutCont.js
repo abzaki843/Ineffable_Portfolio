@@ -117,7 +117,7 @@ export default function AboutCont () {
               <motion.div
                 initial={{ x: '-100vw' }}
                 animate={{ x: 0 }}
-                transition={{ delay: 1, duration: 1 }}
+                transition={{ delay: 1, duration: 1.5 }}
               >
                 <img
                   src='/Assets/divider.png'

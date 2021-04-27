@@ -113,7 +113,7 @@ export default function ProjectContainer () {
               <motion.div
                 initial={{ x: '-100vw' }}
                 animate={{ x: 0 }}
-                transition={{ delay: 1, duration: 1 }}
+                transition={{ delay: 1, duration: 1.5 }}
               >
                 <img src='/Assets/divider.png' style={{ width: '100%', height: '2px' }} />
               </motion.div>

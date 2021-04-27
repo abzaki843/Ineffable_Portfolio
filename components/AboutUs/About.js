@@ -8,7 +8,6 @@ import Avatar from '@material-ui/core/Avatar'
 import Divider from '@material-ui/core/Divider'
 import { useFadedShadowStyles } from '@mui-treasury/styles/shadow/faded'
 import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBordered'
-import Grid from '@material-ui/core/Grid'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import Link from 'next/Link'
@@ -23,9 +22,9 @@ const containerVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring',
-      mass: 0.4,
-      damping: 8,
+      type: 'tween',
+      duration: 0.5,
+      delay: 0.5,
     },
   },
 }
@@ -91,7 +90,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
       animation.start('hidden')
     }
   }, [animation, inView])
-  const shadowStyles = useFadedShadowStyles()
+
   const borderedGridStyles = useGutterBorderedGridStyles({
     borderColor: 'rgba(0, 0, 0, 0.08)',
     height: '50%',
@@ -100,48 +99,42 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
 
   function CardRow () {
     return (
-      <motion.div ref={ref} initial='hidden' animate={animation}>
-        <React.Fragment>
-          <motion.div
-            variants={containerVariants}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Card className={cx(styles.card)}>
-              <CardContent>
-                <Avatar className={styles.avatar} src={aboutImage} />
-                <h3 className={styles.heading}>{aboutTitle}</h3>
-                <span className={styles.subheader}>{aboutName}</span>
-              </CardContent>
-              <Divider light />
-              <Box display={'flex'}>
-                <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-                  <p className={styles.statLabel}>
-                    {' '}
-                    <Link href={linked}>
-                      <LinkedInIcon style={{ color: '#67c974' }} />
-                    </Link>
-                  </p>
-                </Box>
-                <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-                  <p className={styles.statLabel}>
-                    {' '}
-                    <Link href={facebook}>
-                      <FacebookIcon style={{ color: '#67c974' }} />
-                    </Link>{' '}
-                  </p>
-                </Box>
+      <>
+        <motion.div variants={containerVariants}>
+          <Card className={cx(styles.card)}>
+            <CardContent>
+              <Avatar className={styles.avatar} src={aboutImage} />
+              <h3 className={styles.heading}>{aboutTitle}</h3>
+              <span className={styles.subheader}>{aboutName}</span>
+            </CardContent>
+            <Divider light />
+            <Box display={'flex'}>
+              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+                <p className={styles.statLabel}>
+                  {' '}
+                  <Link href={linked}>
+                    <LinkedInIcon style={{ color: '#67c974' }} />
+                  </Link>
+                </p>
               </Box>
-            </Card>
-          </motion.div>
-        </React.Fragment>
-      </motion.div>
+              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+                <p className={styles.statLabel}>
+                  {' '}
+                  <Link href={facebook}>
+                    <FacebookIcon style={{ color: '#67c974' }} />
+                  </Link>{' '}
+                </p>
+              </Box>
+            </Box>
+          </Card>
+        </motion.div>
+      </>
     )
   }
   return (
-    <div>
+    <motion.div ref={ref} initial='hidden' animate={animation}>
       <CardRow />
-    </div>
+    </motion.div>
   )
 })
 

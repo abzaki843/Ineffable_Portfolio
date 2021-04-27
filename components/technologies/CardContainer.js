@@ -83,85 +83,93 @@ export default function CardContainer () {
     },
   ]
   return (
-    <div id='tech'>
-      <Box ml={2}>
-        <Grid container direction='row' justify='center'>
-          <Grid item lg={10}>
-            <Box m={1} display='grid' justifyContent='center' alignItems='center'>
-              <Hidden mdDown>
-                <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
-                  <motion.div
-                    initial={{ x: '100vw' }}
-                    animate={{ x: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <Typography variant='h3' gutterBottom color='textPrimary'>
-                      Technologies & Services
-                    </Typography>
-                  </motion.div>
-                  <motion.div
-                    initial={{ x: '-100vw' }}
-                    animate={{ x: 0 }}
-                    transition={{ delay: 1, duration: 1 }}
-                  >
-                    <img
-                      src='/Assets/divider.png'
-                      style={{ width: '100%', height: '12px', padding: '5px' }}
-                      nitial={{ x: '-100vw' }}
+    <motion.div ref={ref} initial='hidden' animate={animation}>
+      <div id='tech'>
+        <Box ml={2}>
+          <Grid container direction='row' justify='center'>
+            <Grid item lg={10}>
+              <Box m={1} display='grid' justifyContent='center' alignItems='center'>
+                <Hidden mdDown>
+                  <Box mt={2} display='grid' justifyContent='center' alignItems='center'>
+                    <motion.div
+                      initial={{ x: '100vw' }}
                       animate={{ x: 0 }}
-                      transition={{ delay: 2 }}
-                    />
-                  </motion.div>
-                </Box>
-                <motion.div
-                  initial={{ x: '-100vw' }}
-                  animate={{ x: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Typography variant='h5' gutterBottom color='textSecondary'>
-                    We believe in delivering premier services with cutting edge and forefront
-                    technology
-                  </Typography>
-                </motion.div>
-              </Hidden>
-            </Box>
-          </Grid>
-
-          <Grid item xs={12} lg={12}>
-            <Box mt={5} display='grid' justifyContent='center' alignItems='center'>
-              <Hidden lgUp>
-                <Box display='grid' justifyContent='center' alignItems='center'>
-                  <motion.div
-                    initial={{ x: '100vw' }}
-                    animate={{ x: 0 }}
-                    transition={{ delay: 0.5 }}
-                  >
-                    <Typography variant='h4' gutterBottom color='textPrimary'>
-                      Services We Offer
-                    </Typography>
-                  </motion.div>
+                      transition={{ delay: 1, duration: 1 }}
+                    >
+                      <Typography variant='h3' gutterBottom color='textPrimary'>
+                        Technologies & Services
+                      </Typography>
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: '-100vw' }}
+                      animate={{ x: 0 }}
+                      transition={{ delay: 1, duration: 1.5 }}
+                    >
+                      <img
+                        src='/Assets/divider.png'
+                        style={{ width: '100%', height: '12px', padding: '5px' }}
+                        nitial={{ x: '-100vw' }}
+                        animate={{ x: 0 }}
+                        transition={{ delay: 2 }}
+                      />
+                    </motion.div>
+                  </Box>
                   <motion.div
                     initial={{ x: '-100vw' }}
                     animate={{ x: 0 }}
-                    transition={{ delay: 1, duration: 1 }}
+                    transition={{ delay: 1, duration: 2 }}
                   >
-                    <img
-                      src='/Assets/divider.png'
-                      style={{ width: '100%', height: '12px', padding: '5px' }}
-                    />
+                    <Typography variant='h5' gutterBottom color='textSecondary'>
+                      We believe in delivering premier services with cutting edge and forefront
+                      technology
+                    </Typography>
                   </motion.div>
-                </Box>
-                <Typography variant='body1' gutterBottom color='textSecondary'>
-                  We believe in delivering premier services with cutting edge and forefront
-                  technology
-                </Typography>
-              </Hidden>
-            </Box>
+                </Hidden>
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} lg={12}>
+              <Box mt={5} display='grid' justifyContent='center' alignItems='center'>
+                <Hidden lgUp>
+                  <Box display='grid' justifyContent='center' alignItems='center'>
+                    <motion.div
+                      initial={{ x: '100vw' }}
+                      animate={{ x: 0 }}
+                      transition={{ delay: 1 }}
+                    >
+                      <Typography variant='h4' gutterBottom color='textPrimary'>
+                        Services We Offer
+                      </Typography>
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: '-100vw' }}
+                      animate={{ x: 0 }}
+                      transition={{ delay: 1, duration: 1.5 }}
+                    >
+                      <img
+                        src='/Assets/divider.png'
+                        style={{ width: '100%', height: '12px', padding: '5px' }}
+                      />
+                    </motion.div>
+                  </Box>
+                  <motion.div
+                    initial={{ x: '-100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 1, duration: 2 }}
+                  >
+                    <Typography variant='body1' gutterBottom color='textSecondary'>
+                      We believe in delivering premier services with cutting edge and forefront
+                      technology
+                    </Typography>
+                  </motion.div>
+                </Hidden>
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Box>
-      <MediaCard cardInfo={cardInfo} />
-    </div>
+        </Box>
+        <MediaCard cardInfo={cardInfo} />
+      </div>
+    </motion.div>
   )
 }
 // nothing has changed here as well

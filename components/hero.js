@@ -8,7 +8,7 @@ import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
 import { Hidden } from '@material-ui/core'
 
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -22,87 +22,84 @@ export default function Hero () {
   const classes = useStyles()
 
   return (
-    <div className={(classes.root, classes.bg)} id='hero' >
+    <div className={(classes.root, classes.bg)} id='hero'>
       <Grid container direction='row' justify='center' alignItems='center'>
-
         <Grid item lg={5}>
-        <motion.div
-  initial={{x:'-100vw'}}
-  animate={{x:0}}
-  transition={{delay:0.5,duration:0.5}}
- >
-          <Box m={3}>
-            <Hidden mdDown>
-           
+          <motion.div
+            initial={{ x: '-100vw' }}
+            animate={{ x: 0 }}
+            transition={{ delay: 1, duration: 1 }}
+          >
+            <Box m={3}>
+              <Hidden mdDown>
                 <Typography variant='h3' gutterBottom color='textPrimary'>
                   Innovative Software Company
                 </Typography>
-           
-            
+
                 <motion.img
                   src='/Assets/divider.png'
                   style={{ width: '80%', height: '12px', padding: '5px' }}
-                  initial={{x:'-100vw'}}
-animate={{x:0}}
-transition={{delay:1,duration:1}}
-
+                  initial={{ x: '-100vw' }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: 1, duration: 1.5 }}
                 />
-          
-            </Hidden>
-            <Hidden lgUp>
-              <Box align='center'>
-                <Typography variant='h4' gutterBottom color='textPrimary'>
-                  Innovative Software Company
-                </Typography>
+              </Hidden>
+              <Hidden lgUp>
+                <Box align='center'>
+                  <Typography variant='h4' gutterBottom color='textPrimary'>
+                    Innovative Software Company
+                  </Typography>
 
-                <motion.img
-                  src='/Assets/divider.png'
-                  style={{ width: '40%', height: 'auto', padding: '5px' }}
-                  initial={{x:'-100vw'}}
-animate={{x:0}}
-transition={{delay:1,duration:1}}
+                  <motion.img
+                    src='/Assets/divider.png'
+                    style={{ width: '40%', height: 'auto', padding: '5px' }}
+                    initial={{ x: '-100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 1, duration: 1 }}
+                  />
+                </Box>
+              </Hidden>
 
-                />
-              </Box>
-            </Hidden>
-
-            <Hidden mdDown>
-           
-                <Typography
-                  variant='h5'
-                  component='h2'
-                  gutterBottom
-                  color='textSecondary'
-                  align='justify'
+              <Hidden mdDown>
+                <motion.div
+                  initial={{ x: '-100vw' }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: 1, duration: 2 }}
                 >
-                  Inventing better Future
-                </Typography>
-          
-           
+                  <Typography
+                    variant='h5'
+                    component='h2'
+                    gutterBottom
+                    color='textSecondary'
+                    align='justify'
+                  >
+                    Inventing better Future
+                  </Typography>
+                </motion.div>
+
                 <Typography variant='body1' gutterBottom color='textSecondary' align='justify'>
                   We Are a Team of software developers, Highly Dedicated to develop Products that
                   Matter
                 </Typography>
-         
-              {/*   <Button variant='contained' color='primary'>
+
+                {/*   <Button variant='contained' color='primary'>
                 Explore More
               </Button>
          
               */}
-            </Hidden>
-          </Box>
+              </Hidden>
+            </Box>
           </motion.div>
         </Grid>
-      
 
         <Grid item xs={12} md={10} lg={7}>
-        <motion.div
-
-initial={{x:'100vw'}}
-  animate={{x:0}}
-  transition={{delay:0.5,duration:0.5}}>
+          <motion.div
+            initial={{ x: '100vw' }}
+            animate={{ x: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+          >
             <img src='/Assets/hero-img.png' style={{ width: '100%', height: 'auto' }} />
-    </motion.div>
+          </motion.div>
         </Grid>
         <Hidden lgUp>
           <Grid item xs={11} md={10}>

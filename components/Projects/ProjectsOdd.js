@@ -21,10 +21,9 @@ const containerVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring',
-      stiffness: 120,
-      mass: 0.4,
-      damping: 10,
+      type: 'tween',
+      duration: 0.5,
+      delay: 0.5,
     },
   },
 }
@@ -38,10 +37,9 @@ const childVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring',
-      stiffness: 120,
-      mass: 0.4,
-      damping: 10,
+      type: 'tween',
+      duration: 0.5,
+      delay: 0.5,
     },
   },
 }

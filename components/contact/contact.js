@@ -25,10 +25,9 @@ const containerVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring',
-      mass: 0.4,
-      damping: 8,
-      staggerChildren: 0.4,
+      type: 'tween',
+      duration: 0.5,
+      delay: 0.5,
     },
   },
 }
@@ -42,10 +41,9 @@ const childVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      type: 'spring',
-      mass: 0.4,
-      damping: 8,
-      staggerChildren: 0.4,
+      type: 'tween',
+      duration: 0.5,
+      delay: 0.5,
     },
   },
 }
@@ -107,7 +105,7 @@ export default function Contact () {
                           <motion.div
                             initial={{ x: '100vw' }}
                             animate={{ x: 0 }}
-                            transition={{ delay: 0.5 }}
+                            transition={{ delay: 1 }}
                           >
                             <Typography component='h1' variant='h3' color='textPrimary'>
                               Get In Touch
@@ -116,7 +114,7 @@ export default function Contact () {
                           <motion.div
                             initial={{ x: '-100vw' }}
                             animate={{ x: 0 }}
-                            transition={{ delay: 1, duration: 1 }}
+                            transition={{ delay: 1, duration: 1.5 }}
                           >
                             <img
                               src='/Assets/divider.png'
