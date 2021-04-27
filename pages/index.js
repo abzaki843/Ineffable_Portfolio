@@ -147,8 +147,8 @@ export default function ButtonAppBar (props) {
       <CssBaseline />
       <HideOnScroll {...props}>
         <motion.div
-          initial={{ y: -250 }}
-          animate={{ y: 0 }}
+          initial={{ x: -250 }}
+          animate={{ x: 0 }}
           transition={{ delay: 0.5, type: 'spring' }}
         >
           <AppBar
@@ -156,8 +156,6 @@ export default function ButtonAppBar (props) {
             className={clsx(classes.appBar, {
               [classes.appBarShift]: open,
             })}
-            initial={{ y: -250 }}
-            animate={{ y: 0 }}
           >
             <Toolbar justifyContent='flex-end'>
               <Hidden lgUp>

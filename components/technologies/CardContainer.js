@@ -131,14 +131,25 @@ export default function CardContainer () {
             <Box mt={5} display='grid' justifyContent='center' alignItems='center'>
               <Hidden lgUp>
                 <Box display='grid' justifyContent='center' alignItems='center'>
-                  <Typography variant='h4' gutterBottom color='textPrimary'>
-                    Services We Offer
-                  </Typography>
-
-                  <img
-                    src='/Assets/divider.png'
-                    style={{ width: '100%', height: '12px', padding: '5px' }}
-                  />
+                  <motion.div
+                    initial={{ x: '100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <Typography variant='h4' gutterBottom color='textPrimary'>
+                      Services We Offer
+                    </Typography>
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: '-100vw' }}
+                    animate={{ x: 0 }}
+                    transition={{ delay: 1, duration: 1 }}
+                  >
+                    <img
+                      src='/Assets/divider.png'
+                      style={{ width: '100%', height: '12px', padding: '5px' }}
+                    />
+                  </motion.div>
                 </Box>
                 <Typography variant='body1' gutterBottom color='textSecondary'>
                   We believe in delivering premier services with cutting edge and forefront
