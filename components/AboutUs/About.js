@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import cx from 'clsx'
-import Link from 'next/Link'
+import NextLink from 'next/link'
 import { makeStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card'
@@ -111,17 +111,17 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
               <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
                 <p className={styles.statLabel}>
                   {' '}
-                  <Link href={linked}>
+                  <NextLink href={linked}>
                     <LinkedInIcon style={{ color: '#67c974' }} />
-                  </Link>
+                  </NextLink>
                 </p>
               </Box>
               <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
                 <p className={styles.statLabel}>
                   {' '}
-                  <Link href={facebook}>
+                  <NextLink href={facebook}>
                     <FacebookIcon style={{ color: '#67c974' }} />
-                  </Link>{' '}
+                  </NextLink>{' '}
                 </p>
               </Box>
             </Box>
