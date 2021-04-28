@@ -125,7 +125,11 @@ export default function ProjectsEven ({
 
                   <div className={classes.list}>
                     <motion.div whileHover={{ scale: 1.1, originX: 0, color: 'green' }}>
-                      <List component='nav' aria-label='main mailbox folders'>
+                      <List
+                        component='nav'
+                        aria-label='main mailbox folders'
+                        style={{ backgroundColor: ' classes.bg' }}
+                      >
                         <ListItem button>
                           <ListItemIcon>
                             <CheckCircleOutlineRoundedIcon color='primary' />

@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
+  bg: {
+    backgroundColor: '#F5F5F5',
+  },
 }))
 const theme = {
   spacing: 2,
