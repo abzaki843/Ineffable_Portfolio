@@ -30,7 +30,7 @@ export default function ProjectContainer () {
     if (inView) {
       animation.start('visible')
     } else {
-      animation.start('hidden')
+      animation.start('')
     }
   }, [animation, inView])
 

@@ -98,7 +98,7 @@ export default function ProjectsEven ({
     if (inView) {
       animation.start('visible')
     } else {
-      animation.start('hidden')
+      animation.start('')
     }
   }, [animation, inView])
 

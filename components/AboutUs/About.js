@@ -86,7 +86,7 @@ export const ProfileCardDemo = React.memo(function ProfileCard ({
     if (inView) {
       animation.start('visible')
     } else {
-      animation.start('hidden')
+      animation.start('')
     }
   }, [animation, inView])
 

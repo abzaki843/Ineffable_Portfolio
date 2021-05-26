@@ -26,13 +26,14 @@ export default function Hero () {
 
   return (
     <div className={(classes.root, classes.bg)} id='hero'>
-      <Grid container direction='row' justify='center' alignItems='center'>
-        <Grid item lg={5}>
-          <motion.div
+        <motion.div
             initial={{ x: '-100vw' }}
             animate={{ x: 0 }}
             transition={{ delay: 1, duration: 1 }}
           >
+      <Grid container direction='row' justify='center' alignItems='center'>
+        <Grid item lg={5}>
+       
             <Box m={3}>
               <Hidden mdDown>
                 <Typography variant='h3' gutterBottom color='textPrimary'>
@@ -92,17 +93,13 @@ export default function Hero () {
               */}
               </Hidden>
             </Box>
-          </motion.div>
+        
         </Grid>
 
         <Grid item xs={12} md={10} lg={7}>
-          <motion.div
-            initial={{ x: '100vw' }}
-            animate={{ x: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          >
+        
             <img src='/Assets/hero-img.png' style={{ width: '100%', height: 'auto' }} />
-          </motion.div>
+         
         </Grid>
         <Hidden lgUp>
           <Grid item xs={11} md={10}>
@@ -120,6 +117,7 @@ export default function Hero () {
           </Grid>
         </Hidden>
       </Grid>
+      </motion.div>
     </div>
   )
 }

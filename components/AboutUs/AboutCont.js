@@ -47,6 +47,13 @@ export default function AboutCont () {
       linked: 'https://www.linkedin.com/in/ali-ansari-116b47a2/',
       facebook: 'https://www.facebook.com/aliwajdan.ansari',
     },
+    {
+      image: '/Assets/abdul.jfif',
+      title: 'Manager',
+      name: 'Abdul Basit ',
+      linked: 'https://www.linkedin.com/in/abdul-basit-khan-70a893186/',
+      facebook: 'https://www.facebook.com/abdul.basit.9212',
+    },
 
     {
       image: '/Assets/hamza.jfif',
@@ -55,16 +62,10 @@ export default function AboutCont () {
       linked: 'https://www.linkedin.com/in/hamza-rahman-01750787/',
       facebook: 'https://www.facebook.com/heman7',
     },
-    {
-      image: '/Assets/abdul.jfif',
-      title: 'Manager',
-      name: 'Abdul Basit ',
-      linked: 'https://www.linkedin.com/in/abdul-basit-khan-70a893186/',
-      facebook: 'https://www.facebook.com/abdul.basit.9212',
-    },
+    
     {
       image: '/Assets/saada.jpg',
-      title: 'Developer',
+      title: 'Frontend  Lead',
       name: 'Saad ul Hassan',
       linked: 'https://www.linkedin.com/in/saad-ul-hassan-72a7b1190/',
       facebook: 'https://www.facebook.com/profile.php?id=100014828587193',

@@ -95,7 +95,7 @@ export default function ProjectsOdd ({
     if (inView) {
       animation.start('visible')
     } else {
-      animation.start('hidden')
+      animation.start('')
     }
   }, [animation, inView])
   return (

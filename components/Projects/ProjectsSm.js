@@ -70,7 +70,7 @@ export default function ProjectsSm ({
     if (inView) {
       animation.start('visible')
     } else {
-      animation.start('hidden')
+      animation.start('')
     }
   }, [animation, inView])
 
@@ -91,11 +91,11 @@ export default function ProjectsSm ({
                   >
                     {ProjectTitle}
                   </Typography>
-
+                  <Grid item xs={11}  lg={5} align="justify"  >
                   <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
                     {projectText}
                   </Typography>
-
+</Grid>
                   <div className={classes.list}>
                     <List component='nav' aria-label='main mailbox folders'>
                       <ListItem button>

@@ -79,7 +79,7 @@ export default function Contact () {
     if (inView) {
       animation.start('visible')
     } else {
-      animation.start('hidden')
+      animation.start('')
     }
   }, [animation, inView])
 
