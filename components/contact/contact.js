@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
+import lottie from 'lottie-web'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import 'fontsource-roboto'
@@ -82,15 +83,25 @@ export default function Contact () {
       animation.start('')
     }
   }, [animation, inView])
+  const container = useRef(null)
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      render: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../animations/contact.json'),
+    })
+  }, [])
 
   return (
     <motion.div ref={ref} initial='hidden' animate={animation}>
       <Box mt={10} id='contact'>
         <div className={(classes.root, classes.bg)}>
           <Grid container direction='row' justify='center' alignItems='center'>
-            <Grid item md={6} lg={7} xl={6} className={classes.hide}>
+            <Grid item md={6} lg={6} xl={6} className={classes.hide}>
               <motion.div variants={containerVariants}>
-                <img src='/Assets/contact-img.png' style={{ width: '100%' }} />
+                <div className='container' ref={container}></div>
               </motion.div>
             </Grid>
 
