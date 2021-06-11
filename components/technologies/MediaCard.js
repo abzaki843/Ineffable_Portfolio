@@ -58,10 +58,11 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function MediaCard ({ cardInfo }, props) {
+export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
   const classes = useStyles()
   const animation = useAnimation()
   const [ref, inView] = useInView({ threshold: 0.1 })
+  console.log(aboutText)
 
   useEffect(() => {
     if (inView) {
@@ -74,41 +75,36 @@ export default function MediaCard ({ cardInfo }, props) {
   return (
     <>
       <motion.div ref={ref} initial='hidden' animate={animation}>
-        <div className={classes.margin} {...props}>
+        <div className={classes.margin}>
           <Box mt={1}>
-            <Grid container spacing={2}>
-              {cardInfo.map(card => (
-                <Grid item xs={12} sm={6} md={6} lg={3} style={{ padding: '20px' }}>
-                  <motion.div
-                    variants={containerVariants}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Card className={classes.card} style={{ margin: 'auto' }}>
-                      <CardMedia className={classes.media} image={card.image} component='img' />
-                      <CardActionArea className={classes.MuiCardActionArea}>
-                        <CardContent>
-                          <Typography
-                            gutterBottom
-                            variant='h5'
-                            direction='row'
-                            justify='center'
-                            align='center'
-                            style={{ align: 'center' }}
-                            color='textSecondary'
-                          >
-                            {card.title}
-                          </Typography>
-                          <Typography variant='body2' color='textSecondary' display='inline'>
-                            {card.text}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
+            <motion.div
+              variants={containerVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Card className={classes.card} style={{ margin: 'auto' }}>
+                <CardMedia className={classes.media} image={aboutImage} component='img' />
+                <CardActionArea className={classes.MuiCardActionArea}>
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant='h5'
+                      direction='row'
+                      justify='center'
+                      align='center'
+                      style={{ align: 'center' }}
+                      color='textSecondary'
+                    >
+                      {aboutTitle}
+                    </Typography>
+
+                    <Typography variant='body2' color='textSecondary' display='inline'>
+                      {aboutText}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </motion.div>
           </Box>
         </div>
       </motion.div>

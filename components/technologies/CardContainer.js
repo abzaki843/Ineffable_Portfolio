@@ -32,7 +32,7 @@ export default function CardContainer () {
     }
   }, [animation, inView])
 
-  const cardInfo = [
+  const CardInfo = [
     {
       image: '/Assets/web.png',
       title: 'Web Development',
@@ -167,7 +167,19 @@ export default function CardContainer () {
             </Grid>
           </Grid>
         </Box>
-        <MediaCard cardInfo={cardInfo} />
+        <Grid container spacing={2}>
+          {CardInfo.map(about => (
+            <>
+              <Grid item xs={6} sm={6} md={3} lg={3}>
+                <MediaCard
+                  aboutImage={about.image}
+                  aboutTitle={about.title}
+                  aboutText={about.text}
+                />
+              </Grid>
+            </>
+          ))}
+        </Grid>
       </div>
     </motion.div>
   )

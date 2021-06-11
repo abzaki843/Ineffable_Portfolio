@@ -71,7 +71,7 @@ const useStyles = makeStyles(({ palette, theme }) => ({
   },
 }))
 
-export const ProfileCardDemo = React.memo(function ProfileCard ({
+export const ProfileCardDemo = React.memo(function CardRow ({
   aboutTitle,
   aboutImage,
   aboutName,
