@@ -152,12 +152,13 @@ export default function ButtonAppBar (props) {
           transition={{ delay: 0.5, type: 'spring' }}
         >
           <AppBar
+            style={{ background: '#FFFFFF' }}
             position='fixed'
             className={clsx(classes.appBar, {
               [classes.appBarShift]: open,
             })}
           >
-            <Toolbar justifyContent='flex-end'>
+            <Toolbar justifyContent='flex-end' style={{ height: '46px' }}>
               <Hidden lgUp>
                 <IconButton
                   edge='start'
@@ -207,53 +208,19 @@ export default function ButtonAppBar (props) {
                 <nav>
                   <ul>
                     <Link href='#hero'>
-                      <Button variant='contained' size='small' color='primary' disableElevation>
-                        Home
-                      </Button>
+                      <Button>Home</Button>
                     </Link>
                     <Link href='#tech'>
-                      <Button
-                        variant='contained'
-                        size='small'
-                        color='primary'
-                        href='#contained-buttons'
-                        disableElevation
-                      >
-                        Technologies
-                      </Button>
+                      <Button>Technologies</Button>
                     </Link>
                     <Link href='#projects'>
-                      <Button
-                        variant='contained'
-                        size='small'
-                        color='primary'
-                        href='#contained-buttons '
-                        disableElevation
-                      >
-                        Our Work
-                      </Button>
+                      <Button>Our Work</Button>
                     </Link>
                     <Link href='#team'>
-                      <Button
-                        variant='contained'
-                        size='small'
-                        color='primary'
-                        href='#contained-buttons'
-                        disableElevation
-                      >
-                        Team
-                      </Button>
+                      <Button>Team</Button>
                     </Link>
                     <Link href='#contact'>
-                      <Button
-                        variant='contained'
-                        size='small'
-                        color='primary'
-                        href='#contained-buttons'
-                        disableElevation
-                      >
-                        Contact
-                      </Button>
+                      <Button>Contact</Button>
                     </Link>
                   </ul>
                 </nav>
