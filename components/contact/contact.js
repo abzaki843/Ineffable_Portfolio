@@ -84,24 +84,31 @@ export default function Contact () {
     }
   }, [animation, inView])
   const container = useRef(null)
-  useEffect(() => {
-    lottie.loadAnimation({
-      container: container.current,
-      render: 'svg',
-      loop: true,
-      autoplay: true,
-      animationData: require('../animations/contact.json'),
-    })
-  }, [])
+  // useEffect(() => {
+  //   lottie.loadAnimation({
+  //     container: container.current,
+  //     render: 'svg',
+  //     loop: true,
+  //     autoplay: true,
+  //     animationData: require('../animations/contact.json'),
+  //   })
+  // }, [])
 
   return (
     <motion.div ref={ref} initial='hidden' animate={animation}>
       <Box mt={10} id='contact'>
         <div className={(classes.root, classes.bg)}>
           <Grid container direction='row' justify='center' alignItems='center'>
-            <Grid item md={6} lg={6} xl={6} className={classes.hide}>
+            <Grid item md={6} lg={5} xl={5} className={classes.hide}>
               <motion.div variants={containerVariants}>
-                <div className='container' ref={container}></div>
+                {/* <div className='container' ref={container}></div> */}
+                <motion.img
+                  src='/Assets/contact-img.png'
+                  style={{ width: '100%', height: 'auto' }}
+                  initial={{ x: '-100vw' }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: 1, duration: 1 }}
+                />
               </motion.div>
             </Grid>
 

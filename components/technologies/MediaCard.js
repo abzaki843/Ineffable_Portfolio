@@ -82,19 +82,19 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Card className={classes.card} style={{ margin: 'auto' }}>
-                <CardMedia className={classes.media} image={aboutImage} component='img' />
+              <Card
+                className={classes.card}
+                style={{ margin: 'auto', backgroundColor: '#F3FEEF', borderRadius: '16px' }}
+              >
+                <CardMedia
+                  className={classes.media}
+                  image={aboutImage}
+                  component='img'
+                  style={{ width: '48px', height: '48px' }}
+                />
                 <CardActionArea className={classes.MuiCardActionArea}>
                   <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      direction='row'
-                      justify='center'
-                      align='center'
-                      style={{ align: 'center' }}
-                      color='textSecondary'
-                    >
+                    <Typography gutterBottom variant='h5' direction='row' color='textSecondary'>
                       {aboutTitle}
                     </Typography>
 

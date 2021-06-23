@@ -25,15 +25,15 @@ const theme = {
 export default function Hero () {
   const classes = useStyles()
   const container = useRef(null)
-  useEffect(() => {
-    lottie.loadAnimation({
-      container: container.current,
-      render: 'svg',
-      loop: true,
-      autoplay: true,
-      animationData: require('./animations/hero.json'),
-    })
-  }, [])
+  // useEffect(() => {
+  //   lottie.loadAnimation({
+  //     container: container.current,
+  //     render: 'svg',
+  //     loop: true,
+  //     autoplay: true,
+  //     animationData: require('./animations/hero.json'),
+  //   })
+  // }, [])
 
   return (
     <div className={(classes.root, classes.bg)} id='hero'>
@@ -105,8 +105,14 @@ export default function Hero () {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={10} lg={7}>
-            <div className='container' ref={container}></div>
+          <Grid item xs={12} md={10} lg={6}>
+            <motion.img
+              src='/Assets/hero-img.png'
+              style={{ width: '100%', marginTop: '50px' }}
+              initial={{ x: '-100vw' }}
+              animate={{ x: 0 }}
+              transition={{ delay: 1, duration: 1 }}
+            />
           </Grid>
           <Hidden lgUp>
             <Grid item xs={11} md={10}>

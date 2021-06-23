@@ -100,17 +100,16 @@ export const ProfileCardDemo = React.memo(function CardRow ({
     return (
       <>
         <motion.div variants={containerVariants}>
-          <Card className={cx(styles.card)}>
+          <Card className={cx(styles.card)} style={{ margin: 'auto', backgroundColor: '#F3FEEF' }}>
             <CardContent>
               <Avatar className={styles.avatar} src={aboutImage} />
               <h3 className={styles.heading}>{aboutTitle}</h3>
               <span className={styles.subheader}>{aboutName}</span>
             </CardContent>
-            <Divider light />
+            {/* <Divider light /> */}
             <Box display={'flex'}>
               <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
                 <p className={styles.statLabel}>
-                  {' '}
                   <NextLink href={linked}>
                     <LinkedInIcon style={{ color: '#67c974' }} />
                   </NextLink>
@@ -118,10 +117,9 @@ export const ProfileCardDemo = React.memo(function CardRow ({
               </Box>
               <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
                 <p className={styles.statLabel}>
-                  {' '}
                   <NextLink href={facebook}>
                     <FacebookIcon style={{ color: '#67c974' }} />
-                  </NextLink>{' '}
+                  </NextLink>
                 </p>
               </Box>
             </Box>
