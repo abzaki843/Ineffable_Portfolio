@@ -35,7 +35,8 @@ const useStyles = makeStyles(({ palette, theme }) => ({
   },
   card: {
     borderRadius: 12,
-    maxWidth: 256,
+    maxWidth: 350,
+    minHeight: 331,
     textAlign: 'center',
   },
   avatar: {
@@ -111,14 +112,15 @@ export const ProfileCardDemo = React.memo(function CardRow ({
               <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
                 <p className={styles.statLabel}>
                   <NextLink href={linked}>
-                    <LinkedInIcon style={{ color: '#67c974' }} />
+                    <img src='./Assets/linked.png' />
                   </NextLink>
                 </p>
               </Box>
               <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
                 <p className={styles.statLabel}>
                   <NextLink href={facebook}>
-                    <FacebookIcon style={{ color: '#67c974' }} />
+                    {/* <FacebookIcon style={{ color: '#67c974' }} /> */}
+                    <img src='./Assets/face.png' />
                   </NextLink>
                 </p>
               </Box>

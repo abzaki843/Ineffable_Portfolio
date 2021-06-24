@@ -3,6 +3,7 @@ import lottie from 'lottie-web'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import 'fontsource-roboto'
+
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
@@ -36,7 +37,7 @@ export default function Hero () {
   // }, [])
 
   return (
-    <div className={(classes.root, classes.bg)} id='hero'>
+    <div className={classes.root} id='hero'>
       <motion.div
         initial={{ x: '-100vw' }}
         animate={{ x: 0 }}
@@ -60,10 +61,9 @@ export default function Hero () {
               </Hidden>
               <Hidden lgUp>
                 <Box align='center'>
-                  <Typography variant='h4' gutterBottom color='textPrimary'>
-                    Innovative Software Company
-                  </Typography>
-
+                  {/* <Typography variant='h4' gutterBottom color='textPrimary'> */}
+                  Innovative Software Company
+                  {/* </Typography> */}
                   <motion.img
                     src='/Assets/divider.png'
                     style={{ width: '40%', height: 'auto', padding: '5px' }}
@@ -101,6 +101,17 @@ export default function Hero () {
               </Button>
          
               */}
+                <Box mt={2}>
+                  <Grid item lg={12}>
+                    <motion.img
+                      src='/Assets/herolayer.png'
+                      style={{ width: '100%' }}
+                      initial={{ x: '-100vw' }}
+                      animate={{ x: 0 }}
+                      transition={{ delay: 1, duration: 1.5 }}
+                    />
+                  </Grid>
+                </Box>
               </Hidden>
             </Box>
           </Grid>

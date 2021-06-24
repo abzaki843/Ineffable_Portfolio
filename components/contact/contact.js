@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react'
 import lottie from 'lottie-web'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import 'fontsource-roboto'
+// import 'fontsource-roboto'
 import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
-
+import '@fontsource/poppins'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
@@ -97,7 +97,7 @@ export default function Contact () {
   return (
     <motion.div ref={ref} initial='hidden' animate={animation}>
       <Box mt={10} id='contact'>
-        <div className={(classes.root, classes.bg)}>
+        <div className={classes.root}>
           <Grid container direction='row' justify='center' alignItems='center'>
             <Grid item md={6} lg={5} xl={5} className={classes.hide}>
               <motion.div variants={containerVariants}>

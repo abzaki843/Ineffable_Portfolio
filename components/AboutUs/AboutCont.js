@@ -62,7 +62,7 @@ export default function AboutCont () {
       linked: 'https://www.linkedin.com/in/hamza-rahman-01750787/',
       facebook: 'https://www.facebook.com/heman7',
     },
-    
+
     {
       image: '/Assets/saada.jpg',
       title: 'Frontend  Lead',
@@ -80,7 +80,7 @@ export default function AboutCont () {
     {
       image: '/Assets/awais.jpg',
       title: 'Designer',
-      name: 'Awais Shah',
+      name: 'Hafsa Younas',
       linked: 'https://www.linkedin.com/in/imawais/',
       facebook: 'https://www.facebook.com/Awais7o7',
     },

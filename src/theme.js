@@ -27,7 +27,7 @@ const theme = createMuiTheme({
       third: '#FFFFFF',
     },
     typography: {
-      fontFamily: `"Roboto", "Montserrat"`,
+      fontFamily: 'Poppins',
       fontSize: 14,
       fontWeightLight: 300,
       fontWeightRegular: 400,

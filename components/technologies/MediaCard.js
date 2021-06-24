@@ -43,6 +43,9 @@ const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 350,
     minHeight: 331,
+    '&:hover': {
+      backgroundColor: '#373737',
+    },
   },
 
   media: {
@@ -79,26 +82,39 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
           <Box mt={1}>
             <motion.div
               variants={containerVariants}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={{ scale: 1.1, color: '#373737' }}
+              whileTap={{ scale: 0.9, color: '#373737' }}
             >
               <Card
                 className={classes.card}
-                style={{ margin: 'auto', backgroundColor: '#F3FEEF', borderRadius: '16px' }}
+                style={{
+                  margin: 'auto',
+                  backgroundColor: '#F3FEEF',
+                  borderRadius: '16px',
+                }}
               >
-                <CardMedia
-                  className={classes.media}
-                  image={aboutImage}
-                  component='img'
-                  style={{ width: '48px', height: '48px' }}
-                />
+                <Box my={2} />
+                <Box ml={2}>
+                  <CardMedia
+                    className={classes.media}
+                    image={aboutImage}
+                    component='img'
+                    style={{ width: '70px', height: '70px' }}
+                  />
+                </Box>
                 <CardActionArea className={classes.MuiCardActionArea}>
                   <CardContent>
-                    <Typography gutterBottom variant='h5' direction='row' color='textSecondary'>
+                    <Typography
+                      gutterBottom
+                      variant='h5'
+                      direction='row'
+                      color='textSecondary'
+                      align='left'
+                    >
                       {aboutTitle}
                     </Typography>
 
-                    <Typography variant='body2' color='textSecondary' display='inline'>
+                    <Typography variant='body2' color='textSecondary' align='left'>
                       {aboutText}
                     </Typography>
                   </CardContent>
