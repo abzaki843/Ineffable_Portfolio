@@ -119,7 +119,7 @@ export default function ProjectContainer () {
                 transition={{ delay: 0.5, duration: 0.5 }}
               >
                 <Typography variant='h3' gutterBottom color='textPrimary'>
-                  Our Work
+                  <span style={{ color: '#2BA054' }}> Projects </span> we have done
                 </Typography>
               </motion.div>
               <motion.div

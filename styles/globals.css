@@ -42,10 +42,3 @@ body {
   display: block;
   text-align: center;
 }
-@font-face {
-  font-family: 'Poppins-Black';
-  src: url('/fonts/Poppins-Black');
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}

@@ -2,9 +2,10 @@ import React, { useEffect, useRef } from 'react'
 import lottie from 'lottie-web'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import 'fontsource-roboto'
+// import 'fontsource-roboto'
 
 import Typography from '@material-ui/core/Typography'
+
 import Box from '@material-ui/core/Box'
 import Divider from '@material-ui/core/Divider'
 import Button from '@material-ui/core/Button'
@@ -48,7 +49,8 @@ export default function Hero () {
             <Box m={3}>
               <Hidden mdDown>
                 <Typography variant='h3' gutterBottom color='textPrimary'>
-                  Innovative Software Company
+                  Deliver <span style={{ color: '#2BA054' }}> Innovative IT Solutions</span> for
+                  Technology insights
                 </Typography>
 
                 <motion.img
@@ -91,7 +93,7 @@ export default function Hero () {
                   </Typography>
                 </motion.div>
 
-                <Typography variant='body1' gutterBottom color='textSecondary' align='justify'>
+                <Typography variant='h5' gutterBottom color='textPrimary' align='justify'>
                   We Are a Team of software developers, Highly Dedicated to develop Products that
                   Matter
                 </Typography>

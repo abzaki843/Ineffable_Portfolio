@@ -5,11 +5,11 @@ import { red } from '@material-ui/core/colors'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#67C974',
+      main: '#707070',
       contrastText: '#fff',
     },
     secondary: {
-      main: '#67C974',
+      main: '#2BA054',
     },
     third: {
       main: '#000000',
@@ -22,17 +22,17 @@ const theme = createMuiTheme({
     },
 
     text: {
-      primary: '#67C974',
-      secondary: '#000000',
+      primary: '#707070',
+      secondary: '#2BA054',
       third: '#FFFFFF',
     },
-    typography: {
-      fontFamily: 'Poppins',
-      fontSize: 14,
-      fontWeightLight: 300,
-      fontWeightRegular: 400,
-      fontWeightMedium: 500,
-    },
+  },
+  typography: {
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
   },
 })
 

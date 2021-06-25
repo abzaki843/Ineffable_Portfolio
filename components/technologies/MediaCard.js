@@ -44,7 +44,10 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 350,
     minHeight: 331,
     '&:hover': {
-      backgroundColor: '#373737',
+      backgroundColor: '#373737 !important',
+    },
+    '&:typography:hover': {
+      color: 'yellow !important',
     },
   },
 
@@ -58,6 +61,9 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     display: 'block',
     textAlign: 'center',
+  },
+  '.hovers:hover': {
+    color: 'white !important',
   },
 }))
 
@@ -82,8 +88,8 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
           <Box mt={1}>
             <motion.div
               variants={containerVariants}
-              whileHover={{ scale: 1.1, color: '#373737' }}
-              whileTap={{ scale: 0.9, color: '#373737' }}
+
+              // whileTap={{ scale: 0.9, color: '#373737' }}
             >
               <Card
                 className={classes.card}
@@ -104,19 +110,22 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
                 </Box>
                 <CardActionArea className={classes.MuiCardActionArea}>
                   <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      direction='row'
-                      color='textSecondary'
-                      align='left'
-                    >
-                      {aboutTitle}
-                    </Typography>
+                    <div className={classes.hovers}>
+                      <Typography
+                        gutterBottom
+                        variant='h5'
+                        direction='row'
+                        color='textPrimary'
+                        align='left'
+                        underline='hover'
+                      >
+                        {aboutTitle}
+                      </Typography>
 
-                    <Typography variant='body2' color='textSecondary' align='left'>
-                      {aboutText}
-                    </Typography>
+                      <Typography variant='body2' color='textPrimary' align='left'>
+                        {aboutText}
+                      </Typography>
+                    </div>
                   </CardContent>
                 </CardActionArea>
               </Card>
