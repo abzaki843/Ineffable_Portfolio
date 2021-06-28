@@ -36,8 +36,17 @@ const useStyles = makeStyles(({ palette, theme }) => ({
   card: {
     borderRadius: 12,
     maxWidth: 350,
-    minHeight: 331,
+    minHeight: 300,
     textAlign: 'center',
+    '&:hover': {
+      backgroundColor: '#373737 !important',
+    },
+    '&:hover  h3 ': {
+      color: '#FFFF !important',
+    },
+    '&:hover  span ': {
+      color: '#FFFF !important',
+    },
   },
   avatar: {
     width: 130,
@@ -108,15 +117,15 @@ export const ProfileCardDemo = React.memo(function CardRow ({
               <span className={styles.subheader}>{aboutName}</span>
             </CardContent>
             {/* <Divider light /> */}
-            <Box display={'flex'}>
-              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+            <Box display={'flex'} justifyContent='center'>
+              <Box p={2} flex={'center'}>
                 <p className={styles.statLabel}>
                   <NextLink href={linked}>
                     <img src='./Assets/linked.png' />
                   </NextLink>
                 </p>
               </Box>
-              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+              <Box p={2} flex={'center'}>
                 <p className={styles.statLabel}>
                   <NextLink href={facebook}>
                     {/* <FacebookIcon style={{ color: '#67c974' }} /> */}

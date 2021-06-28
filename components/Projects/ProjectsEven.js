@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     width: '100%',
-    maxWidth: 360,
+
     backgroundColor: theme.palette.background.paper,
   },
   bg: {
@@ -113,7 +113,7 @@ export default function ProjectsEven ({
               </motion.div>
             </Grid>
 
-            <Grid item xs={12} lg={6} style={{ marginTop: '70px' }}>
+            <Grid item xs={12} lg={6} style={{ marginTop: '50px' }}>
               <motion.div variants={childVariants}>
                 <div>
                   <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
@@ -124,11 +124,7 @@ export default function ProjectsEven ({
                   </Typography>
 
                   <div className={classes.list}>
-                    <List
-                      component='nav'
-                      aria-label='main mailbox folders'
-                      style={{ backgroundColor: ' classes.bg' }}
-                    >
+                    <List component='nav' aria-label='main mailbox folders'>
                       <ListItem button>
                         <ListItemIcon>
                           <CheckCircleOutlineRoundedIcon color='secondary' />

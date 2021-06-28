@@ -26,15 +26,15 @@ export default function Footer () {
           <Container>
             <Toolbar>
               <Grid container>
-                <Grid container item xs={6} md={3} lg={3}>
+                <Grid container item xs={6} md={3} lg={2}>
                   <Hidden>
                     <Link href='#hero'>
-                      <img src='./Assets/logo.png' style={{ width: '85%', margin: 'auto' }} />
+                      <img src='./Assets/logowhite.png' style={{ width: '100%', margin: 'auto' }} />
                     </Link>
                   </Hidden>
                 </Grid>
 
-                <Grid container item xs={6} md={3} lg={3}>
+                <Grid container item xs={6} md={3} lg={2}>
                   <ul>
                     <ol>
                       <Link href='#hero'>Home</Link>
@@ -51,26 +51,6 @@ export default function Footer () {
                     <ol>
                       <Link href='#contact'>Contact</Link>
                     </ol>
-                  </ul>
-                </Grid>
-
-                <Grid container item xs={6} md={3} lg={3}>
-                  <ul>
-                    <ListItem>
-                      <Link href='https://www.facebook.com/ineffabledevs'>
-                        <FacebookIcon style={{ color: '#FFFFFF' }} />
-                      </Link>
-                    </ListItem>
-                    <ListItem>
-                      <Link href='https://www.linkedin.com/company/ineffable-devs'>
-                        <LinkedInIcon style={{ color: '#FFFFFF' }} />
-                      </Link>
-                    </ListItem>
-                    <ListItem>
-                      <Link href='https://www.linkedin.com/company/ineffable-devs'>
-                        <InstagramIcon style={{ color: '#FFFFFF' }} />
-                      </Link>
-                    </ListItem>
                   </ul>
                 </Grid>
                 <Grid container item xs={6} md={3} lg={3}>
@@ -94,8 +74,33 @@ export default function Footer () {
                     </ListItem>
                   </ul>
                 </Grid>
+
+                <Grid container item xs={6} md={3} lg={3}>
+                  <ul>
+                    <ListItem>
+                      <Box px={2}>
+                        <Link href='https://www.facebook.com/ineffabledevs'>
+                          <img src='/Assets/facebook1.png' style={{ width: '100%' }} />
+                        </Link>
+                      </Box>
+                      <Box px={2}>
+                        <Link href='https://www.linkedin.com/company/ineffable-devs'>
+                          <img src='/Assets/twitter.png' style={{ width: '100%' }} />
+                        </Link>
+                      </Box>
+                      <Box px={2}>
+                        <Link href='https://www.linkedin.com/company/ineffable-devs'>
+                          <img src='/Assets/instagram.png' style={{ width: '100%' }} />
+                        </Link>
+                      </Box>
+                    </ListItem>
+                  </ul>
+                </Grid>
+                <Grid container item lg={2}>
+                  <img src='/Assets/layer.png ' style={{ width: '100%' }} />
+                </Grid>
                 <Grid container direction='column' justify='center' alignItems='center'>
-                  <Grid item xs={12} sm={8} >
+                  <Grid item xs={12} sm={8}>
                     <Typography variant='caption text'>
                       Copyright © 2021 INEFFABLE DEVS. All rights reserved
                     </Typography>
@@ -113,7 +118,7 @@ export default function Footer () {
                 <Grid container item xs={8} sm={4}>
                   <Hidden>
                     <Link href='#hero'>
-                      <img src='./Assets/logo.png' style={{ width: '90%', margin: 'auto' }} />
+                      <img src='./Assets/logowhite.png' style={{ width: '90%', margin: 'auto' }} />
                     </Link>
                   </Hidden>
                 </Grid>
@@ -122,16 +127,16 @@ export default function Footer () {
                     <ListItem>
                       <>
                         <Link href='https://www.facebook.com/ineffabledevs'>
-                          <FacebookIcon style={{ color: '#FFFFFF' }} />
+                          <img src='/Assets/facebook1.png' style={{ width: '20%' }} />
                         </Link>
                       </>
                       <Box m={2} />
                       <Link href='https://www.linkedin.com/company/ineffable-devs'>
-                        <LinkedInIcon style={{ color: '#FFFFFF' }} />
+                        <img src='/Assets/instagram.png' style={{ width: '20%' }} />
                       </Link>
                       <Box m={2} />
                       <Link href='https://www.linkedin.com/company/ineffable-devs'>
-                        <InstagramIcon style={{ color: '#FFFFFF' }} />
+                        <img src='/Assets/twitter.png' style={{ width: '20%' }} />
                       </Link>
                     </ListItem>
                   </ul>
@@ -158,8 +163,8 @@ export default function Footer () {
                   </ul>
                 </Grid>
 
-                <Grid container direction='column' justify='center' alignItems="center" >
-                   <Grid item xs={12} >  
+                <Grid container direction='column' justify='center' alignItems='center'>
+                  <Grid item xs={12}>
                     <Typography variant='caption text'>
                       Copyright © 2021 INEFFABLE DEVS. All rights reserved
                     </Typography>

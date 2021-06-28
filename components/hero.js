@@ -48,7 +48,7 @@ export default function Hero () {
           <Grid item lg={5}>
             <Box m={3}>
               <Hidden mdDown>
-                <Typography variant='h3' gutterBottom color='textPrimary'>
+                <Typography variant='h4' gutterBottom color='textPrimary'>
                   Deliver <span style={{ color: '#2BA054' }}> Innovative IT Solutions</span> for
                   Technology insights
                 </Typography>
@@ -63,12 +63,12 @@ export default function Hero () {
               </Hidden>
               <Hidden lgUp>
                 <Box align='center'>
-                  {/* <Typography variant='h4' gutterBottom color='textPrimary'> */}
-                  Innovative Software Company
-                  {/* </Typography> */}
+                  <Typography variant='h4' gutterBottom color='textPrimary'>
+                    Innovative Software Company
+                  </Typography>{' '}
                   <motion.img
-                    src='/Assets/divider.png'
-                    style={{ width: '40%', height: 'auto', padding: '5px' }}
+                    src='/Assets/herolayer.png'
+                    style={{ width: '50%', height: 'auto' }}
                     initial={{ x: '-100vw' }}
                     animate={{ x: 0 }}
                     transition={{ delay: 1, duration: 1 }}
@@ -93,7 +93,7 @@ export default function Hero () {
                   </Typography>
                 </motion.div>
 
-                <Typography variant='h5' gutterBottom color='textPrimary' align='justify'>
+                <Typography variant='subtitle1' gutterBottom color='textPrimary' align='justify'>
                   We Are a Team of software developers, Highly Dedicated to develop Products that
                   Matter
                 </Typography>
@@ -132,20 +132,14 @@ export default function Hero () {
               <Typography variant='h5' gutterBottom color='textSecondary' align='center'>
                 We Are here to give Best Services
               </Typography>
-              <Typography
-                variant='subtitle1'
-                gutter
-                color='textSecondary'
-                align='justify'
-                paragraph
-              >
+              <Typography variant='subtitle1' gutter color='textPrimary' align='justify' paragraph>
                 We Are a Team of software developers. Highly Dedicated to develop Products that
                 Matter
               </Typography>
               <Grid container justify='center'>
-                <Button variant='contained' color='primary' paragraph justify='center'>
+                {/* <Button variant='contained' color='primary' paragraph justify='center'>
                   Explore More
-                </Button>
+                </Button> */}
               </Grid>
             </Grid>
           </Hidden>

@@ -91,41 +91,41 @@ export default function ProjectsSm ({
                   >
                     {ProjectTitle}
                   </Typography>
-                  <Grid item xs={11}  lg={5} align="justify"  >
-                  <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
-                    {projectText}
-                  </Typography>
-</Grid>
+                  <Grid item xs={11} lg={5} align='justify'>
+                    <Typography variant='subtitle' gutterBottom color='textPrimary' align='justify'>
+                      {projectText}
+                    </Typography>
+                  </Grid>
                   <div className={classes.list}>
                     <List component='nav' aria-label='main mailbox folders'>
                       <ListItem button>
                         <ListItemIcon>
-                          <CheckCircleOutlineRoundedIcon color='primary' />
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
                         </ListItemIcon>
-                        <ListItemText secondary={projectFeature1} />
+                        <ListItemText primary={projectFeature1} />
                       </ListItem>
                       <ListItem button>
                         <ListItemIcon>
-                          <CheckCircleOutlineRoundedIcon color='primary' />
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
                         </ListItemIcon>
-                        <ListItemText secondary={projectFeature2} />
+                        <ListItemText primary={projectFeature2} />
                       </ListItem>
                       <ListItem button>
                         <ListItemIcon>
-                          <CheckCircleOutlineRoundedIcon color='primary' />
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
                         </ListItemIcon>
-                        <ListItemText secondary={projectFeature3} />
+                        <ListItemText primary={projectFeature3} />
                       </ListItem>
                       <ListItem button>
                         <ListItemIcon>
-                          <CheckCircleOutlineRoundedIcon color='primary' />
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
                         </ListItemIcon>
-                        <ListItemText secondary={projectFeature4} />
+                        <ListItemText primary={projectFeature4} />
                       </ListItem>
                       <Box ml={15}>
                         <Button
                           variant='contained'
-                          color='primary'
+                          color='secondary'
                           justify='center'
                           href={projectRef}
                         >

@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -42,12 +43,16 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     maxWidth: 350,
-    minHeight: 331,
+    height: 300,
     '&:hover': {
       backgroundColor: '#373737 !important',
     },
-    '&:typography:hover': {
-      color: 'yellow !important',
+
+    '&:hover  h5 ': {
+      color: '#FFFF !important',
+    },
+    '&:hover  h6': {
+      color: '#FFFF !important',
     },
   },
 
@@ -61,9 +66,6 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     display: 'block',
     textAlign: 'center',
-  },
-  '.hovers:hover': {
-    color: 'white !important',
   },
 }))
 
@@ -110,7 +112,7 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
                 </Box>
                 <CardActionArea className={classes.MuiCardActionArea}>
                   <CardContent>
-                    <div className={classes.hovers}>
+                    <div>
                       <Typography
                         gutterBottom
                         variant='h5'
@@ -122,7 +124,18 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
                         {aboutTitle}
                       </Typography>
 
-                      <Typography variant='body2' color='textPrimary' align='left'>
+                      <Typography
+                        variant='h6'
+                        color='textPrimary'
+                        align='left'
+                        underline='hover'
+                        style={{
+                          fontSize: '1rem',
+                          fontFamily: 'Poppins',
+                          fontweight: '400',
+                          lineHeight: '1.5',
+                        }}
+                      >
                         {aboutText}
                       </Typography>
                     </div>

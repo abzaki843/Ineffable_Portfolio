@@ -118,7 +118,7 @@ export default function ProjectContainer () {
                 animate={{ x: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
               >
-                <Typography variant='h3' gutterBottom color='textPrimary'>
+                <Typography variant='h4' gutterBottom color='textPrimary'>
                   <span style={{ color: '#2BA054' }}> Projects </span> we have done
                 </Typography>
               </motion.div>

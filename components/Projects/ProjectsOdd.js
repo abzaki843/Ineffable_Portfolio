@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     width: '100%',
-    maxWidth: 360,
+
     backgroundColor: theme.palette.background.paper,
   },
 }))
@@ -151,7 +151,7 @@ export default function ProjectsOdd ({
                   </div>
                 </motion.div>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} style={{ marginTop: '50px' }}>
                 <motion.div variants={childVariants}>
                   <img src={projectImage} style={{ width: '100%' }} />
                 </motion.div>
