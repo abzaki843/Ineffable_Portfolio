@@ -153,12 +153,13 @@ export default function ButtonAppBar (props) {
         >
           <AppBar
             style={{ background: '#FFFFFF' }}
+            elevation={0}
             position='fixed'
             className={clsx(classes.appBar, {
               [classes.appBarShift]: open,
             })}
           >
-            <Toolbar justifyContent='flex-end' style={{ height: '46px' }}>
+            <Toolbar justifyContent='center' style={{ height: '46px' }}>
               <Hidden lgUp>
                 <IconButton
                   edge='start'
@@ -205,14 +206,16 @@ export default function ButtonAppBar (props) {
               </Box>
 
               <Hidden mdDown>
-                <nav>
+                <nav style={{ marginRight: '95px' }}>
                   <ul>
                     <Link href='#hero'>
                       <Button>Home</Button>
                     </Link>
+
                     <Link href='#tech'>
                       <Button>Technologies</Button>
                     </Link>
+
                     <Link href='#projects'>
                       <Button>Our Work</Button>
                     </Link>

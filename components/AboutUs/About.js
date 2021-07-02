@@ -110,7 +110,11 @@ export const ProfileCardDemo = React.memo(function CardRow ({
     return (
       <>
         <motion.div variants={containerVariants}>
-          <Card className={cx(styles.card)} style={{ margin: 'auto', backgroundColor: '#F3FEEF' }}>
+          <Card
+            className={cx(styles.card)}
+            style={{ margin: 'auto', backgroundColor: '#F3FEEF' }}
+            elevation={0}
+          >
             <CardContent>
               <Avatar className={styles.avatar} src={aboutImage} />
               <h3 className={styles.heading}>{aboutTitle}</h3>

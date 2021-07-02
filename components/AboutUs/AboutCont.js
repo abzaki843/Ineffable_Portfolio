@@ -48,19 +48,18 @@ export default function AboutCont () {
       facebook: 'https://www.facebook.com/aliwajdan.ansari',
     },
     {
-      image: '/Assets/abdul.jfif',
-      title: 'Manager',
-      name: 'Abdul Basit ',
-      linked: 'https://www.linkedin.com/in/abdul-basit-khan-70a893186/',
-      facebook: 'https://www.facebook.com/abdul.basit.9212',
-    },
-
-    {
       image: '/Assets/hamza.jfif',
       title: 'Technical Lead',
       name: 'Hamza Rehman ',
       linked: 'https://www.linkedin.com/in/hamza-rahman-01750787/',
       facebook: 'https://www.facebook.com/heman7',
+    },
+    {
+      image: '/Assets/abdul.jfif',
+      title: 'Manager',
+      name: 'Abdul Basit ',
+      linked: 'https://www.linkedin.com/in/abdul-basit-khan-70a893186/',
+      facebook: 'https://www.facebook.com/abdul.basit.9212',
     },
 
     {
@@ -141,7 +140,7 @@ export default function AboutCont () {
                 <Typography
                   variant='body1'
                   gutterBottom
-                  color='textSecondary'
+                  color='textPrimary'
                   justify-content='center'
                 >
                   Achievements of an organization are result of combined efforts of every individual

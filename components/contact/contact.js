@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import { useState } from 'react'
 import lottie from 'lottie-web'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -17,6 +18,7 @@ import MessageIcon from '@material-ui/icons/Message'
 import { Hidden } from '@material-ui/core'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -93,12 +95,53 @@ export default function Contact () {
   //     animationData: require('../animations/contact.json'),
   //   })
   // }, [])
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  const handleSubmit = e => {
+    e.preventDefault()
+    let data = {
+      name,
+      email,
+      message,
+    }
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then(res => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        setSubmitted(true)
+        setName('')
+        setEmail('')
+        setBody('')
+      }
+    })
+  }
 
   return (
     <motion.div ref={ref} initial='hidden' animate={animation}>
       <Box mt={10} id='contact'>
         <div className={classes.root}>
           <Grid container direction='row' justify='center' alignItems='center'>
+            <Hidden mdDown>
+              <Grid item xl={12} container direction='row' justify='center' alignItems='center'>
+                <Typography component='h1' variant='h3' color='textPrimary'>
+                  Get <span style={{ color: '#2BA054' }}> In Touch</span> with Us
+                </Typography>
+              </Grid>
+              <Grid item xl={12} container direction='row' justify='center' alignItems='center'>
+                <Typography variant='body1' color='textPrimary'>
+                  Lets Start Something New ! Just ask and get Answers
+                </Typography>
+              </Grid>
+            </Hidden>
             <Grid item md={6} lg={5} xl={5} className={classes.hide}>
               <motion.div variants={containerVariants}>
                 {/* <div className='container' ref={container}></div> */}
@@ -124,11 +167,7 @@ export default function Contact () {
                             initial={{ x: '100vw' }}
                             animate={{ x: 0 }}
                             transition={{ delay: 1 }}
-                          >
-                            <Typography component='h1' variant='h3' color='textPrimary'>
-                              Get In Touch
-                            </Typography>
-                          </motion.div>
+                          ></motion.div>
                           <motion.div
                             initial={{ x: '-100vw' }}
                             animate={{ x: 0 }}
@@ -150,7 +189,10 @@ export default function Contact () {
                             transition={{ delay: 1 }}
                           >
                             <Typography component='h1' variant='h3' color='textPrimary'>
-                              Get In Touch
+                              Get <span style={{ color: '#2BA054' }}> In Touch</span>
+                            </Typography>
+                            <Typography variant='body1' color='textPrimary'>
+                              Lets Start Something New ! Just ask and get Answers
                             </Typography>
                           </motion.div>
                           <motion.div
@@ -159,16 +201,16 @@ export default function Contact () {
                             transition={{ delay: 1, duration: 2 }}
                           >
                             <img
-                              src='/Assets/divider.png'
-                              style={{ width: '50%', height: 'auto', padding: '10px' }}
+                              src='/Assets/contact-img.png'
+                              style={{ width: '100%', height: 'auto', padding: '10px' }}
                             />
                           </motion.div>
                         </Box>
                       </Hidden>
                       <Box my={2} />
-                      <Typography variant='body1' color='textSecondary'>
+                      {/* <Typography variant='body1' color='textPrimary'>
                         Lets Start Something New ! Just ask and get Answers
-                      </Typography>
+                      </Typography> */}
                       <form className={classes.form} noValidate>
                         <TextField
                           variant='outlined'
@@ -177,8 +219,11 @@ export default function Contact () {
                           fullWidth
                           id='email'
                           label='Name'
-                          name='email'
-                          autoComplete='email'
+                          name='name'
+                          autoComplete='name'
+                          onChange={e => {
+                            setName(e.target.value)
+                          }}
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position='start'>
@@ -193,6 +238,9 @@ export default function Contact () {
                           required
                           fullWidth
                           label='email'
+                          onChange={e => {
+                            setEmail(e.target.value)
+                          }}
                           InputProps={{
                             startAdornment: (
                               <InputAdornment position='start'>
@@ -207,6 +255,9 @@ export default function Contact () {
                           required
                           fullWidth
                           label='message'
+                          onChange={e => {
+                            setMessage(e.target.value)
+                          }}
                           InputProps={{
                             className: classes.input,
                             startAdornment: (
@@ -216,14 +267,16 @@ export default function Contact () {
                             ),
                           }}
                         />
-                        <Box align='center' mb={2}>
+                        <Box align='left' mb={2}>
                           <Button
-                            type='submit'
                             variant='contained'
-                            color='primary'
+                            color='secondary'
                             className={classes.submit}
+                            onClick={e => {
+                              handleSubmit(e)
+                            }}
                           >
-                            Send
+                            Send us Message
                           </Button>
                         </Box>
                       </form>

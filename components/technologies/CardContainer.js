@@ -157,7 +157,7 @@ export default function CardContainer () {
                     animate={{ x: 0 }}
                     transition={{ delay: 1, duration: 2 }}
                   >
-                    <Typography variant='body1' gutterBottom color='textSecondary'>
+                    <Typography variant='body1' gutterBottom color='textPrimary'>
                       We believe in delivering premier services with cutting edge and forefront
                       technology
                     </Typography>

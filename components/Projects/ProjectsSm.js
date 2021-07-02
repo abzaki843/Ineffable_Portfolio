@@ -40,7 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     width: '100%',
-    maxWidth: 360,
+
     backgroundColor: theme.palette.background.paper,
   },
 }))
@@ -77,25 +77,29 @@ export default function ProjectsSm ({
   return (
     <motion.div ref={ref} initial='hidden' animate={animation}>
       <div className={(classes.root, classes.hide)}>
-        <Grid container spacing={3} direction='row' justify='center' alignItems='flex-start'>
+        <Grid container spacing={3} direction='row' justify='center' alignItems='center'>
           <>
             <motion.div variants={containerVariants}>
-              <Grid item xs={11} sm={10} lg={5}>
-                <Grid container justify='center'>
-                  <Typography
-                    variant='h4'
-                    gutterBottom
-                    color='textPrimary'
-                    align='justify'
-                    style={{ marginTop: '30px' }}
-                  >
-                    {ProjectTitle}
+              {/* <Grid item xs={11} sm={10} lg={5}> */}
+              <Grid container direction='row' justify='center' alignItems='center'>
+                <Typography
+                  variant='h4'
+                  gutterBottom
+                  color='textPrimary'
+                  align='justify'
+                  style={{ marginTop: '30px' }}
+                >
+                  {ProjectTitle}
+                </Typography>
+
+                <Grid item xs={10} lg={5} align='justify'>
+                  <Typography variant='subtitle' gutterBottom color='textPrimary' align='justify'>
+                    {projectText}
                   </Typography>
-                  <Grid item xs={11} lg={5} align='justify'>
-                    <Typography variant='subtitle' gutterBottom color='textPrimary' align='justify'>
-                      {projectText}
-                    </Typography>
-                  </Grid>
+                </Grid>
+                <Grid item xs={10} lg={6} align='justify'>
+                  <img src={projectImage} width={'100%'} />
+
                   <div className={classes.list}>
                     <List component='nav' aria-label='main mailbox folders'>
                       <ListItem button>
@@ -122,12 +126,14 @@ export default function ProjectsSm ({
                         </ListItemIcon>
                         <ListItemText primary={projectFeature4} />
                       </ListItem>
-                      <Box ml={15}>
+
+                      <Box ml={20}>
                         <Button
                           variant='contained'
                           color='secondary'
                           justify='center'
                           href={projectRef}
+                          align='justify'
                         >
                           Visit Web
                         </Button>
@@ -135,9 +141,6 @@ export default function ProjectsSm ({
                     </List>
                   </div>
                 </Grid>
-              </Grid>
-              <Grid item xs={12} lg={6}>
-                <img src={projectImage} width={'100%'} />
               </Grid>
             </motion.div>
           </>

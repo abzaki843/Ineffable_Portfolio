@@ -100,6 +100,7 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
                   backgroundColor: '#F3FEEF',
                   borderRadius: '16px',
                 }}
+                elevation={0}
               >
                 <Box my={2} />
                 <Box ml={2}>

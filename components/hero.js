@@ -68,7 +68,7 @@ export default function Hero () {
                   </Typography>{' '}
                   <motion.img
                     src='/Assets/herolayer.png'
-                    style={{ width: '50%', height: 'auto' }}
+                    style={{ width: '80%', height: 'auto' }}
                     initial={{ x: '-100vw' }}
                     animate={{ x: 0 }}
                     transition={{ delay: 1, duration: 1 }}

@@ -37,7 +37,7 @@ export default function ProjectContainer () {
   const projectInfo = [
     {
       image: '/Assets/vango.png',
-      image1: '/Assets/van.png',
+
       title: 'Van Go',
       Text:
         'Van go is our startup product  to be launched in UK .Van go will help users move from one place to other or relocating your bussiness or house  by providing transport and Manpower services ',
@@ -52,8 +52,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/jamcommerce.png',
-      image1: '/Assets/jamm.png',
-      title: 'Jam Commerce',
+      title: 'Jamcommerce',
       Text:
         'An E-Commerce Platform which is free of any 3rd Party Cart System and can be changed according to need with ease. ',
       feature1:
@@ -67,7 +66,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/covid19.png',
-      image1: '/Assets/covid.png',
+
       title: 'Covid 19',
       Text:
         'A website developed to educate people about Covid 19 and keeps updated about Covid19 live counts locally and Globally . ',
@@ -83,7 +82,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/toursdenorth.png',
-      image1: '/Assets/tours.png',
+
       title: 'Tours De North',
       Text:
         'A Website for all people who want to visit Northern Areas of Pakistan. It provides many packages of ranging differences and provides all information needed for the trip.',
@@ -96,7 +95,7 @@ export default function ProjectContainer () {
     },
     {
       image: '/Assets/skin.png',
-      image1: '/Assets/skinstore.png',
+
       title: 'Steamskinstore',
       Text:
         'A Website for all Lovers of Custom Skins for Steam Games. You can get all Skins at Good Price and with Many Payment Methods.',
@@ -160,7 +159,7 @@ export default function ProjectContainer () {
               />
             )}
             <ProjectsSm
-              projectImage={project.image1}
+              projectImage={project.image}
               ProjectTitle={project.title}
               projectText={project.Text}
               projectFeature1={project.feature1}
