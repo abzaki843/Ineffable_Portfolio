@@ -10,6 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+
 const containerVariants = {
   hidden: {
     opacity: 0,
@@ -42,7 +43,17 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     maxWidth: 350,
-    minHeight: 331,
+    height: 300,
+    '&:hover': {
+      backgroundColor: '#373737 !important',
+    },
+
+    '&:hover  h5 ': {
+      color: '#FFFF !important',
+    },
+    '&:hover  h6': {
+      color: '#FFFF !important',
+    },
   },
 
   media: {
@@ -79,28 +90,56 @@ export default function MediaCard ({ aboutTitle, aboutImage, aboutText }) {
           <Box mt={1}>
             <motion.div
               variants={containerVariants}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+
+              // whileTap={{ scale: 0.9, color: '#373737' }}
             >
-              <Card className={classes.card} style={{ margin: 'auto' }}>
-                <CardMedia className={classes.media} image={aboutImage} component='img' />
+              <Card
+                className={classes.card}
+                style={{
+                  margin: 'auto',
+                  backgroundColor: '#F3FEEF',
+                  borderRadius: '16px',
+                }}
+                elevation={0}
+              >
+                <Box my={2} />
+                <Box ml={2}>
+                  <CardMedia
+                    className={classes.media}
+                    image={aboutImage}
+                    component='img'
+                    style={{ width: '70px', height: '70px' }}
+                  />
+                </Box>
                 <CardActionArea className={classes.MuiCardActionArea}>
                   <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant='h5'
-                      direction='row'
-                      justify='center'
-                      align='center'
-                      style={{ align: 'center' }}
-                      color='textSecondary'
-                    >
-                      {aboutTitle}
-                    </Typography>
+                    <div>
+                      <Typography
+                        gutterBottom
+                        variant='h5'
+                        direction='row'
+                        color='textPrimary'
+                        align='left'
+                        underline='hover'
+                      >
+                        {aboutTitle}
+                      </Typography>
 
-                    <Typography variant='body2' color='textSecondary' display='inline'>
-                      {aboutText}
-                    </Typography>
+                      <Typography
+                        variant='h6'
+                        color='textPrimary'
+                        align='left'
+                        underline='hover'
+                        style={{
+                          fontSize: '1rem',
+                          fontFamily: 'Poppins',
+                          fontweight: '400',
+                          lineHeight: '1.5',
+                        }}
+                      >
+                        {aboutText}
+                      </Typography>
+                    </div>
                   </CardContent>
                 </CardActionArea>
               </Card>

@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     width: '100%',
-    maxWidth: 360,
+
     backgroundColor: theme.palette.background.paper,
   },
 }))
@@ -90,7 +90,6 @@ export default function ProjectsOdd ({
   const classes = useStyles()
   const animation = useAnimation()
   const [ref, inView, entry] = useInView({ threshold: 0.1 })
-
   useEffect(() => {
     if (inView) {
       animation.start('visible')
@@ -104,54 +103,47 @@ export default function ProjectsOdd ({
         <Box ml={10}>
           <Grid container spacing={1} direction='row' justify='center' alignItems='flex-start'>
             <>
-              <Grid item xs={12} lg={6} style={{ marginTop: '180px' }}>
+              <Grid item xs={12} lg={6} style={{ marginTop: '100px' }}>
                 <motion.div variants={containerVariants}>
                   <div>
                     <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                       {ProjectTitle}
                     </Typography>
-                    <Typography
-                      variant='subtitle'
-                      gutterBottom
-                      color='textSecondary'
-                      align='justify'
-                    >
+                    <Typography variant='subtitle' gutterBottom color='textPrimary' align='justify'>
                       {projectText}
                     </Typography>
 
                     <div className={classes.list}>
-                      <motion.div whileHover={{ scale: 1.1, originX: 0, color: 'green' }}>
-                        <List component='nav' aria-label='main mailbox folders'>
-                          <ListItem button>
-                            <ListItemIcon>
-                              <CheckCircleOutlineRoundedIcon color='primary' />
-                            </ListItemIcon>
-                            <ListItemText secondary={projectFeature1} />
-                          </ListItem>
-                          <ListItem button>
-                            <ListItemIcon>
-                              <CheckCircleOutlineRoundedIcon color='primary' />
-                            </ListItemIcon>
-                            <ListItemText secondary={projectFeature2} />
-                          </ListItem>
-                          <ListItem button>
-                            <ListItemIcon>
-                              <CheckCircleOutlineRoundedIcon color='primary' />
-                            </ListItemIcon>
-                            <ListItemText secondary={projectFeature3} />
-                          </ListItem>
-                          <ListItem button>
-                            <ListItemIcon>
-                              <CheckCircleOutlineRoundedIcon color='primary' />
-                            </ListItemIcon>
-                            <ListItemText secondary={projectFeature4} />
-                          </ListItem>
-                        </List>
-                      </motion.div>
+                      <List component='nav' aria-label='main mailbox folders'>
+                        <ListItem button>
+                          <ListItemIcon>
+                            <CheckCircleOutlineRoundedIcon color='secondary' />
+                          </ListItemIcon>
+                          <ListItemText primary={projectFeature1} />
+                        </ListItem>
+                        <ListItem button>
+                          <ListItemIcon>
+                            <CheckCircleOutlineRoundedIcon color='secondary' />
+                          </ListItemIcon>
+                          <ListItemText primary={projectFeature2} />
+                        </ListItem>
+                        <ListItem button>
+                          <ListItemIcon>
+                            <CheckCircleOutlineRoundedIcon color='secondary' />
+                          </ListItemIcon>
+                          <ListItemText primary={projectFeature3} />
+                        </ListItem>
+                        <ListItem button>
+                          <ListItemIcon>
+                            <CheckCircleOutlineRoundedIcon color='secondary' />
+                          </ListItemIcon>
+                          <ListItemText primary={projectFeature4} />
+                        </ListItem>
+                      </List>
                     </div>
                     <Box ml={8}>
                       <motion.div whileHover={{ scale: 1.1, originX: 0 }}>
-                        <Button variant='contained' color='primary' href={projectRef}>
+                        <Button variant='contained' color='secondary' href={projectRef}>
                           LEARN MORE
                         </Button>
                       </motion.div>
@@ -159,7 +151,7 @@ export default function ProjectsOdd ({
                   </div>
                 </motion.div>
               </Grid>
-              <Grid item lg={6}>
+              <Grid item lg={6} style={{ marginTop: '50px' }}>
                 <motion.div variants={childVariants}>
                   <img src={projectImage} style={{ width: '100%' }} />
                 </motion.div>

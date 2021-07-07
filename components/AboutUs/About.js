@@ -35,8 +35,18 @@ const useStyles = makeStyles(({ palette, theme }) => ({
   },
   card: {
     borderRadius: 12,
-    maxWidth: 256,
+    maxWidth: 350,
+    minHeight: 300,
     textAlign: 'center',
+    '&:hover': {
+      backgroundColor: '#373737 !important',
+    },
+    '&:hover  h3 ': {
+      color: '#FFFF !important',
+    },
+    '&:hover  span ': {
+      color: '#FFFF !important',
+    },
   },
   avatar: {
     width: 130,
@@ -100,28 +110,31 @@ export const ProfileCardDemo = React.memo(function CardRow ({
     return (
       <>
         <motion.div variants={containerVariants}>
-          <Card className={cx(styles.card)}>
+          <Card
+            className={cx(styles.card)}
+            style={{ margin: 'auto', backgroundColor: '#F3FEEF' }}
+            elevation={0}
+          >
             <CardContent>
               <Avatar className={styles.avatar} src={aboutImage} />
               <h3 className={styles.heading}>{aboutTitle}</h3>
               <span className={styles.subheader}>{aboutName}</span>
             </CardContent>
-            <Divider light />
-            <Box display={'flex'}>
-              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+            {/* <Divider light /> */}
+            <Box display={'flex'} justifyContent='center'>
+              <Box p={2} flex={'center'}>
                 <p className={styles.statLabel}>
-                  {' '}
                   <NextLink href={linked}>
-                    <LinkedInIcon style={{ color: '#67c974' }} />
+                    <img src='./Assets/linked.png' />
                   </NextLink>
                 </p>
               </Box>
-              <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+              <Box p={2} flex={'center'}>
                 <p className={styles.statLabel}>
-                  {' '}
                   <NextLink href={facebook}>
-                    <FacebookIcon style={{ color: '#67c974' }} />
-                  </NextLink>{' '}
+                    {/* <FacebookIcon style={{ color: '#67c974' }} /> */}
+                    <img src='./Assets/face.png' />
+                  </NextLink>
                 </p>
               </Box>
             </Box>

@@ -42,10 +42,17 @@ export default function AboutCont () {
     },
     {
       image: '/Assets/Ali.jfif',
-      title: 'Technical Lead',
+      title: 'Team Lead',
       name: 'Ali Ansari',
       linked: 'https://www.linkedin.com/in/ali-ansari-116b47a2/',
       facebook: 'https://www.facebook.com/aliwajdan.ansari',
+    },
+    {
+      image: '/Assets/hamza.jfif',
+      title: 'Technical Lead',
+      name: 'Hamza Rehman ',
+      linked: 'https://www.linkedin.com/in/hamza-rahman-01750787/',
+      facebook: 'https://www.facebook.com/heman7',
     },
     {
       image: '/Assets/abdul.jfif',
@@ -56,40 +63,40 @@ export default function AboutCont () {
     },
 
     {
-      image: '/Assets/hamza.jfif',
-      title: 'Backend Lead',
-      name: 'Hamza Rehman ',
-      linked: 'https://www.linkedin.com/in/hamza-rahman-01750787/',
-      facebook: 'https://www.facebook.com/heman7',
-    },
-    
-    {
       image: '/Assets/saada.jpg',
-      title: 'Frontend  Lead',
+      title: 'Software Engineer',
       name: 'Saad ul Hassan',
       linked: 'https://www.linkedin.com/in/saad-ul-hassan-72a7b1190/',
       facebook: 'https://www.facebook.com/profile.php?id=100014828587193',
     },
     {
       image: '/Assets/saad.jfif',
-      title: 'QA Engineer',
+      title: 'Software Engineer',
       name: 'Saad Arshad',
       linked: 'https://www.linkedin.com/in/saadarshadmehmood/',
       facebook: 'https://www.facebook.com/saadarshadmehmood',
     },
-    {
-      image: '/Assets/awais.jpg',
-      title: 'Designer',
-      name: 'Awais Shah',
-      linked: 'https://www.linkedin.com/in/imawais/',
-      facebook: 'https://www.facebook.com/Awais7o7',
-    },
+
     {
       image: '/Assets/aliasad.jpg',
-      title: 'Developer',
+      title: 'Software Engineer',
       name: 'Ali Asad',
       linked: '',
       facebook: '',
+    },
+    {
+      image: '',
+      title: 'Software Engineer',
+      name: 'Ayesha Munir',
+      linked: '',
+      facebook: '',
+    },
+    {
+      image: '/Assets/awais.jpg',
+      title: 'Designer',
+      name: 'Hafsa Younas',
+      linked: 'https://www.linkedin.com/in/imawais/',
+      facebook: 'https://www.facebook.com/Awais7o7',
     },
   ]
 
@@ -133,7 +140,7 @@ export default function AboutCont () {
                 <Typography
                   variant='body1'
                   gutterBottom
-                  color='textSecondary'
+                  color='textPrimary'
                   justify-content='center'
                 >
                   Achievements of an organization are result of combined efforts of every individual
@@ -143,7 +150,7 @@ export default function AboutCont () {
 
             {AboutInfo.map(about => (
               <>
-                <Grid item xs={6} sm={6} md={3} lg={3}>
+                <Grid item xs={6} sm={6} md={4} lg={4}>
                   <ProfileCardDemo
                     aboutImage={about.image}
                     aboutTitle={about.title}

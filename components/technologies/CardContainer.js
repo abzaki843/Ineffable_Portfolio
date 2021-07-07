@@ -96,7 +96,7 @@ export default function CardContainer () {
                       animate={{ x: 0 }}
                       transition={{ delay: 1, duration: 1 }}
                     >
-                      <Typography variant='h3' gutterBottom color='textPrimary'>
+                      <Typography variant='h4' gutterBottom color='textPrimary'>
                         Technologies & Services
                       </Typography>
                     </motion.div>
@@ -119,7 +119,7 @@ export default function CardContainer () {
                     animate={{ x: 0 }}
                     transition={{ delay: 1, duration: 2 }}
                   >
-                    <Typography variant='h5' gutterBottom color='textSecondary'>
+                    <Typography variant='h6' gutterBottom color='textPrimary'>
                       We believe in delivering premier services with cutting edge and forefront
                       technology
                     </Typography>
@@ -138,7 +138,7 @@ export default function CardContainer () {
                       transition={{ delay: 1 }}
                     >
                       <Typography variant='h4' gutterBottom color='textPrimary'>
-                        Services We Offer
+                        Technologies & Services
                       </Typography>
                     </motion.div>
                     <motion.div
@@ -157,7 +157,7 @@ export default function CardContainer () {
                     animate={{ x: 0 }}
                     transition={{ delay: 1, duration: 2 }}
                   >
-                    <Typography variant='body1' gutterBottom color='textSecondary'>
+                    <Typography variant='body1' gutterBottom color='textPrimary'>
                       We believe in delivering premier services with cutting edge and forefront
                       technology
                     </Typography>

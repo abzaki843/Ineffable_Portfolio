@@ -22,6 +22,7 @@ export default function MyApp (props) {
       <Head>
         <title>Ineffable Devs</title>
         <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width' />
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'></link>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

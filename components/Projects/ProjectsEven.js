@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
   },
   list: {
     width: '100%',
-    maxWidth: 360,
+
     backgroundColor: theme.palette.background.paper,
   },
   bg: {
@@ -113,49 +113,43 @@ export default function ProjectsEven ({
               </motion.div>
             </Grid>
 
-            <Grid item xs={12} lg={6} style={{ marginTop: '90px' }}>
+            <Grid item xs={12} lg={6} style={{ marginTop: '50px' }}>
               <motion.div variants={childVariants}>
                 <div>
                   <Typography variant='h4' gutterBottom color='textPrimary' align='justify'>
                     {ProjectTitle}
                   </Typography>
-                  <Typography variant='subtitle' gutterBottom color='textSecondary' align='justify'>
+                  <Typography variant='subtitle' gutterBottom color='textPrimary' align='justify'>
                     {projectText}
                   </Typography>
 
                   <div className={classes.list}>
-                    <motion.div whileHover={{ scale: 1.1, originX: 0, color: 'green' }}>
-                      <List
-                        component='nav'
-                        aria-label='main mailbox folders'
-                        style={{ backgroundColor: ' classes.bg' }}
-                      >
-                        <ListItem button>
-                          <ListItemIcon>
-                            <CheckCircleOutlineRoundedIcon color='primary' />
-                          </ListItemIcon>
-                          <ListItemText secondary={projectFeature1} />
-                        </ListItem>
-                        <ListItem button>
-                          <ListItemIcon>
-                            <CheckCircleOutlineRoundedIcon color='primary' />
-                          </ListItemIcon>
-                          <ListItemText secondary={projectFeature2} />
-                        </ListItem>
-                        <ListItem button>
-                          <ListItemIcon>
-                            <CheckCircleOutlineRoundedIcon color='primary' />
-                          </ListItemIcon>
-                          <ListItemText secondary={projectFeature3} />
-                        </ListItem>
-                        <ListItem button>
-                          <ListItemIcon>
-                            <CheckCircleOutlineRoundedIcon color='primary' />
-                          </ListItemIcon>
-                          <ListItemText secondary={projectFeature4} />
-                        </ListItem>
-                      </List>
-                    </motion.div>
+                    <List component='nav' aria-label='main mailbox folders'>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
+                        </ListItemIcon>
+                        <ListItemText primary={projectFeature1} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
+                        </ListItemIcon>
+                        <ListItemText primary={projectFeature2} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
+                        </ListItemIcon>
+                        <ListItemText primary={projectFeature3} />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <CheckCircleOutlineRoundedIcon color='secondary' />
+                        </ListItemIcon>
+                        <ListItemText primary={projectFeature4} />
+                      </ListItem>
+                    </List>
                   </div>
                   <Box ml={8}>
                     <motion.div
@@ -164,7 +158,7 @@ export default function ProjectsEven ({
                       ref={ref}
                       style={{ opacity: inView ? 1 : 0 }}
                     >
-                      <Button variant='contained' color='primary' href={projectRef}>
+                      <Button variant='contained' color='secondary' href={projectRef}>
                         LEARN MORE
                       </Button>
                     </motion.div>
